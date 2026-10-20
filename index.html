@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>藍牙實體玩具互動小遊戲</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 藍牙實體玩具互動小遊戲</h1>
+    
+    <!-- 藍牙連線控制區 -->
+    <div class="card">
+      <button id="connect-btn" class="btn primary">🔗 連接藍牙玩具</button>
+      <span id="status" class="status-disconnected">狀態：未連線</span>
+    </div>
+
+    <!-- 玩具控制測試面板 (Web -> Toy) -->
+    <div class="card">
+      <h3>發送指令給玩具 (Write 特徵值)</h3>
+      <div class="control-group">
+        <button id="btn-vibrate" class="btn" disabled>📳 觸發玩具震動 (500ms)</button>
+        <button id="btn-led-red" class="btn red" disabled>🔴 玩具亮紅燈</button>
+        <button id="btn-led-green" class="btn green" disabled>🟢 玩具亮綠燈</button>
+      </div>
+    </div>
+
+    <!-- 數據接收顯示區 (Toy -> Web) -->
+    <div class="card">
+      <h3>玩具傳回數據 (Notify 特徵值)</h3>
+      <div class="telemetry">
+        <p>最後按鈕動作：<strong id="toy-button">無</strong></p>
+        <p>玩具傾斜角度 (Tilt Roll)：<strong id="toy-tilt">0</strong>°</p>
+      </div>
+    </div>
+
+    <!-- 遊戲畫布區 -->
+    <div class="card">
+      <h3>互動遊戲：避開隕石</h3>
+      <p class="hint">說明：左右傾斜玩具控制飛船移動，按下玩具按鈕或點擊畫面發射雷射！</p>
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
