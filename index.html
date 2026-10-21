@@ -18,51 +18,78 @@
 
 <div style="margin-left: auto; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
 
-  <div style="
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    padding: 10px 16px;
-    border-radius: 18px;
-    min-width: 170px;
-    box-shadow: 0 2px 8px rgba(99, 63, 78, 0.08);
+<div style="
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 10px 14px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(99, 63, 78, 0.04);
+">
+
+  <svg width="19" height="19"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#633F4E"
+       stroke-width="1.8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       aria-hidden="true">
+    <path d="m5 8 6 6"/>
+    <path d="m4 14 6-6 2-3H2"/>
+    <path d="M2 5h12"/>
+    <path d="M7 2h1"/>
+    <path d="m22 22-5-10-5 10"/>
+    <path d="M14 18h6"/>
+  </svg>
+
+  <select id="language-select"
+          aria-label="Choose language"
+          style="
+    border: none;
+    background: transparent;
+    color: #633F4E;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    width: 76px;
+    appearance: none;
+    -webkit-appearance: none;
   ">
-    <span style="font-size: 18px; color: #7A5A68;">文A</span>
+    <option value="en">English</option>
+    <option value="zh">中文</option>
+  </select>
 
-    <select id="language-select" aria-label="Choose language" style="
-      border: none;
-      background: transparent;
-      color: #633F4E;
-      font-size: 18px;
-      font-weight: 600;
-      font-family: inherit;
-      outline: none;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      cursor: pointer;
-      flex: 1;
-    ">
-      <option value="en">English</option>
-      <option value="zh">中文</option>
-    </select>
-
-    <span style="color: #633F4E; font-size: 16px;">⌄</span>
-  </div>
-
-  <span style="
-    background: #B27C89;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 18px;
-    font-weight: 600;
-  ">
-    Log in
-  </span>
+  <svg width="15" height="15"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#633F4E"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       aria-hidden="true">
+    <path d="m6 9 6 6 6-6"/>
+  </svg>
 
 </div>
-    
+
+<span style="
+  background: #B27C89;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+">
+  Log in
+</span>
+
+</div>
+
 </header>
 
 <nav style="display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 28px 25px;">
