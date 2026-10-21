@@ -162,3 +162,55 @@ function gameLoop() {
 }
 
 gameLoop();
+
+
+ 
+// ===== HeartSync 中英文切換功能 =====
+(function () {
+  const languageSelect = document.getElementById('language-select');
+
+  // 英文和中文對照表
+  const translations = {
+    en: {
+      navHome: 'Home',
+      navAbout: 'About Us',
+      navPlay: 'Play',
+      navParents: 'Parents',
+      welcome: 'WELCOME TO HEARTSYNC',
+      slogan: 'Music Lights Brighter Tomorrows',
+      description: 'Learning English through rhythm, light and play.'
+    },
+
+    zh: {
+      navHome: '首頁',
+      navAbout: '關於我們',
+      navPlay: '開始遊戲',
+      navParents: '家長專區',
+      welcome: '歡迎來到 HeartSync',
+      slogan: '以音樂點亮更好的明天',
+      description: '透過節奏、燈光與遊戲，讓英語學習充滿樂趣。'
+    }
+  };
+
+  function changeLanguage(language) {
+    const words = translations[language] || translations.en;
+
+    document.querySelectorAll('[data-i18n]').forEach(function (element) {
+      const key = element.getAttribute('data-i18n');
+
+      if (words[key] !== undefined) {
+        element.textContent = words[key];
+      }
+    });
+
+    document.documentElement.lang = language === 'zh' ? 'zh-Hant' : 'en';
+  }
+
+  if (languageSelect) {
+    languageSelect.addEventListener('change', function () {
+      changeLanguage(languageSelect.value);
+    });
+
+    changeLanguage(languageSelect.value);
+  }
+})();
