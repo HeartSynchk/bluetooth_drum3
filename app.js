@@ -185,7 +185,9 @@ gameLoop();
       parentsTitle: 'Parents Area',
       parentsIntro: "Your child's learning journey, all in one place.",
       parentsComing: 'Coming Soon',
-      parentsMessage: 'Learning progress and activity records will be available in the future.'
+      parentsMessage: 'Learning progress and activity records will be available in the future.',
+      contactTitle: 'Contact Us',
+      contactIntro: "Have a question about HeartSync? We'd love to hear from you!"
     },
 
     zh: {
@@ -202,7 +204,9 @@ gameLoop();
       parentsTitle: '家長專區',
       parentsIntro: '在這裡陪伴孩子的每一步學習旅程。',
       parentsComing: '即將推出',
-      parentsMessage: '未來將提供學習進度與活動紀錄，方便家長了解孩子的成長。'
+      parentsMessage: '未來將提供學習進度與活動紀錄，方便家長了解孩子的成長。',
+      contactTitle: '聯絡我們',
+      contactIntro: '對 HeartSync 有任何疑問嗎？歡迎透過以下方式聯絡我們！'
     }
   };
 
