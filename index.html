@@ -15,20 +15,53 @@
     <h1 style="margin: 0; font-size: 28px; color: #633F4E;">
       HeartSync
     </h1>
-    
-<div style="margin-left: auto; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
 
-<select id="language-select" aria-label="Choose language"
-  style="background: white; color: #633F4E; padding: 10px 14px; border: none; border-radius: 12px; font-size: 16px; cursor: pointer;">
-  <option value="en">English</option>
-  <option value="zh">中文</option>
-</select>
+<div style="margin-left: auto; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
 
-  <span style="background: #B27C89; color: white; padding: 10px 18px; border-radius: 12px;">
+  <div style="
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px 16px;
+    border-radius: 18px;
+    min-width: 170px;
+    box-shadow: 0 2px 8px rgba(99, 63, 78, 0.08);
+  ">
+    <span style="font-size: 18px; color: #7A5A68;">文A</span>
+
+    <select id="language-select" aria-label="Choose language" style="
+      border: none;
+      background: transparent;
+      color: #633F4E;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: inherit;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+      flex: 1;
+    ">
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
+
+    <span style="color: #633F4E; font-size: 16px;">⌄</span>
+  </div>
+
+  <span style="
+    background: #B27C89;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 18px;
+    font-weight: 600;
+  ">
     Log in
   </span>
 
-  </div>
+</div>
     
 </header>
 
