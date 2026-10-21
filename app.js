@@ -187,7 +187,16 @@ gameLoop();
       parentsComing: 'Coming Soon',
       parentsMessage: 'Learning progress and activity records will be available in the future.',
       contactTitle: 'Contact Us',
-      contactIntro: "Have a question about HeartSync? We'd love to hear from you!"
+      contactIntro: "Have a question about HeartSync? We'd love to hear from you!",
+      storyTitle: 'Our Story',
+      storyPlaceholder: 'Coming Soon',
+      vmvTitle: 'Our VMV',
+      visionTitle: 'Vision',
+      visionPlaceholder: 'Coming Soon',
+      missionTitle: 'Mission',
+      missionPlaceholder: 'Coming Soon',
+      valuesTitle: 'Values',
+      valuesPlaceholder: 'Coming Soon'
     },
 
     zh: {
@@ -206,7 +215,16 @@ gameLoop();
       parentsComing: '即將推出',
       parentsMessage: '未來將提供學習進度與活動紀錄，方便家長了解孩子的成長。',
       contactTitle: '聯絡我們',
-      contactIntro: '對 HeartSync 有任何疑問嗎？歡迎透過以下方式聯絡我們！'
+      contactIntro: '對 HeartSync 有任何疑問嗎？歡迎透過以下方式聯絡我們！',
+      storyTitle: '我們的故事',
+      storyPlaceholder: '即將推出',
+      vmvTitle: '我們的願景、使命與價值觀',
+      visionTitle: '願景',
+      visionPlaceholder: '即將推出',
+      missionTitle: '使命',
+      missionPlaceholder: '即將推出',
+      valuesTitle: '價值觀',
+      valuesPlaceholder: '即將推出'
     }
   };
 
