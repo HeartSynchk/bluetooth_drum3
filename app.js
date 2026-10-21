@@ -181,7 +181,11 @@ gameLoop();
       slogan: 'Music Lights Brighter Tomorrows',    
       description: 'Learning English through rhythm, light and play.',
       aboutTitle: 'About HeartSync',
-      aboutIntro: 'Discover how music, light and play come together in HeartSync.'
+      aboutIntro: 'Discover how music, light and play come together in HeartSync.',
+      parentsTitle: 'Parents Area',
+      parentsIntro: "Your child's learning journey, all in one place.",
+      parentsComing: 'Coming Soon',
+      parentsMessage: 'Learning progress and activity records will be available in the future.'
     },
 
     zh: {
@@ -194,7 +198,11 @@ gameLoop();
       slogan: '以音樂點亮更好的明天',
       description: '透過節奏、燈光與遊戲，讓英語學習充滿樂趣。',
       aboutTitle: '關於 HeartSync',
-      aboutIntro: '探索 HeartSync 如何將音樂、燈光與遊戲結合，讓學習充滿樂趣。'
+      aboutIntro: '探索 HeartSync 如何將音樂、燈光與遊戲結合，讓學習充滿樂趣。',
+      parentsTitle: '家長專區',
+      parentsIntro: '在這裡陪伴孩子的每一步學習旅程。',
+      parentsComing: '即將推出',
+      parentsMessage: '未來將提供學習進度與活動紀錄，方便家長了解孩子的成長。'
     }
   };
 
