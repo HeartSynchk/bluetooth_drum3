@@ -228,3 +228,42 @@ gameLoop();
     changeLanguage(languageSelect.value);
   }
 })();
+
+/* ===== HeartSync 页面切换功能 ===== */
+(function () {
+  const pageIds = ['home', 'about', 'play', 'parents'];
+
+  function showPage(pageId) {
+    if (!pageIds.includes(pageId)) {
+      pageId = 'home';
+    }
+
+    pageIds.forEach(function (id) {
+      const page = document.getElementById(id);
+
+      if (page) {
+        page.hidden = (id !== pageId);
+      }
+    });
+
+    window.scrollTo(0, 0);
+  }
+
+  document.querySelectorAll('nav a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const pageId = link.getAttribute('href').substring(1);
+
+      if (pageIds.includes(pageId)) {
+        event.preventDefault();
+        window.location.hash = pageId;
+        showPage(pageId);
+      }
+    });
+  });
+
+  window.addEventListener('hashchange', function () {
+    showPage(window.location.hash.substring(1));
+  });
+
+  showPage(window.location.hash.substring(1) || 'home');
+})();
