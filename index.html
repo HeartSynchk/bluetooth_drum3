@@ -243,6 +243,7 @@
 
 
 
+
 <!-- HeartSync Play Mode Selection -->
 <div id="play-mode-selection" style="
   background: #FFF9F0;
@@ -250,6 +251,7 @@
   border-radius: 24px;
   margin-bottom: 30px;
   text-align: center;
+  box-sizing: border-box;
 ">
 
   <h2 style="color: #5B433B; font-size: 32px;">
@@ -260,127 +262,133 @@
     Choose a mode to begin your musical journey.
   </p>
 
-  <!-- Mode 1 and Mode 2 -->
+  <!-- Two main modes -->
   <div style="
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 24px;
     margin-top: 30px;
   ">
 
-<!-- Mode 1 -->
-<div id="mode1-card" style="
-  background: #CDEBE7;
-  border-radius: 28px;
-  padding: 24px;
-  text-align: center;
-">
-  <div style="
-    height: 280px;
-    overflow: hidden;
+    <!-- Mode 1 -->
+    <div id="mode1-card" style="
+      background: #D8F4EE;
+      border-radius: 24px;
+      padding: 20px;
+      box-sizing: border-box;
+    ">
+      <div style="
+        height: 270px;
+        overflow: hidden;
+        border-radius: 18px;
+      ">
+        <img
+          src="mode1%20.jpg"
+          alt="Child playing the HeartSync drum"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+          "
+        >
+      </div>
+
+      <h3 style="color: #265C57;">Mode 1</h3>
+      <p style="color: #265C57;">Free Exploration</p>
+      <p style="color: #265C57;">自由探索</p>
+    </div>
+
+    <!-- Mode 2 -->
+    <div id="mode2-card" style="
+      background: #FFE2DB;
+      border-radius: 24px;
+      padding: 20px;
+      box-sizing: border-box;
+    ">
+      <div style="
+        height: 270px;
+        overflow: hidden;
+        border-radius: 18px;
+      ">
+        <img
+          src="mode3%20.jpg"
+          alt="English letters, musical notes and book"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+          "
+        >
+      </div>
+
+      <h3 style="color: #754035;">Mode 2</h3>
+      <p style="color: #754035;">Follow the Light</p>
+      <p style="color: #754035;">燈光引導</p>
+    </div>
+
+  </div>
+  <!-- End Two Main Modes Grid -->
+
+  <!-- Mode 2 Learning Journey -->
+  <div id="learning-journey-card" style="
+    background: #FFE5A6;
     border-radius: 24px;
-    margin-bottom: 18px;
+    padding: 24px;
+    margin-top: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
   ">
-    <img
-      src="mode1%20.jpg"
-      alt="Mode 1 - Free Exploration"
-      style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        transform: scale(1.12);
-        display: block;
-      "
-    >
-  </div>
 
-  <h3 style="margin: 0; color: #2F6765; font-size: 24px;">Mode 1</h3>
-  <p style="margin: 10px 0 0; color: #2F6765; font-size: 18px;">Free Exploration</p>
-  <p style="margin: 8px 0 0; color: #2F6765; font-size: 18px;">自由探索</p>
+    <div style="
+      width: 220px;
+      height: 220px;
+      overflow: hidden;
+      border-radius: 18px;
+      flex-shrink: 0;
+    ">
+      <img
+        src="mode2%20Learning%20Journey%20.jpg"
+        alt="Music learning journey with trophy"
+        style="
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
+          display: block;
+        "
+      >
+    </div>
+
+    <div style="
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    ">
+      <h3 style="color: #704A1C; font-size: 26px;">
+        Mode 2 Learning Journey
+      </h3>
+
+      <p style="color: #795726; font-size: 18px;">
+        Learn Words → Read Rhythms → Play a Song
+      </p>
+
+      <p style="color: #795726;">
+        英文單字 · 節奏學習 · 我的第一首歌
+      </p>
+    </div>
+
+  </div>
+  <!-- End Learning Journey -->
+
 </div>
-
-<!-- Mode 2 -->
-<div id="mode2-card" style="
-  background: #F6D9D4;
-  border-radius: 28px;
-  padding: 24px;
-  text-align: center;
-">
-  <div style="
-    height: 280px;
-    overflow: hidden;
-    border-radius: 24px;
-    margin-bottom: 18px;
-  ">
-    <img
-      src="mode3%20.jpg"
-      alt="Mode 2 - Follow the Light"
-      style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        transform: scale(1.12);
-        display: block;
-      "
-    >
-  </div>
-
-  <h3 style="margin: 0; color: #7B4B43; font-size: 24px;">Mode 2</h3>
-  <p style="margin: 10px 0 0; color: #7B4B43; font-size: 18px;">Follow the Light</p>
-  <p style="margin: 8px 0 0; color: #7B4B43; font-size: 18px;">燈光引導</p>
-</div>
-
-
-<!-- Mode 2 Learning Journey -->
-<div id="learning-journey-card" style="
-  margin-top: 24px;
-  background: #F5DC8E;
-  border-radius: 28px;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-">
-  <div style="
-    width: 220px;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 24px;
-    flex-shrink: 0;
-    background: #FFF8DC;
-  ">
-    <img
-      src="mode2%20Learning%20Journey%20.jpg"
-      alt="Mode 2 Learning Journey"
-      style="
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        transform: scale(1.18);
-        display: block;
-      "
-    >
-  </div>
-
-  <div style="flex: 1; min-width: 260px;">
-    <h3 style="margin: 0; color: #7B541C; font-size: 26px;">
-      Mode 2 Learning Journey
-    </h3>
-
-    <p style="margin: 18px 0 0; color: #7B541C; font-size: 18px; line-height: 1.6;">
-      Learn Words → Read Rhythms → Play a Song
-    </p>
-
-    <p style="margin: 14px 0 0; color: #7B541C; font-size: 18px; line-height: 1.6;">
-      英文單字・節奏學習・我的第一首歌
-    </p>
-  </div>
-</div>
-
 <!-- End Play Mode Selection -->
     
     <!-- 藍牙連線控制區 -->
