@@ -390,6 +390,100 @@
 
 </div>
 <!-- End Play Mode Selection -->
+
+    
+<!-- Sensory Settings -->
+<div id="sensory-settings" hidden style="
+  background: #FFF9F0;
+  padding: 35px 25px;
+  border-radius: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-sizing: border-box;
+">
+
+  <h2 style="color: #5B433B;">
+    Sensory Settings
+  </h2>
+
+  <p id="selected-mode-label" style="color: #896E61;">
+    Get ready to play!
+  </p>
+
+  <div style="
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+  ">
+
+    <h3 style="color: #633F4E;">
+      Visual Mode
+    </h3>
+
+    <label style="display:block; margin:15px 0;">
+      <input type="radio"
+             name="visual-mode"
+             value="gentle"
+             checked>
+      Gentle — 柔和模式
+    </label>
+
+    <label style="display:block; margin:15px 0;">
+      <input type="radio"
+             name="visual-mode"
+             value="colourful">
+      Colourful — 繽紛模式
+    </label>
+
+    <hr>
+
+    <label style="display:block; margin:20px 0;">
+      <input type="checkbox" id="sensory-sound">
+      Sound Effects — 遊戲音效
+    </label>
+
+    <label style="display:block; margin:20px 0;">
+      <input type="checkbox"
+             id="sensory-reduce-motion"
+             checked>
+      Reduce Motion — 減少動畫
+    </label>
+
+  </div>
+
+  <button type="button" id="sensory-back-btn"
+    style="
+      padding:14px 24px;
+      border:none;
+      border-radius:14px;
+      background:#EADFD5;
+      color:#5B433B;
+      font-size:16px;
+      cursor:pointer;
+      margin:5px;
+    ">
+    Back
+  </button>
+
+  <button type="button" id="sensory-start-btn"
+    style="
+      padding:14px 24px;
+      border:none;
+      border-radius:14px;
+      background:#3DAFA5;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      margin:5px;
+    ">
+    Continue
+  </button>
+
+</div>
+<!-- End Sensory Settings -->
     
     <!-- 藍牙連線控制區 -->
     <div class="card">
