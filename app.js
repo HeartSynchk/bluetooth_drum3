@@ -399,9 +399,128 @@ gameLoop();
     sensorySettings.scrollIntoView();
   });
 
-  // Demo game will be built next
+
+  // ===== HeartSync Virtual Drum Demo =====
+
+  const demoPage = document.getElementById('heartsync-demo');
+  const drumPad = document.getElementById('demo-drum-pad');
+  const demoModeLabel = document.getElementById('demo-mode-label');
+  const demoFeedback = document.getElementById('demo-feedback');
+  const tapCount = document.getElementById('demo-tap-count');
+  const resetBtn = document.getElementById('demo-reset-btn');
+  const demoBackBtn = document.getElementById('demo-back-btn');
+
+  if (!demoPage || !drumPad || !demoModeLabel ||
+      !demoFeedback || !tapCount || !resetBtn || !demoBackBtn) {
+    console.warn('HeartSync: Demo elements are missing.');
+    return;
+  }
+
+  let hits = 0;
+  let colorIndex = 0;
+
+  const gentleColors = [
+    '#D8F4EE',
+    '#FFE2DB',
+    '#FFF1DD'
+  ];
+
+  const colourfulColors = [
+    '#FFB5A7',
+    '#FFE082',
+    '#A7E8D5',
+    '#B8C8FF',
+    '#E5BEFA'
+  ];
+
+  function updateDrumColor() {
+    const settings = window.heartSyncSession || {};
+    const colourful = settings.visual === 'colourful';
+
+    const colors = colourful
+      ? colourfulColors
+      : gentleColors;
+
+    drumPad.style.background =
+      colors[colorIndex % colors.length];
+
+    drumPad.style.borderColor =
+      colourful ? '#E8898A' : '#63C7BE';
+
+    drumPad.style.transition = settings.reduceMotion
+      ? 'none'
+      : 'background-color 0.2s ease, border-color 0.2s ease';
+  }
+
+  function tapDrum() {
+    hits += 1;
+    colorIndex += 1;
+
+    tapCount.textContent = hits;
+    demoFeedback.textContent = 'Great job! ♪';
+
+    updateDrumColor();
+  }
+
+  function resetDemo() {
+    hits = 0;
+    colorIndex = 0;
+
+    tapCount.textContent = '0';
+    demoFeedback.textContent = 'Ready to play!';
+
+    updateDrumColor();
+  }
+
+  // Connect Drum -> Demo Mode
   demoBtn.addEventListener('click', function () {
-    alert('HeartSync Demo Mode is coming next!');
+    const settings = window.heartSyncSession || {};
+
+    demoModeLabel.textContent =
+      settings.mode || 'Free Exploration';
+
+    connectionPage.hidden = true;
+    demoPage.hidden = false;
+
+    resetDemo();
+    demoPage.scrollIntoView();
   });
 
+  // Tap on the drum
+  drumPad.addEventListener('click', tapDrum);
+
+  // Keyboard: Space to tap
+  document.addEventListener('keydown', function (event) {
+    if (demoPage.hidden || event.key !== ' ') {
+      return;
+    }
+
+    const active = document.activeElement;
+    const tag = active ? active.tagName : '';
+
+    // Do not interfere with buttons or form fields
+    if (tag === 'BUTTON' || tag === 'INPUT' ||
+        tag === 'TEXTAREA' || tag === 'SELECT') {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (!event.repeat) {
+      tapDrum();
+    }
+  });
+
+  // Reset hit counter
+  resetBtn.addEventListener('click', resetDemo);
+
+  // Demo Mode -> Connect Drum
+  demoBackBtn.addEventListener('click', function () {
+    demoPage.hidden = true;
+    connectionPage.hidden = false;
+
+    connectionPage.scrollIntoView();
+  });
+
+  // ===== End Virtual Drum Demo =====
 })();
