@@ -289,3 +289,89 @@ gameLoop();
 
   showPage(window.location.hash.substring(1) || 'home');
 })();
+
+
+/* ===== HeartSync Sensory Settings Flow ===== */
+(function () {
+  const modeSelection = document.getElementById('play-mode-selection');
+  const sensorySettings = document.getElementById('sensory-settings');
+  const modeLabel = document.getElementById('selected-mode-label');
+  const backBtn = document.getElementById('sensory-back-btn');
+  const continueBtn = document.getElementById('sensory-start-btn');
+
+  if (!modeSelection || !sensorySettings || !modeLabel ||
+      !backBtn || !continueBtn) {
+    return;
+  }
+
+  const modes = [
+    ['mode1-card', 'Mode 1 — Free Exploration'],
+    ['mode2-card', 'Mode 2 — Follow the Light'],
+    ['learning-journey-card', 'Mode 2 — Learning Journey']
+  ];
+
+  let selectedMode = '';
+
+  function openSettings(modeName) {
+    selectedMode = modeName;
+    modeLabel.textContent = 'Selected: ' + selectedMode;
+
+    modeSelection.hidden = true;
+    sensorySettings.hidden = false;
+
+    sensorySettings.scrollIntoView();
+  }
+
+  modes.forEach(function (mode) {
+    const card = document.getElementById(mode[0]);
+    if (!card) return;
+
+    card.style.cursor = 'pointer';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', 'Choose ' + mode[1]);
+
+    function chooseMode() {
+      openSettings(mode[1]);
+    }
+
+    card.addEventListener('click', chooseMode);
+
+    card.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        chooseMode();
+      }
+    });
+  });
+
+  backBtn.addEventListener('click', function () {
+    sensorySettings.hidden = true;
+    modeSelection.hidden = false;
+    modeSelection.scrollIntoView();
+  });
+
+  continueBtn.addEventListener('click', function () {
+    const visualMode = document.querySelector(
+      'input[name="visual-mode"]:checked'
+    );
+
+    const soundEnabled =
+      document.getElementById('sensory-sound').checked;
+
+    const reduceMotion =
+      document.getElementById('sensory-reduce-motion').checked;
+
+    console.log('HeartSync settings:', {
+      mode: selectedMode,
+      visual: visualMode ? visualMode.value : 'gentle',
+      sound: soundEnabled,
+      reduceMotion: reduceMotion
+    });
+
+    alert(
+      'Settings saved for this session!\n' +
+      'Next step: Connect HeartSync Drum.'
+    );
+  });
+})();
