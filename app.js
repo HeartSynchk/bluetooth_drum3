@@ -291,16 +291,25 @@ gameLoop();
 })();
 
 
+
 /* ===== HeartSync Sensory Settings Flow ===== */
 (function () {
   const modeSelection = document.getElementById('play-mode-selection');
   const sensorySettings = document.getElementById('sensory-settings');
   const modeLabel = document.getElementById('selected-mode-label');
+
   const backBtn = document.getElementById('sensory-back-btn');
   const continueBtn = document.getElementById('sensory-start-btn');
 
+  const connectionPage = document.getElementById('drum-connection');
+  const connectionModeLabel = document.getElementById('connection-selected-mode');
+  const connectionBackBtn = document.getElementById('connection-back-btn');
+  const demoBtn = document.getElementById('connection-demo-btn');
+
   if (!modeSelection || !sensorySettings || !modeLabel ||
-      !backBtn || !continueBtn) {
+      !backBtn || !continueBtn || !connectionPage ||
+      !connectionModeLabel || !connectionBackBtn || !demoBtn) {
+    console.warn('HeartSync: A page element is missing.');
     return;
   }
 
@@ -317,11 +326,13 @@ gameLoop();
     modeLabel.textContent = 'Selected: ' + selectedMode;
 
     modeSelection.hidden = true;
+    connectionPage.hidden = true;
     sensorySettings.hidden = false;
 
     sensorySettings.scrollIntoView();
   }
 
+  // Select a game mode
   modes.forEach(function (mode) {
     const card = document.getElementById(mode[0]);
     if (!card) return;
@@ -345,12 +356,14 @@ gameLoop();
     });
   });
 
+  // Back: Sensory Settings -> Mode Selection
   backBtn.addEventListener('click', function () {
     sensorySettings.hidden = true;
     modeSelection.hidden = false;
     modeSelection.scrollIntoView();
   });
 
+  // Continue: Sensory Settings -> Connect Drum
   continueBtn.addEventListener('click', function () {
     const visualMode = document.querySelector(
       'input[name="visual-mode"]:checked'
@@ -362,16 +375,33 @@ gameLoop();
     const reduceMotion =
       document.getElementById('sensory-reduce-motion').checked;
 
-    console.log('HeartSync settings:', {
+    // Keep selections available for the future demo game
+    window.heartSyncSession = {
       mode: selectedMode,
       visual: visualMode ? visualMode.value : 'gentle',
       sound: soundEnabled,
       reduceMotion: reduceMotion
-    });
+    };
 
-    alert(
-      'Settings saved for this session!\n' +
-      'Next step: Connect HeartSync Drum.'
-    );
+    connectionModeLabel.textContent =
+      'Selected: ' + selectedMode;
+
+    sensorySettings.hidden = true;
+    connectionPage.hidden = false;
+
+    connectionPage.scrollIntoView();
   });
+
+  // Back: Connect Drum -> Sensory Settings
+  connectionBackBtn.addEventListener('click', function () {
+    connectionPage.hidden = true;
+    sensorySettings.hidden = false;
+    sensorySettings.scrollIntoView();
+  });
+
+  // Demo game will be built next
+  demoBtn.addEventListener('click', function () {
+    alert('HeartSync Demo Mode is coming next!');
+  });
+
 })();
