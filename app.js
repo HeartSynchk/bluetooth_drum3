@@ -196,7 +196,23 @@ gameLoop();
       missionTitle: 'Mission',
       missionPlaceholder: 'Coming Soon',
       valuesTitle: 'Values',
-      valuesPlaceholder: 'Coming Soon'
+      
+valuesPlaceholder: 'Coming Soon',
+
+// Sensory Settings
+sensoryTitle: 'Sensory Settings',
+sensoryIntro: 'Make HeartSync comfortable for you.',
+screenAppearance: 'Screen Appearance',
+screenDescription: 'Choose colours that feel comfortable.',
+gentle: 'Gentle',
+colourful: 'Colourful',
+reduceMotion: 'Reduce Motion',
+drumLight: 'Drum Light',
+drumLightDescription: 'Adjust the drum lighting.',
+brightness: 'Brightness',
+soundEffects: 'Sound Effects',
+back: 'Back',
+continue: 'Continue'
     },
 
     zh: {
@@ -224,7 +240,23 @@ gameLoop();
       missionTitle: '使命',
       missionPlaceholder: '即將推出',
       valuesTitle: '價值觀',
-      valuesPlaceholder: '即將推出'
+      
+valuesPlaceholder: '即將推出',
+
+// 感官設定
+sensoryTitle: '感官設定',
+sensoryIntro: '打造讓你感到舒適的 HeartSync 體驗。',
+screenAppearance: '畫面外觀',
+screenDescription: '選擇讓你感到舒適的色彩。',
+gentle: '柔和模式',
+colourful: '繽紛模式',
+reduceMotion: '減少動畫',
+drumLight: '鼓燈設定',
+drumLightDescription: '調整鼓的燈光效果。',
+brightness: '亮度',
+soundEffects: '遊戲音效',
+back: '返回',
+continue: '繼續'
     }
   };
 
