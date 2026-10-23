@@ -212,13 +212,8 @@ value3Title: 'Playful & Inclusive Learning',
 value3Body: `Combining sensory relaxation interventions with interactive games such as English vocabulary and musical rhythms creates a joyful learning experience suitable for all children.`,
 
 value4Title: 'Child-Centric Safety & Ethical Care',
-value4Body: `Adhering to safe and non-toxic hardware design, low-irritation lighting protection modes, and strict personal data privacy protection (anonymization & parental autonomy) establishes a trustworthy product experience.`
+value4Body: `Adhering to safe and non-toxic hardware design, low-irritation lighting protection modes, and strict personal data privacy protection (anonymization & parental autonomy) establishes a trustworthy product experience.`,
 
-      missionTitle: 'Mission',
-      missionPlaceholder: 'Coming Soon',
-      valuesTitle: 'Values',
-      
-valuesPlaceholder: 'Coming Soon',
 
 // Sensory Settings
 sensoryTitle: 'Sensory Settings',
@@ -279,13 +274,8 @@ value3Title: '寓教於樂',
 value3Body: `將感官舒緩干預與英文單字、音樂音律等互動遊戲互相結合，打造適合所有孩子一同參與的快樂學習體驗。`,
 
 value4Title: '安全信任',
-value4Body: `堅持使用安全無毒的硬體設計、低刺激的燈光防護模式，以及嚴格的個人資料隱私保護（匿名化處理與家長自主權），建立值得信任的產品體驗。`
+value4Body: `堅持使用安全無毒的硬體設計、低刺激的燈光防護模式，以及嚴格的個人資料隱私保護（匿名化處理與家長自主權），建立值得信任的產品體驗。`,
 
-      missionTitle: '使命',
-      missionPlaceholder: '即將推出',
-      valuesTitle: '價值觀',
-      
-valuesPlaceholder: '即將推出',
 
 // 感官設定
 sensoryTitle: '感官設定',
