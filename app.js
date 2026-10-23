@@ -177,6 +177,16 @@ gameLoop();
       navPlay: 'Play',
       navParents: 'Parents',
       login: 'Log in',
+      loginClose: 'Close',
+      loginWelcome: 'Welcome to HeartSync',
+      loginIntro: 'Choose how you would like to continue.',
+      parentLoginTitle: 'Parent Log In',
+      parentLoginIntro: "Parents will be able to manage their child's learning records and settings.",
+      parentEmailComing: 'Email Sign In - Coming Soon',
+      guestPlayTitle: 'Play as Guest',
+      guestPlayIntro: 'Explore music and games without creating an account.',
+      guestPlayButton: 'Start Playing',
+
       welcome: 'WELCOME TO HEARTSYNC',
       slogan: 'Music Lights Brighter Tomorrows',    
       description: 'Learning English through rhythm, light and play.',
@@ -239,6 +249,15 @@ chooseModeIntro: 'Choose a mode to begin your musical journey.'
       navPlay: '開始遊戲',
       navParents: '家長專區',
       login: '登入',
+      loginClose: '關閉',
+      loginWelcome: '歡迎來到 HeartSync',
+      loginIntro: '選擇適合你的使用方式。',
+      parentLoginTitle: '家長登入',
+      parentLoginIntro: '家長登入後，未來可以管理孩子的學習記錄及設定。',
+      parentEmailComing: '電郵登入－即將推出',
+      guestPlayTitle: '訪客試玩',
+      guestPlayIntro: '無需建立帳戶，即可探索音樂與遊戲。',
+      guestPlayButton: '開始遊戲',
       welcome: '歡迎來到 HeartSync',
       slogan: '以音樂點亮更好的明天',
       description: '透過節奏、燈光與遊戲，讓英語學習充滿樂趣。',
@@ -252,29 +271,21 @@ chooseModeIntro: 'Choose a mode to begin your musical journey.'
       contactIntro: '對 HeartSync 有任何疑問嗎？歡迎透過以下方式聯絡我們！',
       storyTitle: '我們的故事',
       storyPlaceholder: '即將推出',
-     
-vmvTitle: '我們的願景、使命與核心價值',
-
-visionTitle: '願景',
-visionMotto: '以音樂點亮更好的明天。',
-visionPlaceholder: `打造一個包容共享的社會，讓每一位兒童（特別是SEN孩子）都能透過普及且具啟發性的音樂感官科技，獨立進行情緒調節、提升專注力與自主學習，享受自信成長的快樂。`,
-
-missionTitle: '使命',
-missionPlaceholder: `我們致力於為兒童（特別是SEN孩子）提供趣味豐富的音樂感官輔助套件（LED 燈光程式化樂器與線上遊戲平台）。HeartSync致力於讓 SEN 學生與兒童在無需成人全程陪同的情況下，能夠自主進行專注力、衝動控制與情緒舒緩訓練，同時輕鬆融入音樂與英語單字的趣味學習。`,
-
-valuesTitle: '核心價值',
-
-value1Title: '平等普及',
-value1Body: `降低經濟與使用門檻，讓每一個家庭、學校與社區中心皆能輕鬆獲取有效的互動干預工具。`,
-
-value2Title: '自主賦能',
-value2Body: `打造零依賴、具明確引導機制的樂器與遊戲，鼓勵孩子依據自己的節奏建立專注力、自信心與情緒自控力。`,
-
-value3Title: '寓教於樂',
-value3Body: `將感官舒緩干預與英文單字、音樂音律等互動遊戲互相結合，打造適合所有孩子一同參與的快樂學習體驗。`,
-
-value4Title: '安全信任',
-value4Body: `堅持使用安全無毒的硬體設計、低刺激的燈光防護模式，以及嚴格的個人資料隱私保護（匿名化處理與家長自主權），建立值得信任的產品體驗。`,
+      vmvTitle: '我們的願景、使命與核心價值',
+      visionTitle: '願景',
+      visionMotto: '以音樂點亮更好的明天。',
+      visionPlaceholder: `打造一個包容共享的社會，讓每一位兒童（特別是SEN孩子）都能透過普及且具啟發性的音樂感官科技，獨立進行情緒調節、提升專注力與自主學習，享受自信成長的快樂。`,
+      missionTitle: '使命',
+      missionPlaceholder: `我們致力於為兒童（特別是SEN孩子）提供趣味豐富的音樂感官輔助套件（LED 燈光程式化樂器與線上遊戲平台）。HeartSync致力於讓 SEN 學生與兒童在無需成人全程陪同的情況下，能夠自主進行專注力、衝動控制與情緒舒緩訓練，同時輕鬆融入音樂與英語單字的趣味學習。`,
+      valuesTitle: '核心價值',
+      value1Title: '平等普及',
+      value1Body: `降低經濟與使用門檻，讓每一個家庭、學校與社區中心皆能輕鬆獲取有效的互動干預工具。`,
+      value2Title: '自主賦能',
+      value2Body: `打造零依賴、具明確引導機制的樂器與遊戲，鼓勵孩子依據自己的節奏建立專注力、自信心與情緒自控力。`,
+      value3Title: '寓教於樂',
+      value3Body: `將感官舒緩干預與英文單字、音樂音律等互動遊戲互相結合，打造適合所有孩子一同參與的快樂學習體驗。`,
+      value4Title: '安全信任',
+      value4Body: `堅持使用安全無毒的硬體設計、低刺激的燈光防護模式，以及嚴格的個人資料隱私保護（匿名化處理與家長自主權），建立值得信任的產品體驗。`,
 
 
 // 感官設定
@@ -834,4 +845,97 @@ demoModeLabel.textContent = translateModeName(
 
   // Apply the default settings
   updateScreenAppearance();
+})();
+
+
+/* ===== HeartSync Login Dialog ===== */
+(function () {
+  const openBtn = document.getElementById('open-login-btn');
+  const dialog = document.getElementById('heartsync-login');
+  const closeBtn = document.getElementById('login-close-btn');
+  const guestBtn = document.getElementById('guest-play-btn');
+
+  if (!openBtn || !dialog || !closeBtn || !guestBtn) {
+    console.warn('HeartSync: Login elements are missing.');
+    return;
+  }
+
+  let previousFocus = null;
+
+  function openLogin() {
+    previousFocus = document.activeElement;
+
+    dialog.hidden = false;
+    closeBtn.focus();
+  }
+
+  function closeLogin() {
+    dialog.hidden = true;
+
+    if (previousFocus && previousFocus.focus) {
+      previousFocus.focus();
+    }
+  }
+
+  // Open Login
+  openBtn.addEventListener('click', openLogin);
+
+  // Close Login
+  closeBtn.addEventListener('click', closeLogin);
+
+  // Close when clicking outside the white dialog
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) {
+      closeLogin();
+    }
+  });
+
+  // Escape key closes the dialog
+  document.addEventListener('keydown', function (event) {
+    if (!dialog.hidden && event.key === 'Escape') {
+      closeLogin();
+    }
+  });
+
+  // Keep keyboard focus within the dialog
+  dialog.addEventListener('keydown', function (event) {
+    if (event.key !== 'Tab') return;
+
+    const focusable = Array.from(
+      dialog.querySelectorAll(
+        'button:not([disabled]), a[href], input:not([disabled])'
+      )
+    ).filter(function (element) {
+      return element.getClientRects().length > 0;
+    });
+
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey &&
+               document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  // Guest Play: go directly to the Play page
+  guestBtn.addEventListener('click', function () {
+    dialog.hidden = true;
+
+    // Use HeartSync's existing page navigation
+    window.location.hash = 'play';
+
+    const playPage = document.getElementById('play');
+
+    if (playPage) {
+      playPage.scrollIntoView();
+    }
+  });
+
 })();
