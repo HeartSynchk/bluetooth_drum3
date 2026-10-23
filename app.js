@@ -556,3 +556,45 @@ continue: '繼續'
 
   // ===== End Virtual Drum Demo =====
 })();
+
+
+/* ===== HeartSync Drum Brightness Control ===== */
+(function () {
+  const brightnessSlider =
+    document.getElementById('drum-brightness');
+
+  const brightnessValue =
+    document.getElementById('drum-brightness-value');
+
+  if (!brightnessSlider || !brightnessValue) {
+    return;
+  }
+
+  function updateBrightness() {
+    const brightness = Number(brightnessSlider.value);
+
+    // Update percentage immediately
+    brightnessValue.textContent = brightness + '%';
+
+    // Save the selected brightness for later use
+    window.heartSyncSession = {
+      ...(window.heartSyncSession || {}),
+      drumBrightness: brightness
+    };
+  }
+
+  // Update while dragging the slider
+  brightnessSlider.addEventListener(
+    'input',
+    updateBrightness
+  );
+
+  // Also update when the value changes
+  brightnessSlider.addEventListener(
+    'change',
+    updateBrightness
+  );
+
+  // Show the correct percentage when page loads
+  updateBrightness();
+})();
