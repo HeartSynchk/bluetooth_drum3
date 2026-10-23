@@ -598,3 +598,117 @@ continue: '繼續'
   // Show the correct percentage when page loads
   updateBrightness();
 })();
+
+
+/* ===== HeartSync Screen Appearance ===== */
+(function () {
+  const playPage = document.getElementById('play');
+  const visualInputs = document.querySelectorAll(
+    '#sensory-settings input[name="visual-mode"]'
+  );
+
+  const reduceMotionInput = document.getElementById(
+    'sensory-reduce-motion'
+  );
+
+  if (!playPage || !visualInputs.length ||
+      !reduceMotionInput) {
+    return;
+  }
+
+  // Add colours for the two screen themes
+  const style = document.createElement('style');
+
+  style.textContent = `
+    /* Gentle keeps the original HeartSync colours */
+
+    /* Colourful changes the Play screens */
+    #play.hs-colourful #sensory-settings,
+    #play.hs-colourful #drum-connection,
+    #play.hs-colourful #heartsync-demo {
+      background: #FFF0E7 !important;
+    }
+
+    /* Colourful Sensory Settings cards */
+    #play.hs-colourful #sensory-settings > div > div {
+      background: #FFF8F3 !important;
+      border: 2px solid #F5D8CE;
+    }
+
+    /* Colourful main action buttons */
+    #play.hs-colourful #sensory-start-btn,
+    #play.hs-colourful #connection-demo-btn {
+      background: #DE8997 !important;
+      color: white !important;
+    }
+
+    /* Gentle transitions when motion is allowed */
+    #play.hs-soft-motion #sensory-settings,
+    #play.hs-soft-motion #drum-connection,
+    #play.hs-soft-motion #heartsync-demo,
+    #play.hs-soft-motion #sensory-settings > div > div {
+      transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    /* Respect system reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      #play.hs-soft-motion #sensory-settings,
+      #play.hs-soft-motion #drum-connection,
+      #play.hs-soft-motion #heartsync-demo,
+      #play.hs-soft-motion #sensory-settings > div > div {
+        transition: none;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+  function updateScreenAppearance() {
+    const selected = document.querySelector(
+      '#sensory-settings input[name="visual-mode"]:checked'
+    );
+
+    const visual = selected
+      ? selected.value
+      : 'gentle';
+
+    const reduceMotion = reduceMotionInput.checked;
+
+    // Switch colours immediately
+    playPage.classList.toggle(
+      'hs-colourful',
+      visual === 'colourful'
+    );
+
+    // Allow soft transitions only when appropriate
+    playPage.classList.toggle(
+      'hs-soft-motion',
+      !reduceMotion
+    );
+
+    // Remember settings without deleting other options
+    window.heartSyncSession = {
+      ...(window.heartSyncSession || {}),
+      visual: visual,
+      reduceMotion: reduceMotion
+    };
+  }
+
+  // Update immediately when the visitor changes settings
+  visualInputs.forEach(function (input) {
+    input.addEventListener(
+      'change',
+      updateScreenAppearance
+    );
+  });
+
+  reduceMotionInput.addEventListener(
+    'change',
+    updateScreenAppearance
+  );
+
+  // Apply the default settings
+  updateScreenAppearance();
+})();
