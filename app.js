@@ -355,11 +355,69 @@ chooseModeIntro: '選擇一個模式，開始你的音樂旅程。'
     ['learning-journey-card', 'Mode 2 — Learning Journey']
   ];
 
-  let selectedMode = '';
 
-  function openSettings(modeName) {
+let selectedMode = '';
+
+// Translate the selected Play mode
+const modeTranslations = {
+  'Mode 1 — Free Exploration': '模式一 — 自由探索',
+  'Mode 2 — Follow the Light': '模式二 — 燈光引導',
+  'Mode 2 — Learning Journey': '模式二 — 學習旅程'
+};
+
+function translateModeName(modeName) {
+  const languageSelect =
+    document.getElementById('language-select');
+
+  const chinese = languageSelect &&
+    languageSelect.value === 'zh';
+
+  return chinese
+    ? (modeTranslations[modeName] || modeName)
+    : modeName;
+}
+
+function updateSelectedModeLanguage() {
+  if (!selectedMode) return;
+
+  const languageSelect =
+    document.getElementById('language-select');
+
+  const chinese = languageSelect &&
+    languageSelect.value === 'zh';
+
+  const translatedName = translateModeName(selectedMode);
+
+  const selectedText = chinese
+    ? '已選擇：' + translatedName
+    : 'Selected: ' + translatedName;
+
+  modeLabel.textContent = selectedText;
+  connectionModeLabel.textContent = selectedText;
+
+  const demoModeLabel =
+    document.getElementById('demo-mode-label');
+
+  if (demoModeLabel) {
+    demoModeLabel.textContent = translatedName;
+  }
+}
+
+// Update immediately when the visitor changes language
+const modeLanguageSelect =
+  document.getElementById('language-select');
+
+if (modeLanguageSelect) {
+  modeLanguageSelect.addEventListener(
+    'change',
+    updateSelectedModeLanguage
+  );
+}
+
+function openSettings(modeName) {
+
     selectedMode = modeName;
-    modeLabel.textContent = 'Selected: ' + selectedMode;
+    updateSelectedModeLanguage();
 
     modeSelection.hidden = true;
     connectionPage.hidden = true;
@@ -419,8 +477,7 @@ chooseModeIntro: '選擇一個模式，開始你的音樂旅程。'
       reduceMotion: reduceMotion
     };
 
-    connectionModeLabel.textContent =
-      'Selected: ' + selectedMode;
+   updateSelectedModeLanguage();
 
     sensorySettings.hidden = true;
     connectionPage.hidden = false;
@@ -512,8 +569,9 @@ chooseModeIntro: '選擇一個模式，開始你的音樂旅程。'
   demoBtn.addEventListener('click', function () {
     const settings = window.heartSyncSession || {};
 
-    demoModeLabel.textContent =
-      settings.mode || 'Free Exploration';
+demoModeLabel.textContent = translateModeName(
+  settings.mode || selectedMode || 'Mode 1 — Free Exploration'
+);
 
     connectionPage.hidden = true;
     demoPage.hidden = false;
