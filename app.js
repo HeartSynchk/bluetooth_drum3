@@ -212,7 +212,9 @@ drumLightDescription: 'Adjust the drum lighting.',
 brightness: 'Brightness',
 soundEffects: 'Sound Effects',
 back: 'Back',
-continue: 'Continue'
+continue: 'Continue',
+chooseAdventure: 'Choose Your Adventure!',
+chooseModeIntro: 'Choose a mode to begin your musical journey.'
     },
 
     zh: {
@@ -256,7 +258,9 @@ drumLightDescription: '調整鼓的燈光效果。',
 brightness: '亮度',
 soundEffects: '遊戲音效',
 back: '返回',
-continue: '繼續'
+continue: '繼續',
+chooseAdventure: '選擇你的音樂冒險！',
+chooseModeIntro: '選擇一個模式，開始你的音樂旅程。'
     }
   };
 
