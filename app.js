@@ -190,9 +190,30 @@ gameLoop();
       contactIntro: "Have a question about HeartSync? We'd love to hear from you!",
       storyTitle: 'Our Story',
       storyPlaceholder: 'Coming Soon',
-      vmvTitle: 'Our VMV',
-      visionTitle: 'Vision',
-      visionPlaceholder: 'Coming Soon',
+      
+vmvTitle: 'Our Vision, Mission & Core Values',
+
+visionTitle: 'Vision',
+visionMotto: 'Music Lights Brighter Tomorrows.',
+visionPlaceholder: `To build an inclusive society where every child (especially SEN students) can independently self-regulate, build focus, and learn through accessible and tech-enabled music sensory kits, enjoying the joy of confident growth.`,
+
+missionTitle: 'Mission',
+missionPlaceholder: `To empower children (especially SEN students) with fun and interactive music sensory kit (LED-programmable instruments & online game platform). HeartSync aims to enable SEN students and children to independently train their focus, impulse control, and emotional well-being without constant adult supervision, while easily integrating music and English vocabulary learning.`,
+
+valuesTitle: 'Core Values',
+
+value1Title: 'Affordability & Accessibility',
+value1Body: `Lowering economic and usage barriers, making effective interactive music sensory kits easily accessible to every family, school, and community center.`,
+
+value2Title: 'Self-Directed Empowerment',
+value2Body: `Creating instruments and games with zero dependency and clear guidance mechanisms, encouraging children to build focus, confidence, and emotional self-control at their own pace.`,
+
+value3Title: 'Playful & Inclusive Learning',
+value3Body: `Combining sensory relaxation interventions with interactive games such as English vocabulary and musical rhythms creates a joyful learning experience suitable for all children.`,
+
+value4Title: 'Child-Centric Safety & Ethical Care',
+value4Body: `Adhering to safe and non-toxic hardware design, low-irritation lighting protection modes, and strict personal data privacy protection (anonymization & parental autonomy) establishes a trustworthy product experience.`
+
       missionTitle: 'Mission',
       missionPlaceholder: 'Coming Soon',
       valuesTitle: 'Values',
@@ -236,9 +257,30 @@ chooseModeIntro: 'Choose a mode to begin your musical journey.'
       contactIntro: '對 HeartSync 有任何疑問嗎？歡迎透過以下方式聯絡我們！',
       storyTitle: '我們的故事',
       storyPlaceholder: '即將推出',
-      vmvTitle: '我們的願景、使命與價值觀',
-      visionTitle: '願景',
-      visionPlaceholder: '即將推出',
+     
+vmvTitle: '我們的願景、使命與核心價值',
+
+visionTitle: '願景',
+visionMotto: '以音樂點亮更好的明天。',
+visionPlaceholder: `打造一個包容共享的社會，讓每一位兒童（特別是SEN孩子）都能透過普及且具啟發性的音樂感官科技，獨立進行情緒調節、提升專注力與自主學習，享受自信成長的快樂。`,
+
+missionTitle: '使命',
+missionPlaceholder: `我們致力於為兒童（特別是SEN孩子）提供趣味豐富的音樂感官輔助套件（LED 燈光程式化樂器與線上遊戲平台）。HeartSync致力於讓 SEN 學生與兒童在無需成人全程陪同的情況下，能夠自主進行專注力、衝動控制與情緒舒緩訓練，同時輕鬆融入音樂與英語單字的趣味學習。`,
+
+valuesTitle: '核心價值',
+
+value1Title: '平等普及',
+value1Body: `降低經濟與使用門檻，讓每一個家庭、學校與社區中心皆能輕鬆獲取有效的互動干預工具。`,
+
+value2Title: '自主賦能',
+value2Body: `打造零依賴、具明確引導機制的樂器與遊戲，鼓勵孩子依據自己的節奏建立專注力、自信心與情緒自控力。`,
+
+value3Title: '寓教於樂',
+value3Body: `將感官舒緩干預與英文單字、音樂音律等互動遊戲互相結合，打造適合所有孩子一同參與的快樂學習體驗。`,
+
+value4Title: '安全信任',
+value4Body: `堅持使用安全無毒的硬體設計、低刺激的燈光防護模式，以及嚴格的個人資料隱私保護（匿名化處理與家長自主權），建立值得信任的產品體驗。`
+
       missionTitle: '使命',
       missionPlaceholder: '即將推出',
       valuesTitle: '價值觀',
