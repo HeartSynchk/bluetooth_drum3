@@ -392,93 +392,190 @@
 <!-- End Play Mode Selection -->
 
     
+
 <!-- Sensory Settings -->
 <div id="sensory-settings" hidden style="
-  background: #FFF9F0;
-  padding: 35px 25px;
-  border-radius: 24px;
-  margin-bottom: 30px;
-  text-align: center;
-  box-sizing: border-box;
+  background:#FFF9F0;
+  padding:35px 20px;
+  border-radius:24px;
+  margin-bottom:30px;
+  text-align:center;
+  box-sizing:border-box;
 ">
 
-  <h2 style="color: #5B433B;">
+  <h2 data-i18n="sensoryTitle" style="color:#5B433B;">
     Sensory Settings
   </h2>
 
-  <p id="selected-mode-label" style="color: #896E61;">
+  <p id="selected-mode-label" style="color:#896E61;">
     Get ready to play!
   </p>
 
+  <p data-i18n="sensoryIntro" style="color:#896E61;">
+    Make HeartSync comfortable for you.
+  </p>
+
   <div style="
-    background: white;
-    border-radius: 20px;
-    padding: 25px;
-    max-width: 500px;
-    margin: 20px auto;
-    text-align: left;
+    max-width:550px;
+    margin:25px auto;
+    display:grid;
+    gap:20px;
+    text-align:left;
   ">
 
-    <h3 style="color: #633F4E;">
-      Visual Mode
-    </h3>
+    <!-- Screen Appearance -->
+    <div style="
+      background:white;
+      padding:25px;
+      border-radius:20px;
+    ">
 
-    <label style="display:block; margin:15px 0;">
-      <input type="radio"
-             name="visual-mode"
-             value="gentle"
-             checked>
-      Gentle — 柔和模式
-    </label>
+      <h3 data-i18n="screenAppearance"
+          style="color:#633F4E;">
+        Screen Appearance
+      </h3>
 
-    <label style="display:block; margin:15px 0;">
-      <input type="radio"
-             name="visual-mode"
-             value="colourful">
-      Colourful — 繽紛模式
-    </label>
+      <p data-i18n="screenDescription"
+         style="color:#896E61;">
+        Choose colours that feel comfortable.
+      </p>
 
-    <hr>
+      <label style="display:block; margin:18px 0;">
+        <input type="radio"
+               name="visual-mode"
+               value="gentle"
+               checked>
+        <span data-i18n="gentle">
+          Gentle
+        </span>
+      </label>
 
-    <label style="display:block; margin:20px 0;">
-      <input type="checkbox" id="sensory-sound">
-      Sound Effects — 遊戲音效
-    </label>
+      <label style="display:block; margin:18px 0;">
+        <input type="radio"
+               name="visual-mode"
+               value="colourful">
+        <span data-i18n="colourful">
+          Colourful
+        </span>
+      </label>
 
-    <label style="display:block; margin:20px 0;">
-      <input type="checkbox"
-             id="sensory-reduce-motion"
-             checked>
-      Reduce Motion — 減少動畫
-    </label>
+      <hr style="border:0; border-top:1px solid #EADFD5;">
+
+      <label style="display:block; margin:18px 0;">
+        <input type="checkbox"
+               id="sensory-reduce-motion"
+               checked>
+        <span data-i18n="reduceMotion">
+          Reduce Motion
+        </span>
+      </label>
+
+    </div>
+
+    <!-- Drum Light -->
+    <div style="
+      background:white;
+      padding:25px;
+      border-radius:20px;
+    ">
+
+      <h3 data-i18n="drumLight"
+          style="color:#633F4E;">
+        Drum Light
+      </h3>
+
+      <p data-i18n="drumLightDescription"
+         style="color:#896E61;">
+        Adjust the drum lighting.
+      </p>
+
+      <label style="display:block; margin:18px 0;">
+        <input type="radio"
+               name="drum-light-mode"
+               value="gentle"
+               checked>
+        <span data-i18n="gentle">
+          Gentle
+        </span>
+      </label>
+
+      <label style="display:block; margin:18px 0;">
+        <input type="radio"
+               name="drum-light-mode"
+               value="colourful">
+        <span data-i18n="colourful">
+          Colourful
+        </span>
+      </label>
+
+      <label for="drum-brightness"
+             data-i18n="brightness"
+             style="display:block; color:#633F4E;">
+        Brightness
+      </label>
+
+      <input type="range"
+             id="drum-brightness"
+             min="10"
+             max="70"
+             step="5"
+             value="30"
+             style="width:100%; accent-color:#3DAFA5;">
+
+      <p id="drum-brightness-value"
+         style="text-align:center; color:#896E61;">
+        30%
+      </p>
+
+    </div>
+
+    <!-- Sound -->
+    <div style="
+      background:white;
+      padding:25px;
+      border-radius:20px;
+    ">
+
+      <label style="display:block;">
+        <input type="checkbox" id="sensory-sound">
+        <span data-i18n="soundEffects">
+          Sound Effects
+        </span>
+      </label>
+
+    </div>
 
   </div>
 
-  <button type="button" id="sensory-back-btn"
-    style="
-      padding:14px 24px;
-      border:none;
-      border-radius:14px;
-      background:#EADFD5;
-      color:#5B433B;
-      font-size:16px;
-      cursor:pointer;
-      margin:5px;
-    ">
+  <button type="button"
+          id="sensory-back-btn"
+          data-i18n="back"
+          style="
+            padding:14px 24px;
+            border:none;
+            border-radius:14px;
+            background:#EADFD5;
+            color:#5B433B;
+            font-size:16px;
+            cursor:pointer;
+            margin:5px;
+          ">
     Back
   </button>
 
-  <button type="button" id="sensory-start-btn"
-    style="
-      padding:14px 24px;
-      border:none;
-      border-radius:14px;
-      background:#3DAFA5;
-      color:white;
-      font-size:16px;
-      cursor:pointer;
-      margin:5px;
-    ">
+  <button type="button"
+          id="sensory-start-btn"
+          data-i18n="continue"
+          style="
+            padding:14px 24px;
+            border:none;
+            border-radius:14px;
+            background:#3DAFA5;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            margin:5px;
+          ">
     Continue
   </button>
 
