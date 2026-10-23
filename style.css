@@ -69,3 +69,65 @@ canvas {
   font-size: 12px;
   color: #aaa;
 }
+
+
+
+/* ===== HeartSync VMV Final Style ===== */
+
+#vmv {
+  background: #F7F3EC !important;
+}
+
+/* Main VMV title */
+#vmv > h3 {
+  color: #604B46 !important;
+  font-weight: 800;
+}
+
+/* All three VMV cards */
+#vmv > div > div {
+  background: #FFFDFC !important;
+  border: 1px solid #E8DED2;
+  border-radius: 22px !important;
+  text-align: left;
+}
+
+/* Vision, Mission, Core Values headings */
+#vmv h4 {
+  color: #604B46 !important;
+  font-weight: 800;
+  font-size: 23px;
+}
+
+/* Vision motto */
+#vmv [data-i18n="visionMotto"] {
+  color: #604B46 !important;
+  font-weight: 700;
+}
+
+/* Four core value headings */
+#vmv h5 {
+  color: #604B46 !important;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* Body paragraphs stay easy to read */
+#vmv p:not([data-i18n="visionMotto"]) {
+  color: #78675F !important;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* Subtle section accent */
+#vmv > div > div:nth-child(1) {
+  border-left: 5px solid #A8D5BA;
+}
+
+#vmv > div > div:nth-child(2) {
+  border-left: 5px solid #B6CED6;
+}
+
+#vmv > div > div:nth-child(3) {
+  border-left: 5px solid #E3D3B3;
+}
