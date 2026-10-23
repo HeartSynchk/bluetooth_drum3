@@ -619,30 +619,58 @@ continue: '繼續'
   // Add colours for the two screen themes
   const style = document.createElement('style');
 
-  style.textContent = `
-    /* Gentle keeps the original HeartSync colours */
 
-    /* Colourful changes the Play screens */
+  style.textContent = `
+    /* ===== Colourful: Main Background ===== */
+
     #play.hs-colourful #sensory-settings,
     #play.hs-colourful #drum-connection,
     #play.hs-colourful #heartsync-demo {
-      background: #FFF0E7 !important;
+      background: #FFF1EA !important;
     }
 
-    /* Colourful Sensory Settings cards */
-    #play.hs-colourful #sensory-settings > div > div {
-      background: #FFF8F3 !important;
-      border: 2px solid #F5D8CE;
+    /* Screen Appearance: Soft Pink */
+    #play.hs-colourful
+    #sensory-settings > div > div:nth-child(1) {
+      background: #FFE9F0 !important;
+      border: 2px solid #F5B3C9 !important;
     }
 
-    /* Colourful main action buttons */
+    /* Drum Light: Cream Yellow */
+    #play.hs-colourful
+    #sensory-settings > div > div:nth-child(2) {
+      background: #FFF3CA !important;
+      border: 2px solid #F0D16B !important;
+    }
+
+    /* Sound Effects: Mint Green */
+    #play.hs-colourful
+    #sensory-settings > div > div:nth-child(3) {
+      background: #DFF8EE !important;
+      border: 2px solid #9DDDC6 !important;
+    }
+
+    /* Colourful: Radio Buttons and Checkboxes */
+    #play.hs-colourful
+    #sensory-settings input[type="radio"],
+    #play.hs-colourful
+    #sensory-settings input[type="checkbox"] {
+      accent-color: #DE7797;
+    }
+
+    /* Colourful: Brightness Slider */
+    #play.hs-colourful #drum-brightness {
+      accent-color: #E88A9D !important;
+    }
+
+    /* Colourful: Continue Buttons */
     #play.hs-colourful #sensory-start-btn,
     #play.hs-colourful #connection-demo-btn {
-      background: #DE8997 !important;
+      background: #F087A2 !important;
       color: white !important;
     }
 
-    /* Gentle transitions when motion is allowed */
+    /* Keep animations gentle */
     #play.hs-soft-motion #sensory-settings,
     #play.hs-soft-motion #drum-connection,
     #play.hs-soft-motion #heartsync-demo,
@@ -652,7 +680,7 @@ continue: '繼續'
         border-color 0.25s ease;
     }
 
-    /* Respect system reduced-motion preferences */
+    /* Respect reduced motion preferences */
     @media (prefers-reduced-motion: reduce) {
       #play.hs-soft-motion #sensory-settings,
       #play.hs-soft-motion #drum-connection,
@@ -662,6 +690,7 @@ continue: '繼續'
       }
     }
   `;
+
 
   document.head.appendChild(style);
 
