@@ -939,3 +939,118 @@ demoModeLabel.textContent = translateModeName(
   });
 
 })();
+
+
+/* ===== HeartSync ESP32 BLE Drum Connection ===== */
+(function () {
+  const connectButton =
+    document.getElementById('connection-connect-btn');
+
+  const statusDisplay =
+    document.getElementById('drum-connection-status');
+
+  const hitDisplay =
+    document.getElementById('drum-last-hit');
+
+  if (!connectButton || !statusDisplay || !hitDisplay) {
+    console.warn('HeartSync: Drum connection elements missing.');
+    return;
+  }
+
+  const SERVICE_UUID =
+    '4fafc201-1fb5-459e-8fcc-c5c9c331914b';
+
+  const HIT_UUID =
+    'beb5483e-36e1-4688-b7f5-ea07361b26a8';
+
+  let drumDevice = null;
+  let connecting = false;
+  const decoder = new TextDecoder();
+
+  function setStatus(message) {
+    statusDisplay.textContent = message;
+  }
+
+  function onDrumDisconnected() {
+    setStatus('Drum Disconnected / 電子鼓已斷線');
+    connectButton.textContent =
+      'Connect Drum / 連接電子鼓';
+  }
+
+  function onDrumHit(event) {
+    const value = event.target.value;
+
+    const bytes = new Uint8Array(
+      value.buffer,
+      value.byteOffset,
+      value.byteLength
+    );
+
+    const message = decoder.decode(bytes);
+
+    if (!/^HIT:\d+$/.test(message)) {
+      console.log('HeartSync BLE data:', message);
+      return;
+    }
+
+    hitDisplay.textContent = 'Last Drum Hit: ' + message;
+    console.log('HeartSync received:', message);
+  }
+
+  connectButton.addEventListener('click', async function () {
+    if (connecting) return;
+
+    if (!navigator.bluetooth) {
+      setStatus('Web Bluetooth is not supported in this browser.');
+      return;
+    }
+
+    connecting = true;
+    connectButton.disabled = true;
+    setStatus('Connecting... / 正在連接...');
+
+    try {
+      drumDevice = await navigator.bluetooth.requestDevice({
+        filters: [{ name: 'HeartSync_Drum' }],
+        optionalServices: [SERVICE_UUID]
+      });
+
+      drumDevice.addEventListener(
+        'gattserverdisconnected',
+        onDrumDisconnected
+      );
+
+      const server = await drumDevice.gatt.connect();
+      const service =
+        await server.getPrimaryService(SERVICE_UUID);
+
+      const hitCharacteristic =
+        await service.getCharacteristic(HIT_UUID);
+
+      hitCharacteristic.addEventListener(
+        'characteristicvaluechanged',
+        onDrumHit
+      );
+
+      await hitCharacteristic.startNotifications();
+
+      setStatus('Drum Connected / 電子鼓已連接');
+      connectButton.textContent = 'Drum Connected ✓';
+
+    } catch (error) {
+      console.error('HeartSync BLE connection error:', error);
+
+      setStatus(
+        'Connection unsuccessful / 連接未成功'
+      );
+
+      connectButton.textContent =
+        'Connect Drum / 連接電子鼓';
+
+    } finally {
+      connecting = false;
+      connectButton.disabled = false;
+    }
+  });
+})();
+/* ===== End HeartSync ESP32 BLE Connection ===== */
