@@ -551,6 +551,46 @@ function openSettings(modeName) {
 
   });
 
+  // ===== Learning Journey: Continue to Learning World =====
+
+  const learningWorldBtn = document.getElementById(
+    'connection-learning-world-btn'
+  );
+
+  if (learningWorldBtn) {
+
+    // Show the correct button for each game mode
+    continueBtn.addEventListener('click', function () {
+      const isLearningJourney =
+        selectedMode.includes('Learning Journey');
+
+      learningWorldBtn.hidden = !isLearningJourney;
+      demoBtn.hidden = isLearningJourney;
+    });
+
+    // Go to Learning World after the drum connection step
+    learningWorldBtn.addEventListener('click', function () {
+      if (!selectedMode.includes('Learning Journey')) {
+        return;
+      }
+
+      const worldPage = document.getElementById(
+        'learning-world-selection'
+      );
+
+      if (!worldPage) {
+        console.warn('Learning World page not found.');
+        return;
+      }
+
+      connectionPage.hidden = true;
+      worldPage.hidden = false;
+      worldPage.scrollIntoView();
+    });
+  }
+
+  // ===== End Learning Journey Continue =====
+
   // Learning World Back -> Sensory Settings
   const worldBackBtn = document.getElementById(
     'world-back-btn'
