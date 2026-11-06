@@ -229,3 +229,72 @@ canvas {
 }
 
 /* ===== End Connect Drum Redesign ===== */
+
+/* ===== HeartSync Soft Buttons V2 ===== */
+
+/* Keep all action buttons consistent */
+#connection-connect-btn,
+#connection-demo-btn,
+#connection-learning-world-btn,
+#connection-back-btn {
+  width: min(100%, 260px) !important;
+  height: 76px !important;
+  padding: 12px 14px !important;
+  margin: 8px !important;
+  box-sizing: border-box;
+  border-radius: 18px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+  box-shadow: none !important;
+  vertical-align: middle;
+}
+
+/* Gentle mint: Connect Drum */
+#connection-connect-btn,
+#connection-demo-btn {
+  background: #D8F4EE !important;
+  color: #265C57 !important;
+  border: 1px solid #A9D6CB !important;
+}
+
+/* Gentle pink: Continue */
+#connection-learning-world-btn {
+  background: #F5E4E9 !important;
+  color: #633F4E !important;
+  border: 1px solid #E2BFC9 !important;
+}
+
+#connection-learning-world-btn span {
+  font-size: 13px !important;
+  margin-top: 3px;
+}
+
+/* Soft cream: Back */
+#connection-back-btn {
+  background: #EFE7DF !important;
+  color: #5B433B !important;
+  border: 1px solid #E1D3C7 !important;
+}
+
+/* Colourful Mode: slightly richer pastels */
+#play.hs-colourful #drum-connection
+#connection-connect-btn,
+#play.hs-colourful #drum-connection
+#connection-demo-btn {
+  background: #BDEBE3 !important;
+  color: #265C57 !important;
+}
+
+#play.hs-colourful #drum-connection
+#connection-learning-world-btn {
+  background: #F4CCD7 !important;
+  color: #633F4E !important;
+}
+
+/* Preserve hidden buttons */
+#drum-connection button[hidden] {
+  display: none !important;
+}
+
+/* ===== End HeartSync Soft Buttons V2 ===== */
