@@ -230,27 +230,49 @@ canvas {
 
 /* ===== End Connect Drum Redesign ===== */
 
-/* ===== HeartSync Soft Buttons V2 ===== */
 
-/* Keep all action buttons consistent */
-#connection-connect-btn,
-#connection-demo-btn,
-#connection-learning-world-btn,
-#connection-back-btn {
-  width: min(100%, 260px) !important;
-  height: 76px !important;
-  padding: 12px 14px !important;
-  margin: 8px !important;
-  box-sizing: border-box;
-  border-radius: 18px !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  font-family: inherit !important;
-  box-shadow: none !important;
-  vertical-align: middle;
+/* ===== HeartSync Connect Drum Layout V3 ===== */
+
+/* Overall page */
+#drum-connection {
+  max-width: 900px !important;
+  padding: 30px 22px 36px !important;
+  margin: 24px auto 30px !important;
 }
 
-/* Gentle mint: Connect Drum */
+/* Make the title less oversized */
+#drum-connection > h2 {
+  font-size: clamp(24px, 3vw, 30px) !important;
+  line-height: 1.35 !important;
+}
+
+/* Drum status card */
+#drum-connection > div:nth-of-type(2) {
+  max-width: 700px !important;
+  padding: 24px 20px !important;
+  margin: 22px auto !important;
+  border-radius: 24px !important;
+}
+
+/* Connect Drum and Learning World */
+#connection-connect-btn,
+#connection-demo-btn,
+#connection-learning-world-btn {
+  display: block;
+  width: min(100%, 380px) !important;
+  height: auto !important;
+  min-height: 64px !important;
+  padding: 15px 20px !important;
+  margin: 14px auto !important;
+  border-radius: 18px !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  box-shadow: none !important;
+}
+
+/* Connect Drum: pastel mint */
 #connection-connect-btn,
 #connection-demo-btn {
   background: #D8F4EE !important;
@@ -258,43 +280,51 @@ canvas {
   border: 1px solid #A9D6CB !important;
 }
 
-/* Gentle pink: Continue */
+/* Learning World: pastel pink */
 #connection-learning-world-btn {
   background: #F5E4E9 !important;
   color: #633F4E !important;
   border: 1px solid #E2BFC9 !important;
+  margin-top: 24px !important;
 }
 
 #connection-learning-world-btn span {
-  font-size: 13px !important;
+  display: block;
+  font-size: 14px !important;
   margin-top: 3px;
 }
 
-/* Soft cream: Back */
+/* Back: simple text, no large box */
 #connection-back-btn {
-  background: #EFE7DF !important;
-  color: #5B433B !important;
-  border: 1px solid #E1D3C7 !important;
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  min-height: 40px !important;
+  margin: 12px auto 0 !important;
+  padding: 8px 18px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #765F5A !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-family: inherit !important;
 }
 
-/* Colourful Mode: slightly richer pastels */
-#play.hs-colourful #drum-connection
-#connection-connect-btn,
-#play.hs-colourful #drum-connection
-#connection-demo-btn {
+/* Colourful: slightly richer pastels */
+#play.hs-colourful #connection-connect-btn,
+#play.hs-colourful #connection-demo-btn {
   background: #BDEBE3 !important;
-  color: #265C57 !important;
 }
 
-#play.hs-colourful #drum-connection
-#connection-learning-world-btn {
+#play.hs-colourful #connection-learning-world-btn {
   background: #F4CCD7 !important;
-  color: #633F4E !important;
 }
 
-/* Preserve hidden buttons */
+/* Keep buttons hidden when not in use */
 #drum-connection button[hidden] {
   display: none !important;
 }
 
-/* ===== End HeartSync Soft Buttons V2 ===== */
+/* ===== End HeartSync Connect Drum Layout V3 ===== */
+
