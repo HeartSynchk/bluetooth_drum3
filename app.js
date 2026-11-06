@@ -226,6 +226,7 @@ value4Body: `Adhering to safe and non-toxic hardware design, low-irritation ligh
 
 
 // Sensory Settings
+connectionTitle: 'Connect Your HeartSync Drum',
 sensoryTitle: 'Sensory Settings',
 sensoryIntro: 'Make HeartSync comfortable for you.',
 screenAppearance: 'Screen Appearance',
@@ -289,6 +290,7 @@ chooseModeIntro: 'Choose a mode to begin your musical journey.'
 
 
 // 感官設定
+connectionTitle: '連接你的 HeartSync 電子鼓',
 sensoryTitle: '感官設定',
 sensoryIntro: '打造讓你感到舒適的 HeartSync 體驗。',
 screenAppearance: '畫面外觀',
