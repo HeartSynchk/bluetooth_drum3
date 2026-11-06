@@ -493,32 +493,25 @@ function openSettings(modeName) {
     });
   });
 
+
   // Back: Sensory Settings -> Mode Selection
   backBtn.addEventListener('click', function () {
- 
-sensorySettings.hidden = true;
-
-if (selectedMode === 'Mode 2 — Learning Journey') {
-  // Learning Journey：前往選擇學習世界
-  const worldPage = document.getElementById(
-    'learning-world-selection'
-  );
-
-  if (worldPage) {
+    sensorySettings.hidden = true;
     connectionPage.hidden = true;
-    worldPage.hidden = false;
-    worldPage.scrollIntoView();
-  }
 
-} else {
-  // 其他模式：保持原本的電子鼓連接流程
-  connectionPage.hidden = false;
-  connectionPage.scrollIntoView();
-}
+    const worldPage = document.getElementById(
+      'learning-world-selection'
+    );
 
+    if (worldPage) {
+      worldPage.hidden = true;
+    }
+
+    modeSelection.hidden = false;
+    modeSelection.scrollIntoView();
   });
 
-  // Continue: Sensory Settings -> Connect Drum
+  // Continue: Sensory Settings -> Next Page
   continueBtn.addEventListener('click', function () {
     const visualMode = document.querySelector(
       'input[name="visual-mode"]:checked'
@@ -530,21 +523,63 @@ if (selectedMode === 'Mode 2 — Learning Journey') {
     const reduceMotion =
       document.getElementById('sensory-reduce-motion').checked;
 
-    // Keep selections available for the future demo game
+    // Save Sensory Settings
     window.heartSyncSession = {
+      ...(window.heartSyncSession || {}),
       mode: selectedMode,
       visual: visualMode ? visualMode.value : 'gentle',
       sound: soundEnabled,
       reduceMotion: reduceMotion
     };
 
-   updateSelectedModeLanguage();
-
+    updateSelectedModeLanguage();
     sensorySettings.hidden = true;
-    connectionPage.hidden = false;
 
-    connectionPage.scrollIntoView();
+    const worldPage = document.getElementById(
+      'learning-world-selection'
+    );
+
+    if (
+      selectedMode.includes('Learning Journey') &&
+      worldPage
+    ) {
+      // Learning Journey -> Learning World
+      connectionPage.hidden = true;
+      worldPage.hidden = false;
+      worldPage.scrollIntoView();
+
+    } else {
+      // Other modes -> Connect Drum
+      if (worldPage) {
+        worldPage.hidden = true;
+      }
+
+      connectionPage.hidden = false;
+      connectionPage.scrollIntoView();
+    }
   });
+
+  // Learning World Back -> Sensory Settings
+  const worldBackBtn = document.getElementById(
+    'world-back-btn'
+  );
+
+  if (worldBackBtn) {
+    worldBackBtn.addEventListener('click', function () {
+      const worldPage = document.getElementById(
+        'learning-world-selection'
+      );
+
+      if (worldPage) {
+        worldPage.hidden = true;
+      }
+
+      sensorySettings.hidden = false;
+      sensorySettings.scrollIntoView();
+    });
+  }
+
+
 
   // Back: Connect Drum -> Sensory Settings
   connectionBackBtn.addEventListener('click', function () {
