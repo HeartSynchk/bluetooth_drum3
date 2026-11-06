@@ -495,9 +495,27 @@ function openSettings(modeName) {
 
   // Back: Sensory Settings -> Mode Selection
   backBtn.addEventListener('click', function () {
-    sensorySettings.hidden = true;
-    modeSelection.hidden = false;
-    modeSelection.scrollIntoView();
+ 
+sensorySettings.hidden = true;
+
+if (selectedMode === 'Mode 2 — Learning Journey') {
+  // Learning Journey：前往選擇學習世界
+  const worldPage = document.getElementById(
+    'learning-world-selection'
+  );
+
+  if (worldPage) {
+    connectionPage.hidden = true;
+    worldPage.hidden = false;
+    worldPage.scrollIntoView();
+  }
+
+} else {
+  // 其他模式：保持原本的電子鼓連接流程
+  connectionPage.hidden = false;
+  connectionPage.scrollIntoView();
+}
+
   });
 
   // Continue: Sensory Settings -> Connect Drum
