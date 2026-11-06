@@ -535,28 +535,20 @@ function openSettings(modeName) {
     updateSelectedModeLanguage();
     sensorySettings.hidden = true;
 
+   
+    // Hide Learning World until after drum connection
     const worldPage = document.getElementById(
       'learning-world-selection'
     );
 
-    if (
-      selectedMode.includes('Learning Journey') &&
-      worldPage
-    ) {
-      // Learning Journey -> Learning World
-      connectionPage.hidden = true;
-      worldPage.hidden = false;
-      worldPage.scrollIntoView();
-
-    } else {
-      // Other modes -> Connect Drum
-      if (worldPage) {
-        worldPage.hidden = true;
-      }
-
-      connectionPage.hidden = false;
-      connectionPage.scrollIntoView();
+    if (worldPage) {
+      worldPage.hidden = true;
     }
+
+    // All modes go to Connect Drum first
+    connectionPage.hidden = false;
+    connectionPage.scrollIntoView();
+
   });
 
   // Learning World Back -> Sensory Settings
