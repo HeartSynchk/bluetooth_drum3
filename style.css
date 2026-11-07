@@ -460,3 +460,28 @@ body:has(#learning-world-selection:not([hidden]))
   border-radius: 0 !important;
   padding: 24px !important;
 }
+
+
+/* HeartSync V3 - Storybook Mascot Position */
+
+#learning-world-selection > div:first-of-type {
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding-top: clamp(40px, 6vw, 80px) !important;
+}
+
+#learning-world-selection > div:first-of-type img {
+  width: clamp(95px, 11vw, 165px) !important;
+  height: auto !important;
+}
+
+/* Mobile mascot layout */
+@media (max-width: 600px) {
+  #learning-world-selection > div:first-of-type {
+    padding-top: 50px !important;
+  }
+
+  #learning-world-selection > div:first-of-type img {
+    width: clamp(76px, 23vw, 96px) !important;
+  }
+}
