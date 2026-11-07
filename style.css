@@ -418,8 +418,8 @@ background:
   max-width: none !important;
   aspect-ratio: 1600 / 640;
   box-sizing: border-box;
-
-  background-image: url("learning-world/HeartSync_Storybook_Hero_Desktop_1600x640.webp") !important;
+  
+  background-image: url("learning-world/HeartSync_Storybook_Hero_Desktop_1600x640(2).webp") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -436,4 +436,27 @@ background:
 
     background-image: url("learning-world/HeartSync_Storybook_Hero_Mobile_780x980.webp") !important;
   }
+}
+
+
+/* HeartSync V3 - Full Width Learning World */
+
+body:has(#learning-world-selection:not([hidden])) {
+  padding: 0 !important;
+  background: #FFF8EF !important;
+}
+
+body:has(#learning-world-selection:not([hidden])) #play {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+body:has(#learning-world-selection:not([hidden]))
+#learning-world-selection {
+  width: 100%;
+  box-sizing: border-box;
+  background: #FFF8EF !important;
+  border-radius: 0 !important;
+  padding: 24px !important;
 }
