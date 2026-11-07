@@ -377,23 +377,25 @@ canvas {
   padding: 24px 10px !important;
   box-sizing: border-box;
 
-  background:
-    radial-gradient(
-      circle at 16% 20%,
-      rgba(255,255,255,0.9) 0 40px,
-      transparent 41px
-    ),
-    radial-gradient(
-      circle at 84% 25%,
-      rgba(255,255,255,0.8) 0 48px,
-      transparent 49px
-    ),
-    linear-gradient(
-      180deg,
-      #E8F5FF 0%,
-      #FFF8EB 70%,
-      #EAF5E3 100%
-    );
+  
+background:
+  radial-gradient(
+    ellipse 100px 55px at 16% 24%,
+    rgba(255,255,255,0.65) 0%,
+    rgba(255,255,255,0) 100%
+  ),
+  radial-gradient(
+    ellipse 110px 60px at 84% 25%,
+    rgba(255,255,255,0.6) 0%,
+    rgba(255,255,255,0) 100%
+  ),
+  linear-gradient(
+    180deg,
+    #E8F5FF 0%,
+    #FFF8EB 70%,
+    #EAF5E3 100%
+  );
+
 
   border: 2px solid #E4EBDD;
   border-radius: 30px;
