@@ -359,9 +359,13 @@ canvas {
   max-width: 160px !important;
 }
 
+
 /* HeartSync V3 - Clearer Gentle Illustrations */
 #learning-world-selection img[src$="gentle-colors.png"],
 #learning-world-selection img[src$="gentle-numbers.png"],
-#learning-world-selection img[src$="gentle-food.png"] {
+#learning-world-selection img[src$="gentle-food.png"],
+#learning-world-selection img[src$="gentle-shapes.png"],
+#learning-world-selection img[src$="gentle-family.png"] {
   filter: saturate(1.35) contrast(1.12);
 }
+
