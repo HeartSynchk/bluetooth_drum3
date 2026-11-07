@@ -554,9 +554,11 @@ body:has(#learning-world-selection:not([hidden]))
     width: min(90%, 780px);
     box-sizing: border-box;
 
-    margin:
-      clamp(-240px, -16vw, -150px)
-      auto 0 !important;
+
+margin:
+  clamp(-350px, -22vw, -200px)
+  auto 0 !important;
+
 
     padding: 24px 28px 8px !important;
 
