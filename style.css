@@ -328,3 +328,13 @@ canvas {
 
 /* ===== End HeartSync Connect Drum Layout V3 ===== */
 
+
+/* HeartSync Learning World V3 */
+.learning-world-v3 {
+  background: linear-gradient(
+    180deg,
+    #F0F8FF 0%,
+    #FFF9F0 58%,
+    #EFF5E5 100%
+  ) !important;
+}
