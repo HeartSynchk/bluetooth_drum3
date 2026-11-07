@@ -593,7 +593,7 @@ body:has(#learning-world-selection:not([hidden]))
   }
 
   #learning-world-selection > .world-theme-grid {
-    margin-top: 85px !important;
+    margin-top: 28px !important;
   }
 
 }
