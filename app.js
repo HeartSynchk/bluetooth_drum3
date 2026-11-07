@@ -626,6 +626,15 @@ function openSettings(modeName) {
 
       connectionPage.hidden = true;
       worldPage.hidden = false;
+const visualMode = window.heartSyncSession?.visual || 'gentle';
+
+worldPage.querySelectorAll(
+  'img[data-gentle-src][data-colourful-src]'
+).forEach(function (img) {
+  img.src = visualMode === 'colourful'
+    ? img.dataset.colourfulSrc
+    : img.dataset.gentleSrc;
+});
       worldPage.scrollIntoView();
     });
   }
