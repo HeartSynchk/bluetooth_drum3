@@ -229,6 +229,19 @@ value4Body: `Adhering to safe and non-toxic hardware design, low-irritation ligh
 connectionTitle: 'Connect Your HeartSync Drum',
 connectionIntro: 'Connect your drum or continue without one.',
 enterLearningWorld: '⭐ Enter Learning World',
+drumStatusTitle: 'Drum Status',
+connectionNoDrum: 'You can continue without a drum.',
+connectionHelp: 'Turn on your HeartSync drum, then select Connect Drum.',
+connectionConnect: 'Connect Drum',
+connectionDemo: 'Try Demo Mode',
+connectionNotConnected: 'Not Connected',
+connectionConnecting: 'Connecting...',
+connectionConnected: 'Drum Connected',
+connectionDisconnected: 'Drum Disconnected',
+connectionFailed: 'Connection unsuccessful',
+connectionUnsupported: 'Web Bluetooth is not supported in this browser.',
+connectionLastHit: 'Last Drum Hit: —',
+connectionConnectedButton: 'Drum Connected ✓',
 sensoryTitle: 'Sensory Settings',
 sensoryIntro: 'Make HeartSync comfortable for you.',
 screenAppearance: 'Screen Appearance',
@@ -295,6 +308,19 @@ chooseModeIntro: 'Choose a mode to begin your musical journey.'
 connectionTitle: '連接你的 HeartSync 電子鼓',
 connectionIntro: '連接你的電子鼓，或選擇不使用電子鼓繼續。',
 enterLearningWorld: '⭐ 進入學習世界',
+drumStatusTitle: '電子鼓連接狀態',
+connectionNoDrum: '沒有電子鼓也可以繼續學習。',
+connectionHelp: '開啟你的 HeartSync 電子鼓，然後按「連接電子鼓」。',
+connectionConnect: '連接電子鼓',
+connectionDemo: '試玩模式',
+connectionNotConnected: '尚未連接',
+connectionConnecting: '正在連接...',
+connectionConnected: '電子鼓已連接',
+connectionDisconnected: '電子鼓已斷線',
+connectionFailed: '連接未成功',
+connectionUnsupported: '此瀏覽器不支援 Web Bluetooth。',
+connectionLastHit: '上次敲鼓：—',
+connectionConnectedButton: '電子鼓已連接 ✓',
 sensoryTitle: '感官設定',
 sensoryIntro: '打造讓你感到舒適的 HeartSync 體驗。',
 screenAppearance: '畫面外觀',
@@ -313,6 +339,13 @@ chooseModeIntro: '選擇一個模式，開始你的音樂旅程。'
     }
   };
 
+  
+window.heartSyncTranslate = function (key) {
+  const currentLanguage = languageSelect ? languageSelect.value : 'en';
+  const words = translations[currentLanguage] || translations.en;
+  return words[key] !== undefined ? words[key] : key;
+};
+  
   function changeLanguage(language) {
     const words = translations[language] || translations.en;
 
@@ -325,8 +358,10 @@ chooseModeIntro: '選擇一個模式，開始你的音樂旅程。'
     });
 
     document.documentElement.lang = language === 'zh' ? 'zh-Hant' : 'en';
+    if (typeof window.heartSyncRefreshConnectionLanguage === 'function') {
+      window.heartSyncRefreshConnectionLanguage();
+}
   }
-
   if (languageSelect) {
     languageSelect.addEventListener('change', function () {
       changeLanguage(languageSelect.value);
@@ -1058,14 +1093,34 @@ demoModeLabel.textContent = translateModeName(
   let connecting = false;
   const decoder = new TextDecoder();
 
-  function setStatus(message) {
-    statusDisplay.textContent = message;
-  }
+
+let currentStatusKey = 'connectionNotConnected';
+let lastDrumHit = null;
+
+function setStatus(statusKey) {
+  currentStatusKey = statusKey;
+  statusDisplay.textContent =
+    window.heartSyncTranslate(statusKey);
+}
+
+window.heartSyncRefreshConnectionLanguage = function () {
+  statusDisplay.textContent =
+    window.heartSyncTranslate(currentStatusKey);
+
+  connectButton.textContent = window.heartSyncTranslate(
+    currentStatusKey === 'connectionConnected'
+      ? 'connectionConnectedButton'
+      : 'connectionConnect'
+  );
+hitDisplay.textContent =
+  window.heartSyncTranslate('connectionLastHit').replace('—', lastDrumHit === null ? '—' : lastDrumHit);
+};
+
 
   function onDrumDisconnected() {
-    setStatus('Drum Disconnected / 電子鼓已斷線');
+    setStatus('connectionDisconnected');
     connectButton.textContent =
-      'Connect Drum / 連接電子鼓';
+      window.heartSyncTranslate('connectionConnect');
   }
 
   function onDrumHit(event) {
@@ -1084,7 +1139,9 @@ demoModeLabel.textContent = translateModeName(
       return;
     }
 
-    hitDisplay.textContent = 'Last Drum Hit: ' + message;
+lastDrumHit = message;
+hitDisplay.textContent =
+  window.heartSyncTranslate('connectionLastHit').replace('—', message);
     console.log('HeartSync received:', message);
   }
 
@@ -1092,13 +1149,14 @@ demoModeLabel.textContent = translateModeName(
     if (connecting) return;
 
     if (!navigator.bluetooth) {
-      setStatus('Web Bluetooth is not supported in this browser.');
+      setStatus('connectionUnsupported');
       return;
     }
 
     connecting = true;
     connectButton.disabled = true;
-    setStatus('Connecting... / 正在連接...');
+    setStatus('connectionConnecting');
+
 
     try {
       drumDevice = await navigator.bluetooth.requestDevice({
@@ -1125,18 +1183,19 @@ demoModeLabel.textContent = translateModeName(
 
       await hitCharacteristic.startNotifications();
 
-      setStatus('Drum Connected / 電子鼓已連接');
-      connectButton.textContent = 'Drum Connected ✓';
+      setStatus('connectionConnected');
+      connectButton.textContent =
+        window.heartSyncTranslate('connectionConnectedButton');
+
 
     } catch (error) {
       console.error('HeartSync BLE connection error:', error);
 
-      setStatus(
-        'Connection unsuccessful / 連接未成功'
-      );
+      setStatus('connectionFailed');
 
       connectButton.textContent =
-        'Connect Drum / 連接電子鼓';
+        window.heartSyncTranslate('connectionConnect');
+
 
     } finally {
       connecting = false;
