@@ -409,3 +409,31 @@ background:
     0 5px 5px rgba(91,67,59,0.10)
   );
 }
+
+
+/* HeartSync V3 - Responsive Storybook Hero */
+
+#learning-world-selection > div:first-of-type {
+  width: 100%;
+  max-width: none !important;
+  aspect-ratio: 1600 / 640;
+  box-sizing: border-box;
+
+  background-image: url("learning-world/HeartSync_Storybook_Hero_Desktop_1600x640.webp") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  border: none !important;
+  border-radius: 24px !important;
+  box-shadow: none !important;
+}
+
+/* Mobile version */
+@media (max-width: 600px) {
+  #learning-world-selection > div:first-of-type {
+    aspect-ratio: 780 / 980;
+
+    background-image: url("learning-world/HeartSync_Storybook_Hero_Mobile_780x980.webp") !important;
+  }
+}
