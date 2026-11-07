@@ -541,3 +541,59 @@ body:has(#learning-world-selection:not([hidden]))
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* HeartSync V3 - Desktop Storybook Welcome */
+
+@media (min-width: 861px) {
+
+  #learning-world-title {
+    position: relative;
+    z-index: 3;
+
+    width: min(90%, 780px);
+    box-sizing: border-box;
+
+    margin:
+      clamp(-240px, -16vw, -150px)
+      auto 0 !important;
+
+    padding: 24px 28px 8px !important;
+
+    background: rgba(255, 249, 240, 0.96);
+
+    border-radius: 90px 90px 0 0;
+
+    color: #754839 !important;
+
+    font-size: clamp(28px, 3vw, 42px) !important;
+    line-height: 1.25;
+  }
+
+  #learning-world-title + p {
+    position: relative;
+    z-index: 3;
+
+    width: min(90%, 780px);
+    box-sizing: border-box;
+
+    margin: 0 auto !important;
+    padding: 6px 24px 22px !important;
+
+    background: rgba(255, 249, 240, 0.96);
+
+    border-radius: 0 0 90px 90px;
+
+    color: #805B4E !important;
+    font-size: 19px !important;
+    line-height: 1.6 !important;
+
+    box-shadow: 0 10px 24px
+      rgba(117, 72, 57, 0.06);
+  }
+
+  #learning-world-selection > .world-theme-grid {
+    margin-top: 85px !important;
+  }
+
+}
