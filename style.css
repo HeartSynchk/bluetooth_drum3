@@ -358,3 +358,10 @@ canvas {
 .learning-world-v3 .world-theme-grid img {
   max-width: 160px !important;
 }
+
+/* HeartSync V3 - Clearer Gentle Illustrations */
+#learning-world-selection img[src$="gentle-colors.png"],
+#learning-world-selection img[src$="gentle-numbers.png"],
+#learning-world-selection img[src$="gentle-food.png"] {
+  filter: saturate(1.3) contrast(1.06);
+}
