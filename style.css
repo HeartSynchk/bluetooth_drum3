@@ -369,3 +369,41 @@ canvas {
   filter: saturate(1.35) contrast(1.12);
 }
 
+
+/* HeartSync V3 - Storybook Mascot Welcome */
+#learning-world-selection > div:first-of-type {
+  max-width: 760px;
+  margin: 0 auto 20px !important;
+  padding: 24px 10px !important;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 16% 20%,
+      rgba(255,255,255,0.9) 0 40px,
+      transparent 41px
+    ),
+    radial-gradient(
+      circle at 84% 25%,
+      rgba(255,255,255,0.8) 0 48px,
+      transparent 49px
+    ),
+    linear-gradient(
+      180deg,
+      #E8F5FF 0%,
+      #FFF8EB 70%,
+      #EAF5E3 100%
+    );
+
+  border: 2px solid #E4EBDD;
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(91,67,59,0.06);
+}
+
+#learning-world-selection > div:first-of-type img {
+  width: clamp(64px, 9vw, 112px) !important;
+  height: auto;
+  filter: drop-shadow(
+    0 5px 5px rgba(91,67,59,0.10)
+  );
+}
