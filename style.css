@@ -543,59 +543,94 @@ body:has(#learning-world-selection:not([hidden]))
 }
 
 
-/* HeartSync V3 - Desktop Storybook Welcome */
 
-@media (min-width: 861px) {
+/* HeartSync V3 - Unified Storybook Welcome */
 
-  #learning-world-title {
-    position: relative;
-    z-index: 3;
+#learning-world-selection > div.world-hero {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  align-items: end !important;
+  align-content: center !important;
+  gap: 0 10px !important;
+  padding: 24px 20% 28px !important;
+  box-sizing: border-box;
+}
 
-    width: min(90%, 640px);
-    box-sizing: border-box;
+/* Three HeartSync mascots */
+#learning-world-selection > div.world-hero > img {
+  width: min(100%, 155px) !important;
+  height: auto !important;
+}
 
+/* Welcome title */
+#learning-world-selection .world-hero > #learning-world-title {
+  grid-column: 1 / -1;
+  width: 100% !important;
+  box-sizing: border-box;
 
-margin:
-  clamp(-350px, -22vw, -200px)
-  auto 0 !important;
+  margin: 14px 0 0 !important;
+  padding: 20px 14px 8px !important;
 
+  background: rgba(255,249,240,0.96);
+  border-radius: 55px 55px 0 0;
 
-    padding: 24px 28px 8px !important;
+  color: #754839 !important;
+  font-size: clamp(22px, 2.45vw, 35px) !important;
+  line-height: 1.25 !important;
+}
 
-    background: rgba(255, 249, 240, 0.96);
+/* Chinese welcome subtitle */
+#learning-world-selection .world-hero > #learning-world-title + p {
+  grid-column: 1 / -1;
+  width: 100% !important;
+  box-sizing: border-box;
 
-    border-radius: 90px 90px 0 0;
+  margin: 0 !important;
+  padding: 4px 14px 20px !important;
 
-    color: #754839 !important;
+  background: rgba(255,249,240,0.96);
+  border-radius: 0 0 55px 55px;
 
-    font-size: clamp(28px, 3vw, 42px) !important;
-    line-height: 1.25;
+  color: #805B4E !important;
+  font-size: clamp(15px, 1.4vw, 19px) !important;
+  line-height: 1.6 !important;
+}
+
+/* Space before theme cards */
+#learning-world-selection > .world-theme-grid {
+  margin-top: 28px !important;
+}
+
+/* Tablet */
+@media (max-width: 860px) {
+  #learning-world-selection > div.world-hero {
+    padding: 28px 9% 24px !important;
+    align-content: start !important;
   }
 
-  #learning-world-title + p {
-    position: relative;
-    z-index: 3;
+  #learning-world-selection > div.world-hero > img {
+    width: min(100%, 110px) !important;
+  }
+}
 
-    width: min(90%, 640px);
-    box-sizing: border-box;
-
-    margin: 0 auto !important;
-    padding: 6px 24px 22px !important;
-
-    background: rgba(255, 249, 240, 0.96);
-
-    border-radius: 0 0 90px 90px;
-
-    color: #805B4E !important;
-    font-size: 19px !important;
-    line-height: 1.6 !important;
-
-    box-shadow: 0 10px 24px
-      rgba(117, 72, 57, 0.06);
+/* Mobile */
+@media (max-width: 600px) {
+  #learning-world-selection > div.world-hero {
+    padding: 50px 12px 24px !important;
   }
 
-  #learning-world-selection > .world-theme-grid {
-    margin-top: 28px !important;
+  #learning-world-selection > div.world-hero > img {
+    width: min(100%, 88px) !important;
   }
 
+  #learning-world-selection .world-hero > #learning-world-title {
+    font-size: clamp(20px, 6vw, 26px) !important;
+    padding: 16px 10px 6px !important;
+  }
+
+  #learning-world-selection .world-hero > #learning-world-title + p {
+    font-size: 14px !important;
+    padding: 4px 10px 16px !important;
+  }
 }
