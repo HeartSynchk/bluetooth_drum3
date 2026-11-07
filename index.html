@@ -969,9 +969,11 @@
     margin: 25px auto;
   ">
 
-    <h3 style="color: #633F4E;">
-      Drum Status
-    </h3>
+
+<h3 data-i18n="drumStatusTitle"
+    style="color: #633F4E;">
+  Drum Status
+</h3>
 
     <p id="drum-connection-status"
        role="status"
@@ -984,15 +986,15 @@
   Last Drum Hit: —
 </p>
 
-
-    <p style="color: #896E61; font-size: 14px;">
-      Physical drum connection will be available
-      after hardware integration.
-    </p>
+<p data-i18n="connectionHelp"
+   style="color: #896E61; font-size: 14px;">
+  Turn on your HeartSync drum, then select Connect Drum.
+</p>
 
     <button type="button"
-            id="connection-connect-btn"
-            style="
+id="connection-connect-btn"
+data-i18n="connectionConnect"
+style="
               background: #3DAFA5;
               color: white;
               border: pointer;
@@ -1002,18 +1004,23 @@
               cursor: not-allowed;
               margin: 10px;
             ">
-      Connect Drum / 連接電子鼓
+      Connect Drum
     </button>
 
   </div>
 
-  <p style="color: #896E61;">
-    Don't have your drum yet?
-  </p>
 
-  <button type="button"
-          id="connection-demo-btn"
-          style="
+<p data-i18n="connectionNoDrum"
+   style="color: #896E61;">
+  You can continue without a drum.
+</p>
+
+
+<button type="button"
+        id="connection-demo-btn"
+        data-i18n="connectionDemo"
+        style="
+
             background: #3DAFA5;
             color: white;
             border: none;
@@ -1049,9 +1056,12 @@
 </button>
 <!-- End Learning World Button -->
 
-  <button type="button"
-          id="connection-back-btn"
-          style="
+
+<button type="button"
+        id="connection-back-btn"
+        data-i18n="back"
+        style="
+
             background: #EADFD5;
             color: #5B433B;
             border: none;
