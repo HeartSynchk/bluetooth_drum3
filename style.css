@@ -551,7 +551,7 @@ body:has(#learning-world-selection:not([hidden]))
     position: relative;
     z-index: 3;
 
-    width: min(90%, 780px);
+    width: min(90%, 640px);
     box-sizing: border-box;
 
 
@@ -576,7 +576,7 @@ margin:
     position: relative;
     z-index: 3;
 
-    width: min(90%, 780px);
+    width: min(90%, 640px);
     box-sizing: border-box;
 
     margin: 0 auto !important;
