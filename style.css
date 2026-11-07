@@ -338,3 +338,23 @@ canvas {
     #EFF5E5 100%
   ) !important;
 }
+
+
+/* HeartSync V3 - Multi-Theme Cards */
+.learning-world-v3 .world-theme-grid {
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 210px), 1fr)) !important;
+  gap: 18px !important;
+}
+
+.learning-world-v3 .world-theme-grid > button {
+  width: 100%;
+  max-width: 260px;
+  justify-self: center;
+  padding: 18px 12px !important;
+  box-sizing: border-box;
+}
+
+.learning-world-v3 .world-theme-grid img {
+  max-width: 160px !important;
+}
