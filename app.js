@@ -1204,3 +1204,30 @@ hitDisplay.textContent =
   });
 })();
 /* ===== End HeartSync ESP32 BLE Connection ===== */
+
+
+
+/* HeartSync Learning World V3 - Visual Mode Images */
+(() => {
+  function updateLearningWorldImages() {
+    const selectedMode =
+      document.querySelector('input[name="visual-mode"]:checked')?.value
+      || "gentle";
+
+    document.querySelectorAll(
+      "#learning-world-selection img[data-gentle-src][data-colourful-src]"
+    ).forEach((img) => {
+      img.src = selectedMode === "colourful"
+        ? img.dataset.colourfulSrc
+        : img.dataset.gentleSrc;
+    });
+  }
+
+  document.querySelectorAll(
+    'input[name="visual-mode"]'
+  ).forEach((radio) => {
+    radio.addEventListener("change", updateLearningWorldImages);
+  });
+
+  updateLearningWorldImages();
+})();
