@@ -256,7 +256,11 @@ soundEffects: 'Sound Effects',
 back: 'Back',
 continue: 'Continue',
 chooseAdventure: 'Choose Your Adventure!',
-chooseModeIntro: 'Choose a mode to begin your musical journey.'
+chooseModeIntro: 'Choose a mode to begin your musical journey.',
+learningWorldTitle: 'Choose Your Learning World!',
+learningWorldIntro1: 'Every child has their own path to shine.',
+learningWorldIntro2: 'Where would you like to explore today?'
+
     },
 
     zh: {
@@ -335,7 +339,11 @@ soundEffects: '遊戲音效',
 back: '返回',
 continue: '繼續',
 chooseAdventure: '選擇你的音樂冒險！',
-chooseModeIntro: '選擇一個模式，開始你的音樂旅程。'
+chooseModeIntro: '選擇一個模式，開始你的音樂旅程。',
+learningWorldTitle: '選擇你的學習世界！',
+learningWorldIntro1: '每個孩子都有自己的星軌。',
+learningWorldIntro2: '今天想去哪裡探索？'
+
     }
   };
 
