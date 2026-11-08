@@ -260,7 +260,9 @@ chooseModeIntro: 'Choose a mode to begin your musical journey.',
 learningWorldTitle: 'Choose Your Learning World!',
 learningWorldIntro1: 'Every child has their own path to shine.',
 learningWorldIntro2: 'Where would you like to explore today?',
-worldFruits: 'Fruits'
+worldFruits: 'Fruits',
+worldAvailable: '✓ Available'
+
 
 
 
@@ -346,7 +348,9 @@ chooseModeIntro: '選擇一個模式，開始你的音樂旅程。',
 learningWorldTitle: '選擇你的學習世界！',
 learningWorldIntro1: '每個孩子都有自己的星軌。',
 learningWorldIntro2: '今天想去哪裡探索？',
-worldFruits: '水果'
+worldFruits: '水果',
+worldAvailable: '✓ 可學習'
+
 
 
 
