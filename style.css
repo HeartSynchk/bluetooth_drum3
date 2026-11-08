@@ -661,7 +661,7 @@ body:has(#learning-world-selection:not([hidden]))
 
 /* Welcome message below mascots */
 #learning-world-selection .world-hero-copy {
-  width: min(78%, 800px);
+  width: min(64%, 640px);
   max-width: 100%;
   box-sizing: border-box;
   padding: 18px 20px;
