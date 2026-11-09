@@ -881,3 +881,8 @@ body:has(#learning-world-selection:not([hidden]))
     padding: 45px 22px 30px !important;
   }
 }
+
+/* Learning World - Panda position adjustment */
+#learning-world-selection .world-hero-mascots img:nth-child(3) {
+  transform: translateY(-20px) !important;
+}
