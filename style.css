@@ -978,3 +978,45 @@ padding: 48px 55px 28px !important;
     flex: 0 0 32% !important;
   }
 }
+
+/* Learning World V8 - 吉祥物視覺靠攏 */
+
+#learning-world-selection .world-hero-mascots {
+  width: 540px !important;
+  max-width: 90% !important;
+  gap: 0 !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
+}
+
+#learning-world-selection .world-hero-mascots > img {
+  width: 210px !important;
+  height: 210px !important;
+  flex: 0 0 210px !important;
+  object-fit: contain !important;
+}
+
+/* 讓兔子和熊貓往星星靠 */
+#learning-world-selection .world-hero-mascots > img:first-child {
+  transform: translateX(32px) !important;
+}
+
+#learning-world-selection .world-hero-mascots > img:last-child {
+  transform: translateX(-32px) !important;
+}
+
+@media (max-width: 700px) {
+  #learning-world-selection .world-hero-mascots > img {
+    width: 33% !important;
+    height: auto !important;
+    flex: 0 0 33% !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img:first-child {
+    transform: translateX(12px) !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img:last-child {
+    transform: translateX(-12px) !important;
+  }
+}
