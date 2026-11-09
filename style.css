@@ -814,11 +814,14 @@ body:has(#learning-world-selection:not([hidden]))
 
 
 /* Learning World V5 - make mascots visibly larger */
-.learning-world-v3 .world-hero-mascots img {
+/* Learning World V5 - mascot size fix */
+#learning-world-selection > div.world-hero
+.world-hero-mascots > img {
   width: 220px !important;
   max-width: none !important;
   height: 220px !important;
   object-fit: contain !important;
+  flex-shrink: 0 !important;
 }
 
 @media (max-width: 700px) {
