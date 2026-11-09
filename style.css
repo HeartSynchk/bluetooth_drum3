@@ -831,59 +831,53 @@ body:has(#learning-world-selection:not([hidden]))
   }
 }
 
-/* HeartSync Learning World - Soft Cloud V2 */
+/* HeartSync Learning World - Watercolor Cloud V3 */
 #learning-world-selection .world-hero-copy {
   position: relative !important;
-  width: min(78%, 850px) !important;
-  padding: 28px 30px 32px !important;
-  background: rgba(255, 250, 238, 0.97) !important;
+  z-index: 2 !important;
+
+  width: min(90%, 1000px) !important;
+  min-height: 230px !important;
+  box-sizing: border-box !important;
+
+  margin: -32px auto 0 !important;
+  padding: 78px 55px 48px !important;
+
+  background-color: transparent !important;
+  background-image: url("assets/mascots/柔和奶油色雲朵標籤.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+
   border: none !important;
-  border-radius: 65px !important;
-  box-shadow: 0 8px 22px rgba(145, 105, 75, 0.06) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
   text-align: center !important;
 }
 
-#learning-world-selection .world-hero-copy::before,
-#learning-world-selection .world-hero-copy::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  background: rgba(255, 250, 238, 0.97);
-  border-radius: 50%;
-  pointer-events: none;
+#learning-world-selection .world-hero-mascots {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
-#learning-world-selection .world-hero-copy::before {
-  width: 42%;
-  height: 110px;
-  top: -45px;
-  left: -3%;
-  border-radius: 55% 55% 35% 35%;
+#learning-world-selection .world-hero-copy h2 {
+  color: #754839 !important;
+  position: relative !important;
+  z-index: 3 !important;
 }
 
-#learning-world-selection .world-hero-copy::after {
-  width: 42%;
-  height: 110px;
-  top: -45px;
-  right: -3%;
-  border-radius: 55% 55% 35% 35%;
-}
-
-#learning-world-selection .world-hero-copy > * {
-  position: relative;
-  z-index: 1;
+#learning-world-selection .world-hero-copy p {
+  color: #805b4e !important;
+  position: relative !important;
+  z-index: 3 !important;
 }
 
 @media (max-width: 600px) {
   #learning-world-selection .world-hero-copy {
-    width: 96% !important;
-    padding: 20px 12px !important;
-    border-radius: 35px !important;
-  }
-
-  #learning-world-selection .world-hero-copy::before,
-  #learning-world-selection .world-hero-copy::after {
-    height: 45px;
-    top: -12px;
+    width: 100% !important;
+    min-height: 170px !important;
+    margin-top: -12px !important;
+    padding: 45px 22px 30px !important;
   }
 }
