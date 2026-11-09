@@ -945,3 +945,36 @@ padding: 48px 55px 28px !important;
     padding: 45px 22px 30px !important;
   }
 }
+
+/* Learning World V7 - 三隻吉祥物真正靠攏 */
+
+#learning-world-selection .world-hero-mascots {
+  width: 620px !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  gap: 0 !important;
+}
+
+#learning-world-selection > div.world-hero
+.world-hero-mascots > img {
+  width: 205px !important;
+  height: 205px !important;
+  flex: 0 0 205px !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 700px) {
+  #learning-world-selection .world-hero-mascots {
+    width: 100% !important;
+  }
+
+  #learning-world-selection > div.world-hero
+  .world-hero-mascots > img {
+    width: 32% !important;
+    height: auto !important;
+    flex: 0 0 32% !important;
+  }
+}
