@@ -831,36 +831,57 @@ body:has(#learning-world-selection:not([hidden]))
   }
 }
 
-/* HeartSync Learning World - Cloud Title V1 */
+/* HeartSync Learning World - Soft Cloud V2 */
 #learning-world-selection .world-hero-copy {
   position: relative !important;
   width: min(78%, 850px) !important;
-  padding: 28px 35px 30px !important;
-
+  padding: 28px 30px 32px !important;
   background: rgba(255, 250, 238, 0.97) !important;
   border: none !important;
-  border-radius: 45% 45% 38% 38% / 35% 35% 42% 42% !important;
-
-  box-shadow:
-    0 8px 22px rgba(145, 105, 75, 0.08),
-    inset 0 3px 12px rgba(255, 255, 255, 0.9) !important;
-
+  border-radius: 65px !important;
+  box-shadow: 0 8px 22px rgba(145, 105, 75, 0.06) !important;
   text-align: center !important;
 }
 
-#learning-world-selection .world-hero-copy h2 {
-  color: #754839 !important;
-  font-weight: 800 !important;
+#learning-world-selection .world-hero-copy::before,
+#learning-world-selection .world-hero-copy::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  background: rgba(255, 250, 238, 0.97);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-#learning-world-selection .world-hero-copy p {
-  color: #805B4E !important;
+#learning-world-selection .world-hero-copy::before {
+  width: 28%;
+  height: 85px;
+  top: -24px;
+  left: 8%;
+}
+
+#learning-world-selection .world-hero-copy::after {
+  width: 30%;
+  height: 90px;
+  top: -28px;
+  right: 8%;
+}
+
+#learning-world-selection .world-hero-copy > * {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 600px) {
   #learning-world-selection .world-hero-copy {
     width: 96% !important;
     padding: 20px 12px !important;
-    border-radius: 35% 35% 30% 30% / 22% 22% 25% 25% !important;
+    border-radius: 35px !important;
+  }
+
+  #learning-world-selection .world-hero-copy::before,
+  #learning-world-selection .world-hero-copy::after {
+    height: 45px;
+    top: -12px;
   }
 }
