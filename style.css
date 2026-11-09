@@ -786,3 +786,28 @@ body:has(#learning-world-selection:not([hidden]))
   white-space: nowrap !important;
   line-height: 1.3 !important;
 }
+
+/* Learning World V4 - larger mascots */
+.learning-world-v3 .world-hero-mascots {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  gap: 32px !important;
+  width: 100% !important;
+}
+
+.learning-world-v3 .world-hero-mascots img {
+  width: clamp(120px, 12vw, 175px) !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 600px) {
+  .learning-world-v3 .world-hero-mascots {
+    gap: 8px !important;
+  }
+
+  .learning-world-v3 .world-hero-mascots img {
+    width: 30% !important;
+  }
+}
