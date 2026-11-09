@@ -840,7 +840,7 @@ body:has(#learning-world-selection:not([hidden]))
   min-height: 230px !important;
   box-sizing: border-box !important;
 
-  margin: -32px auto 0 !important;
+  margin: -100px auto 0 !important;
   padding: 78px 55px 48px !important;
 
   background-color: transparent !important;
