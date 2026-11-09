@@ -886,3 +886,8 @@ body:has(#learning-world-selection:not([hidden]))
 #learning-world-selection .world-hero-mascots img:nth-child(3) {
   transform: translateY(-20px) !important;
 }
+
+/* Learning World - Star position adjustment */
+#learning-world-selection .world-hero-mascots img:nth-child(2) {
+  transform: translateY(-15px) !important;
+}
