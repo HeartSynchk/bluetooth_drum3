@@ -357,15 +357,15 @@ learningWorldTitle: '選擇你的學習世界！',
 learningWorldIntro1: '每個孩子都有自己的星軌。',
 learningWorldIntro2: '今天想去哪裡探索？',
 worldFruits: '水果',
-worldAvailable: '✓ 可学习',
+worldAvailable: '✓ 可學習',
 worldTransport: '交通工具',
-worldAnimals: '动物',
-worldColors: '颜色',
-worldNumbers: '数字',
+worldAnimals: '動物',
+worldColors: '顏色',
+worldNumbers: '數字',
 worldFood: '食物',
-worldShapes: '形状',
+worldShapes: '形狀',
 worldFamily: '家庭',
-worldComingSoon: '即将推出'
+worldComingSoon: '即將推出'
 
 
 
