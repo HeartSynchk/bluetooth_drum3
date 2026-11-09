@@ -891,3 +891,14 @@ body:has(#learning-world-selection:not([hidden]))
 #learning-world-selection .world-hero-mascots img:nth-child(2) {
   transform: translateY(-15px) !important;
 }
+
+/* HeartSync Learning World - Storybook Title */
+#learning-world-selection .world-hero-copy h2 {
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif !important;
+  font-size: clamp(28px, 3vw, 46px) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.2 !important;
+  color: #80503d !important;
+  text-shadow: 1px 2px 0 rgba(255, 255, 255, 0.65) !important;
+}
