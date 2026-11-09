@@ -711,3 +711,11 @@ body:has(#learning-world-selection:not([hidden]))
     font-size: 14px !important;
   }
 }
+
+
+/* Fruits card image size */
+#world-fruits-image {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+}
