@@ -854,17 +854,19 @@ body:has(#learning-world-selection:not([hidden]))
 }
 
 #learning-world-selection .world-hero-copy::before {
-  width: 28%;
-  height: 85px;
-  top: -24px;
-  left: 8%;
+  width: 42%;
+  height: 110px;
+  top: -45px;
+  left: -3%;
+  border-radius: 55% 55% 35% 35%;
 }
 
 #learning-world-selection .world-hero-copy::after {
-  width: 30%;
-  height: 90px;
-  top: -28px;
-  right: 8%;
+  width: 42%;
+  height: 110px;
+  top: -45px;
+  right: -3%;
+  border-radius: 55% 55% 35% 35%;
 }
 
 #learning-world-selection .world-hero-copy > * {
