@@ -830,3 +830,37 @@ body:has(#learning-world-selection:not([hidden]))
     height: auto !important;
   }
 }
+
+/* HeartSync Learning World - Cloud Title V1 */
+#learning-world-selection .world-hero-copy {
+  position: relative !important;
+  width: min(78%, 850px) !important;
+  padding: 28px 35px 30px !important;
+
+  background: rgba(255, 250, 238, 0.97) !important;
+  border: none !important;
+  border-radius: 45% 45% 38% 38% / 35% 35% 42% 42% !important;
+
+  box-shadow:
+    0 8px 22px rgba(145, 105, 75, 0.08),
+    inset 0 3px 12px rgba(255, 255, 255, 0.9) !important;
+
+  text-align: center !important;
+}
+
+#learning-world-selection .world-hero-copy h2 {
+  color: #754839 !important;
+  font-weight: 800 !important;
+}
+
+#learning-world-selection .world-hero-copy p {
+  color: #805B4E !important;
+}
+
+@media (max-width: 600px) {
+  #learning-world-selection .world-hero-copy {
+    width: 96% !important;
+    padding: 20px 12px !important;
+    border-radius: 35% 35% 30% 30% / 22% 22% 25% 25% !important;
+  }
+}
