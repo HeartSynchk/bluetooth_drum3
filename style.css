@@ -998,11 +998,11 @@ padding: 48px 55px 28px !important;
 
 /* 讓兔子和熊貓往星星靠 */
 #learning-world-selection .world-hero-mascots > img:first-child {
-  transform: translateX(32px) !important;
+  transform: translateX(65px) !important;
 }
 
 #learning-world-selection .world-hero-mascots > img:last-child {
-  transform: translateX(-32px) !important;
+  transform: translateX(-65px) !important;
 }
 
 @media (max-width: 700px) {
