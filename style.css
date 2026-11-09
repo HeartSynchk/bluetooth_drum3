@@ -811,3 +811,19 @@ body:has(#learning-world-selection:not([hidden]))
     width: 30% !important;
   }
 }
+
+
+/* Learning World V5 - make mascots visibly larger */
+.learning-world-v3 .world-hero-mascots img {
+  width: 220px !important;
+  max-width: none !important;
+  height: 220px !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 700px) {
+  .learning-world-v3 .world-hero-mascots img {
+    width: 30% !important;
+    height: auto !important;
+  }
+}
