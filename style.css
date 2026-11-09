@@ -1020,3 +1020,104 @@ padding: 48px 55px 28px !important;
     transform: translateX(-12px) !important;
   }
 }
+
+
+/* Learning World V9 — integrated scenery and cloud layering */
+
+#learning-world-selection > .world-hero {
+  position: relative !important;
+  isolation: isolate !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  overflow: visible !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: clamp(90px, 11vw, 160px) 12px 35px !important;
+  gap: 0 !important;
+}
+
+/* 田園作為柔和背景，不再是一張硬邊矩形 */
+#learning-world-selection > .world-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("learning-world/HeartSync_Storybook_Hero_Desktop_1600x640(2).webp");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 68%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 68%,
+    transparent 100%
+  );
+}
+
+/* 三隻人物在雲朵後面 */
+#learning-world-selection .world-hero-mascots {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  width: 100% !important;
+  max-width: none !important;
+  gap: 12px !important;
+  margin: 0 auto !important;
+}
+
+#learning-world-selection .world-hero-mascots > img {
+  width: clamp(105px, 13vw, 205px) !important;
+  height: clamp(105px, 13vw, 205px) !important;
+  flex: 0 1 auto !important;
+  max-width: 30% !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+/* 雲朵向上遮住人物下半身 */
+#learning-world-selection .world-hero-copy {
+  position: relative !important;
+  z-index: 2 !important;
+  width: min(100%, 1250px) !important;
+  min-height: 220px !important;
+  margin: -95px auto 0 !important;
+  padding: 95px 45px 50px !important;
+  box-sizing: border-box !important;
+  background-color: transparent !important;
+  background-image: url("assets/mascots/柔和奶油色雲朵標籤.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 600px) {
+  #learning-world-selection > .world-hero {
+    padding: 80px 8px 15px !important;
+  }
+
+  #learning-world-selection > .world-hero::before {
+    background-image: url("learning-world/HeartSync_Storybook_Hero_Mobile_780x980.webp");
+  }
+
+  #learning-world-selection .world-hero-mascots {
+    gap: 0 !important;
+  }
+
+  #learning-world-selection .world-hero-copy {
+    margin-top: -45px !important;
+    min-height: 170px !important;
+    padding: 50px 16px 28px !important;
+  }
+}
