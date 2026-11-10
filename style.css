@@ -1155,19 +1155,17 @@ transparent 76%
 #learning-world-selection > .world-hero::after {
   content: "";
   position: absolute;
-  inset: 0;
 
-  background:
-    linear-gradient(
-      to bottom,
-      #FFF8EF 0px,
-      rgba(255, 248, 239, 0) 55px
-    ),
-    linear-gradient(
-      to top,
-      #FFF8EF 0px,
-      rgba(255, 248, 239, 0) 70px
-    );
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+
+  background: linear-gradient(
+    to bottom,
+    #FFF8EF 0%,
+    rgba(255, 248, 239, 0) 100%
+  );
 
   pointer-events: none;
   z-index: 5;
