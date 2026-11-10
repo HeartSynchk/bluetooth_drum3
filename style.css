@@ -867,6 +867,8 @@ padding: 24px 0 !important;
 width: 110vw !important;
 max-width: none !important;
 flex-shrink: 0 !important;
+left: 50% !important;
+transform: translateX(-50%) !important;
 min-height: 175px !important;
 padding: 48px 55px 28px !important;
 
@@ -933,3 +935,7 @@ padding: 78px 55px 48px !important;
   text-shadow: 1px 2px 0 rgba(255, 255, 255, 0.65) !important;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
