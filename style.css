@@ -471,7 +471,7 @@ body:has(#learning-world-selection:not([hidden]))
   box-sizing: border-box;
   background: #FFF8EF !important;
   border-radius: 0 !important;
-  padding: 24px !important;
+padding: 24px 0 !important;
 }
 
 
