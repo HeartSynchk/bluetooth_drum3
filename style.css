@@ -1223,25 +1223,23 @@ transparent 76%
   }
 }
 
-/* HeartSync - Connect Cloud and Learning Cards */
+/* HeartSync - Cloud and Learning Cards Layout */
 @media (min-width: 701px) {
 
-  /* 讓雲朵下方不再留下大空白 */
   #learning-world-selection > .world-hero {
-    margin-bottom: -220px !important;
+    margin-bottom: -300px !important;
     position: relative !important;
     z-index: 1 !important;
   }
 
-  /* 讓單元區向上靠近雲朵 */
-  #learning-world-selection .world-theme-grid {
+  #learning-world-selection .world-hero-copy {
     position: relative !important;
-    z-index: 2 !important;
-    margin-top: 0 !important;
+    z-index: 3 !important;
   }
 
-  /* 讓雲朵繼續蓋在人物和背景前面 */
-  #learning-world-selection .world-hero-copy {
-    z-index: 3 !important;
+  #learning-world-selection > .world-theme-grid {
+    position: relative !important;
+    z-index: 4 !important;
+    margin-top: 0 !important;
   }
 }
