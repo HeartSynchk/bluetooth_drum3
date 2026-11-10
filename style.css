@@ -1083,15 +1083,15 @@ transparent 76%
 @media (min-width: 701px) {
 
   /* 給放大後的人物和雲朵足夠空間 */
-  #learning-world-selection > div.world-hero {
-    aspect-ratio: auto !important;
-    min-height: 850px !important;
-    height: auto !important;
-    padding: 55px 0 95px !important;
-    align-content: start !important;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-  }
+#learning-world-selection > div.world-hero {
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 35px 0 55px !important;
+  align-content: start !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
 
   /* 三隻靠近 */
   #learning-world-selection .world-hero-mascots {
@@ -1134,62 +1134,4 @@ transparent 76%
   }
 }
 
-/* HeartSync - Fix Mascots, Background and Cloud */
-@media (min-width: 701px) {
 
-  /* 田園背景不再跟著人物放大 */
-  #learning-world-selection > .world-hero {
-    background-size: 100% auto !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-    aspect-ratio: auto !important;
-
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-  }
-
-  /* 三隻人物保持大小，但更親密 */
-  #learning-world-selection .world-hero-mascots {
-    gap: 0 !important;
-    justify-content: center !important;
-    align-items: flex-end !important;
-  }
-
-  #learning-world-selection .world-hero-mascots > img {
-    width: 380px !important;
-    min-width: 380px !important;
-    max-width: none !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* 兔兔靠向星星 */
-  #learning-world-selection .world-hero-mascots > img:nth-child(1) {
-    transform: translateX(75px) !important;
-  }
-
-  /* 星星保持中央 */
-  #learning-world-selection .world-hero-mascots > img:nth-child(2) {
-    transform: translateY(0) !important;
-  }
-
-  /* 熊貓靠向星星 */
-  #learning-world-selection .world-hero-mascots > img:nth-child(3) {
-    transform: translateX(-75px) !important;
-  }
-
-  /* 雲朵和文字不要再被推到下面 */
-  #learning-world-selection .world-hero-copy {
-    margin-top: -65px !important;
-    margin-bottom: 0 !important;
-    padding: 65px 55px 65px !important;
-    z-index: 3 !important;
-  }
-
-  /* 確保文字清晰 */
-  #learning-world-selection .world-hero-copy h2,
-  #learning-world-selection .world-hero-copy p {
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 4 !important;
-  }
-}
