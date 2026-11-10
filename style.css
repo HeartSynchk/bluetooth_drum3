@@ -981,8 +981,8 @@ body {
   -webkit-mask-image: linear-gradient(
     to bottom,
     #000 0%,
-    #000 58%,
-    transparent 83%
+    #000 54%,
+transparent 76%
   ) !important;
 
   mask-image: linear-gradient(
