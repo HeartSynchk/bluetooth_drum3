@@ -420,8 +420,8 @@ aspect-ratio: 1600 / 640;
   box-sizing: border-box;
   
   background-image: url("learning-world/HeartSync_Storybook_Hero_Desktop_1600x640(2).webp") !important;
-  background-size: cover !important;
-  background-position: center !important;
+background-size: 100% auto !important;
+background-position: center top !important;
   background-repeat: no-repeat !important;
 
   border: none !important;
