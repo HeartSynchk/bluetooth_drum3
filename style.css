@@ -507,8 +507,16 @@ padding: 24px 0 !important;
 
 .learning-world-v3 .world-theme-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  max-width: 1360px;
+  width: calc(100% - 100px) !important;
+  max-width: 1360px !important;
   margin: 28px auto !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 600px) {
+  .learning-world-v3 .world-theme-grid {
+    width: calc(100% - 24px) !important;
+  }
 }
 
 .learning-world-v3 .world-theme-grid > button {
