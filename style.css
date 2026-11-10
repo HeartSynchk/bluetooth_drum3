@@ -1134,4 +1134,34 @@ transparent 76%
   }
 }
 
+/* HeartSync - Hero closer to navigation + soft top edge */
+@media (min-width: 701px) {
 
+  /* 減少田園背景上方的空白 */
+  #learning-world-selection {
+    padding-top: 0 !important;
+  }
+
+  #learning-world-selection > .world-hero {
+    margin-top: -45px !important;
+  }
+
+  /* 只讓田園背景的上邊緣柔和淡入 */
+  #learning-world-selection > .world-hero::before {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 58%,
+      transparent 83%
+    ) !important;
+
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 58%,
+      transparent 83%
+    ) !important;
+  }
+}
