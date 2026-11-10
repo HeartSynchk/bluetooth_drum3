@@ -1168,3 +1168,57 @@ transparent 76%
     z-index: 5;
   }
 }
+
+/* HeartSync - Closer Mascots + Cloud Overlap + Remove Gap */
+@media (min-width: 701px) {
+
+  /* 保留完整田園背景，不放大、不裁切 */
+  #learning-world-selection > .world-hero {
+    aspect-ratio: auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 35px 0 0 !important;
+    gap: 0 !important;
+    overflow: visible !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 三隻靠近，保留原本大小 */
+  #learning-world-selection .world-hero-mascots {
+    gap: 0 !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img {
+    width: 380px !important;
+    min-width: 380px !important;
+  }
+
+  /* 左右人物靠向星星 */
+  #learning-world-selection .world-hero-mascots > img:nth-child(1) {
+    transform: translateX(100px) !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img:nth-child(2) {
+    transform: none !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img:nth-child(3) {
+    transform: translateX(-100px) !important;
+  }
+
+  /* 雲朵往上，遮住人物下方約三分之一 */
+  #learning-world-selection .world-hero-copy {
+    margin: -155px auto 0 !important;
+    padding: 85px 55px 75px !important;
+    min-height: 300px !important;
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  /* 縮短雲朵與單元卡片的距離 */
+  #learning-world-selection .world-theme-grid {
+    margin-top: 10px !important;
+  }
+}
