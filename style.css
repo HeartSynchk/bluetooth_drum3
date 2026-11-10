@@ -1243,3 +1243,24 @@ transparent 76%
     margin-top: 0 !important;
   }
 }
+
+/* HeartSync - Fix Large Empty Space Under Cloud */
+@media (min-width: 701px) {
+
+  #learning-world-selection > .world-hero {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #learning-world-selection .world-hero-copy {
+    margin-bottom: 0 !important;
+  }
+
+  #learning-world-selection .world-theme-grid {
+    margin-top: 12px !important;
+  }
+
+}
