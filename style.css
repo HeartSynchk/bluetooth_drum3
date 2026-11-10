@@ -992,3 +992,12 @@ transparent 76%
     transparent 83%
   ) !important;
 }
+
+/* HeartSync Learning World - Cloud Final Adjustment */
+
+@media (min-width: 601px) {
+  #learning-world-selection .world-hero-copy {
+    margin-top: 24px !important;
+    margin-bottom: -170px !important;
+  }
+}
