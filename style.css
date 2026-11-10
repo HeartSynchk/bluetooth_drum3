@@ -1067,3 +1067,14 @@ transparent 76%
     transform: translate(-18px, 0) !important;
   }
 }
+
+/* HeartSync - Mascot Size Test */
+@media (min-width: 701px) {
+  #learning-world-selection .world-hero-mascots > img {
+    width: 380px !important;
+    min-width: 380px !important;
+    max-width: none !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+  }
+}
