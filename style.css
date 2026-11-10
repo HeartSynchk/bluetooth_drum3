@@ -425,8 +425,21 @@ aspect-ratio: 1600 / 640;
   background-repeat: no-repeat !important;
 
   border: none !important;
-  border-radius: 24px !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 65%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 65%,
+    transparent 100%
+  );
 }
 
 /* Mobile version */
