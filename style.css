@@ -939,3 +939,22 @@ html,
 body {
   overflow-x: clip;
 }
+
+/* Learning World V10 - Taller Watercolor Cloud */
+
+#learning-world-selection .world-hero-copy {
+  min-height: 245px !important;
+  padding: 88px 55px 85px !important;
+  margin-top: -100px !important;
+  margin-bottom: -170px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 600px) {
+  #learning-world-selection .world-hero-copy {
+    min-height: 205px !important;
+    padding: 65px 20px 55px !important;
+    margin-top: -35px !important;
+    margin-bottom: -110px !important;
+  }
+}
