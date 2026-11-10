@@ -1001,3 +1001,38 @@ transparent 76%
     margin-bottom: -170px !important;
   }
 }
+
+/* HeartSync - Three Mascots Together */
+
+@media (min-width: 601px) {
+
+  #learning-world-selection .world-hero-mascots {
+    gap: 0 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img {
+    width: clamp(160px, 15vw, 230px) !important;
+    max-width: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 兔兔往右靠 */
+  #learning-world-selection .world-hero-mascots > img:nth-child(1) {
+    transform: translateX(22px) !important;
+  }
+
+  /* 星星保持中間 */
+  #learning-world-selection .world-hero-mascots > img:nth-child(2) {
+    transform: translateY(-15px) !important;
+  }
+
+  /* 熊貓往左靠 */
+  #learning-world-selection .world-hero-mascots > img:nth-child(3) {
+    transform: translate(-22px, -20px) !important;
+  }
+}
