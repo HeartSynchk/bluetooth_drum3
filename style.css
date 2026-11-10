@@ -1151,6 +1151,7 @@ transparent 76%
     position: relative !important;
   }
 
+
   /* 在田園背景頂部加入柔和漸層，不裁切背景 */
 #learning-world-selection > .world-hero::after {
   content: "";
