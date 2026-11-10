@@ -1084,7 +1084,7 @@ transparent 76%
 
   /* 給放大後的人物和雲朵足夠空間 */
 #learning-world-selection > div.world-hero {
-  aspect-ratio: 16 / 9 !important;
+ aspect-ratio: auto !important;
   min-height: 0 !important;
   height: auto !important;
   padding: 35px 0 55px !important;
