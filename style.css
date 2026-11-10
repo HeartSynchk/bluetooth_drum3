@@ -1087,7 +1087,7 @@ transparent 76%
  aspect-ratio: auto !important;
   min-height: 0 !important;
   height: auto !important;
-  padding: 35px 0 55px !important;
+  padding: 35px 0 0 !important;
   align-content: start !important;
   -webkit-mask-image: none !important;
   mask-image: none !important;
