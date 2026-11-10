@@ -845,8 +845,8 @@ body:has(#learning-world-selection:not([hidden]))
 min-height: 175px !important;
 padding: 48px 55px 28px !important;
 
-  margin: -55px auto -35px !important;
-  padding: 78px 55px 48px !important;
+margin: -100px auto -130px !important;
+padding: 78px 55px 48px !important;
 
   background-color: transparent !important;
   background-image: url("assets/mascots/柔和奶油色雲朵標籤.png") !important;
