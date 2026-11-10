@@ -1047,7 +1047,7 @@ transparent 76%
   }
 
   #learning-world-selection .world-hero-mascots > img {
-    width: clamp(260px, 23vw, 355px) !important;
+    width: clamp(320px, 28vw, 440px) !important;
     max-width: none !important;
     flex-shrink: 0 !important;
   }
