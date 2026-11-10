@@ -958,3 +958,19 @@ body {
     margin-bottom: -110px !important;
   }
 }
+
+/* Learning World V11 - Lower Cloud to Reveal Sign */
+
+#learning-world-selection .world-hero-copy {
+  margin-top: -45px !important;
+  margin-bottom: -170px !important;
+  min-height: 245px !important;
+  padding: 88px 55px 85px !important;
+}
+
+@media (max-width: 600px) {
+  #learning-world-selection .world-hero-copy {
+    margin-top: -15px !important;
+    margin-bottom: -110px !important;
+  }
+}
