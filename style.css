@@ -974,3 +974,21 @@ body {
     margin-bottom: -110px !important;
   }
 }
+
+/* Learning World - hide grass beneath cloud edges */
+
+#learning-world-selection > .world-hero::before {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 58%,
+    transparent 83%
+  ) !important;
+
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 58%,
+    transparent 83%
+  ) !important;
+}
