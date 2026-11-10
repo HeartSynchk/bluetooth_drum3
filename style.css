@@ -1037,33 +1037,33 @@ transparent 76%
   }
 }
 
-/* HeartSync - Mascots bigger and closer */
+/* HeartSync - Mascots refined proportions */
 @media (min-width: 601px) {
 
   #learning-world-selection .world-hero-mascots {
-    gap: 0 !important;
+    gap: 18px !important;
     justify-content: center !important;
     align-items: flex-end !important;
   }
 
   #learning-world-selection .world-hero-mascots > img {
-    width: clamp(200px, 18vw, 280px) !important;
+    width: clamp(225px, 20vw, 310px) !important;
     max-width: none !important;
     flex-shrink: 0 !important;
   }
 
-  /* 兔兔靠近星星 */
+  /* 兔兔 */
   #learning-world-selection .world-hero-mascots > img:nth-child(1) {
-    transform: translateX(45px) !important;
+    transform: translate(18px, 0) !important;
   }
 
   /* 星星 */
   #learning-world-selection .world-hero-mascots > img:nth-child(2) {
-    transform: translateY(-15px) !important;
+    transform: translate(0, 0) !important;
   }
 
-  /* 熊貓靠近星星 */
+  /* 熊貓 */
   #learning-world-selection .world-hero-mascots > img:nth-child(3) {
-    transform: translate(-45px, -20px) !important;
+    transform: translate(-18px, 0) !important;
   }
 }
