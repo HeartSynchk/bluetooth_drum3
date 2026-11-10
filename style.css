@@ -1134,34 +1134,37 @@ transparent 76%
   }
 }
 
-/* HeartSync - Hero closer to navigation + soft top edge */
+/* HeartSync - Fix Navigation Gap and Soft Hero Top */
 @media (min-width: 701px) {
 
-  /* 減少田園背景上方的空白 */
+  /* 縮短導覽按鈕與田園背景之間的距離 */
+  body:has(#learning-world-selection:not([hidden])) nav {
+    margin-bottom: 0 !important;
+  }
+
   #learning-world-selection {
     padding-top: 0 !important;
   }
 
   #learning-world-selection > .world-hero {
-    margin-top: -45px !important;
+    margin-top: 0 !important;
+    position: relative !important;
   }
 
-  /* 只讓田園背景的上邊緣柔和淡入 */
-  #learning-world-selection > .world-hero::before {
-    -webkit-mask-image: linear-gradient(
+  /* 在田園背景頂部加入柔和漸層，不裁切背景 */
+  #learning-world-selection > .world-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    background: linear-gradient(
       to bottom,
-      transparent 0%,
-      black 8%,
-      black 58%,
-      transparent 83%
-    ) !important;
-
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 8%,
-      black 58%,
-      transparent 83%
-    ) !important;
+      #FFF8EF 0%,
+      rgba(255, 248, 239, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 5;
   }
 }
