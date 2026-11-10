@@ -1255,9 +1255,10 @@ transparent 76%
     padding-bottom: 0 !important;
   }
 
-  #learning-world-selection .world-hero-copy {
-    margin-bottom: 0 !important;
-  }
+#learning-world-selection .world-hero-copy {
+  margin-bottom: -60px !important;
+  padding-bottom: 135px !important;
+}
 
   #learning-world-selection .world-theme-grid {
     margin-top: 12px !important;
