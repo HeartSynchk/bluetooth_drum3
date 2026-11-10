@@ -416,7 +416,7 @@ background:
 #learning-world-selection > div:first-of-type {
   width: 100%;
   max-width: none !important;
-aspect-ratio: auto;
+aspect-ratio: 1600 / 640;
   box-sizing: border-box;
   
   background-image: url("learning-world/HeartSync_Storybook_Hero_Desktop_1600x640(2).webp") !important;
