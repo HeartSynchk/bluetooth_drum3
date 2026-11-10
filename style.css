@@ -1078,3 +1078,58 @@ transparent 76%
     flex-shrink: 0 !important;
   }
 }
+
+/* HeartSync - Mascots Closer + Cloud Fix */
+@media (min-width: 701px) {
+
+  /* 給放大後的人物和雲朵足夠空間 */
+  #learning-world-selection > div.world-hero {
+    aspect-ratio: auto !important;
+    min-height: 850px !important;
+    height: auto !important;
+    padding: 55px 0 95px !important;
+    align-content: start !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  /* 三隻靠近 */
+  #learning-world-selection .world-hero-mascots {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    gap: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 保留現在滿意的大小 */
+  #learning-world-selection .world-hero-mascots > img {
+    width: 380px !important;
+    min-width: 380px !important;
+    max-width: none !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 兔兔和熊貓往星星靠近 */
+  #learning-world-selection .world-hero-mascots > img:nth-child(1) {
+    transform: translateX(55px) !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img:nth-child(2) {
+    transform: none !important;
+  }
+
+  #learning-world-selection .world-hero-mascots > img:nth-child(3) {
+    transform: translateX(-55px) !important;
+  }
+
+  /* 雲朵和文字恢復顯示 */
+  #learning-world-selection .world-hero-copy {
+    margin: -65px auto 0 !important;
+    padding: 78px 55px 60px !important;
+    min-height: 250px !important;
+    position: relative !important;
+    z-index: 3 !important;
+  }
+}
