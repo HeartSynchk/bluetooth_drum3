@@ -1330,10 +1330,21 @@ transparent 76%
   line-height: 1.6;
 }
 
+
 .hs-apple-fruit {
-  font-size: 110px;
-  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+  margin: 18px auto;
 }
+
+.hs-apple-fruit img {
+  display: block;
+  width: min(100%, 310px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
 
 .hs-apple-panel h2 {
   font-size: 44px;
