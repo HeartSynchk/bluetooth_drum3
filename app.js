@@ -1274,3 +1274,151 @@ hitDisplay.textContent =
 
   updateLearningWorldImages();
 })();
+
+
+/* ===== HeartSync Apple Learning Journey ===== */
+(function () {
+  const applePage = document.getElementById("apple-learning");
+  const worldPage = document.getElementById(
+    "learning-world-selection"
+  );
+  const fruitsBtn = document.getElementById("world-fruits-btn");
+
+  if (!applePage || !worldPage || !fruitsBtn) return;
+
+  const drum = document.getElementById("hs-apple-drum");
+  const ap = document.getElementById("hs-apple-ap");
+  const ple = document.getElementById("hs-apple-ple");
+  const progress = document.getElementById("hs-apple-progress");
+  const star = document.getElementById("hs-apple-star");
+  const english = document.getElementById(
+    "hs-apple-english-line"
+  );
+  const rhythm = document.getElementById(
+    "hs-apple-rhythm-line"
+  );
+
+  let hits = 0;
+  let lightTimer;
+
+  function resetApple() {
+    hits = 0;
+    clearTimeout(lightTimer);
+
+    ap.classList.remove("is-active");
+    ple.classList.remove("is-active");
+    drum.classList.remove("is-hit");
+
+    progress.textContent = "點擊鼓面，開始第一拍";
+
+    english.textContent =
+      "我們一起聽聽 Apple 怎麼讀吧！";
+
+    rhythm.textContent =
+      "準備好就跟著我敲兩下吧！";
+
+    star.textContent =
+      "星星：歡迎來到水果世界！" +
+      "我們可以按照自己的速度慢慢學習。";
+  }
+
+  function openApple() {
+    worldPage.hidden = true;
+    applePage.hidden = false;
+
+    applePage.classList.toggle(
+      "hs-apple-reduced",
+      !!window.heartSyncSession?.reduceMotion
+    );
+
+    resetApple();
+    applePage.scrollIntoView();
+  }
+
+  function tapApple() {
+    if (applePage.hidden || hits >= 2) return;
+
+    hits++;
+
+    // 每敲一下，鼓面出現一次柔和紅色光波
+    clearTimeout(lightTimer);
+    drum.classList.remove("is-hit");
+    void drum.offsetWidth;
+    drum.classList.add("is-hit");
+
+    lightTimer = setTimeout(function () {
+      drum.classList.remove("is-hit");
+    }, 400);
+
+    if (hits === 1) {
+      ap.classList.add("is-active");
+
+      progress.textContent = "第一拍：AP";
+
+      rhythm.textContent =
+        "咚！第一下完成了，接下來是 ple。";
+
+      star.textContent =
+        "星星：我們已經開始了！慢慢敲下一下。";
+    }
+
+    if (hits === 2) {
+      ple.classList.add("is-active");
+
+      progress.textContent = "Apple 練習完成！";
+
+      rhythm.textContent =
+        "咚咚！兩下都敲完了！";
+
+      star.textContent =
+        "星星：你完成了這次練習！" +
+        "想再試一次，還是繼續探索？";
+    }
+  }
+
+  // Learning World → Apple
+  fruitsBtn.addEventListener("click", openApple);
+
+  // Apple → Learning World
+  document.getElementById("apple-back")
+    .addEventListener("click", function () {
+      applePage.hidden = true;
+      worldPage.hidden = false;
+      worldPage.scrollIntoView();
+    });
+
+  // 心心：播放英文
+  document.getElementById("hs-apple-listen")
+    .addEventListener("click", function () {
+      english.textContent =
+        "Apple 分成 AP 和 ple，AP 讀得較重。";
+
+      star.textContent =
+        "星星：可以多聽幾次，不用著急。";
+
+      if ("speechSynthesis" in window) {
+        speechSynthesis.cancel();
+
+        const voice =
+          new SpeechSynthesisUtterance("Apple");
+
+        voice.lang = "en-US";
+        voice.rate = 0.85;
+
+        speechSynthesis.speak(voice);
+      }
+    });
+
+  // 網頁模擬敲鼓
+  drum.addEventListener("click", tapApple);
+
+  // 重新練習
+  document.getElementById("hs-apple-reset")
+    .addEventListener("click", resetApple);
+
+  // 預留給 ESP32 藍牙敲鼓事件
+  window.addEventListener(
+    "heartsync:drum-hit",
+    tapApple
+  );
+})();
