@@ -1269,3 +1269,196 @@ transparent 76%
   }
 
 }
+
+
+/* ===== HeartSync Apple Learning Journey ===== */
+
+#apple-learning[hidden] {
+  display: none !important;
+}
+
+.hs-apple {
+  --apple-bg: #fff9f1;
+  --apple-accent: #df8b91;
+
+  background: var(--apple-bg);
+  border-radius: 30px;
+  padding: 28px;
+  color: #634b48;
+}
+
+.hs-apple-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.hs-apple-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.hs-apple-panel {
+  background: #fffefd;
+  border: 1px solid #f1e4dd;
+  border-radius: 28px;
+  padding: 26px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(99, 63, 78, 0.05);
+}
+
+.hs-apple-character {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  min-height: 100px;
+}
+
+.hs-apple-character img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.hs-apple-character p {
+  line-height: 1.6;
+}
+
+.hs-apple-fruit {
+  font-size: 110px;
+  margin: 12px 0;
+}
+
+.hs-apple-panel h2 {
+  font-size: 44px;
+  margin: 8px 0;
+}
+
+.hs-apple-panel h3 {
+  font-size: 32px;
+}
+
+.hs-apple-syllables {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.hs-apple-syllables span {
+  padding: 14px 25px;
+  background: #f7eee8;
+  border-radius: 18px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.hs-apple-syllables .is-active {
+  background: #ffd9d9;
+  color: #ad424e;
+}
+
+.hs-apple button {
+  border: none;
+  border-radius: 16px;
+  padding: 13px 20px;
+  background: var(--apple-accent);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hs-apple button:focus-visible {
+  outline: 3px solid #2874a6;
+  outline-offset: 4px;
+}
+
+#hs-apple-drum {
+  display: block;
+  width: 155px;
+  height: 155px;
+  margin: 22px auto;
+  border-radius: 50%;
+  font-size: 76px;
+  background: #fff0ec;
+  border: 5px solid #eac7c1;
+}
+
+#hs-apple-drum.is-hit {
+  animation: hsAppleGlow 0.4s ease-out;
+}
+
+@keyframes hsAppleGlow {
+  0% {
+    background: #ffcccc;
+    box-shadow: 0 0 0 0 rgba(225, 95, 100, 0.35);
+  }
+  100% {
+    background: #fff0ec;
+    box-shadow: 0 0 0 25px rgba(225, 95, 100, 0);
+  }
+}
+
+.hs-apple-guide {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fffdf9;
+  border-radius: 24px;
+  padding: 18px;
+  margin-top: 22px;
+}
+
+.hs-apple-guide img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.hs-apple-guide p {
+  flex: 1;
+  line-height: 1.6;
+}
+
+/* 使用原本 Settings 的 Colourful 模式 */
+#play.hs-colourful #apple-learning {
+  --apple-bg: #fff0e9;
+  --apple-accent: #ec798d;
+}
+
+#play.hs-colourful .hs-apple-panel {
+  background: #fff8fc;
+  border-color: #f3cbd5;
+}
+
+/* SEN：尊重減少動畫設定 */
+#apple-learning.hs-apple-reduced #hs-apple-drum.is-hit {
+  animation: none;
+  background: #ffd9d9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hs-apple-drum.is-hit {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hs-apple {
+    padding: 15px;
+  }
+
+  .hs-apple-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hs-apple-guide {
+    flex-wrap: wrap;
+  }
+}
