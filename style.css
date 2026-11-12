@@ -1473,3 +1473,130 @@ transparent 76%
     flex-wrap: wrap;
   }
 }
+
+
+/* ===== HeartSync Apple Visual Upgrade ===== */
+
+/* 两个学习卡片 */
+#apple-learning .hs-apple-grid {
+  gap: 24px;
+  align-items: stretch;
+}
+
+#apple-learning .hs-apple-panel {
+  border-radius: 32px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(99, 63, 78, 0.05);
+}
+
+/* 左边 English */
+#apple-learning .hs-apple-panel:first-child {
+  background: linear-gradient(
+    180deg,
+    #FFF7F9 0%,
+    #FFFDFC 100%
+  );
+  border: 2px solid #F2D6DD;
+}
+
+/* 右边 Rhythm */
+#apple-learning .hs-apple-panel:nth-child(2) {
+  background: linear-gradient(
+    180deg,
+    #F4F9FF 0%,
+    #FFFDFC 100%
+  );
+  border: 2px solid #D5E5F3;
+}
+
+/* 吉祥物介绍区域 */
+#apple-learning .hs-apple-character {
+  padding: 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+#apple-learning .hs-apple-panel:first-child
+.hs-apple-character {
+  background: #FFF0F3;
+}
+
+#apple-learning .hs-apple-panel:nth-child(2)
+.hs-apple-character {
+  background: #EAF4FF;
+}
+
+/* 吉祥物标题 */
+#apple-learning .hs-apple-character strong {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Apple 图片 */
+#apple-learning .hs-apple-fruit img {
+  width: min(100%, 360px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+/* 音节按钮 */
+#apple-learning .hs-apple-syllables span {
+  border-radius: 20px;
+  padding: 14px 26px;
+  min-width: 75px;
+}
+
+/* AP 强读 */
+#apple-learning #hs-apple-ap {
+  background: #FFE0E5;
+  color: #A94358;
+}
+
+/* ple 轻读 */
+#apple-learning #hs-apple-ple {
+  background: #F8EBDD;
+  color: #70534B;
+}
+
+/* 当前音节提示 */
+#apple-learning .hs-apple-syllables
+.is-active {
+  outline: 3px solid #D98B9A;
+  outline-offset: 3px;
+}
+
+/* 鼓按钮 */
+#apple-learning #hs-apple-drum {
+  box-shadow: 0 6px 18px rgba(180, 110, 110, 0.10);
+}
+
+/* Colourful 模式颜色更鲜明 */
+#play.hs-colourful #apple-learning
+.hs-apple-panel:first-child {
+  background: #FFF0F5;
+  border-color: #EDA9BA;
+}
+
+#play.hs-colourful #apple-learning
+.hs-apple-panel:nth-child(2) {
+  background: #EBF5FF;
+  border-color: #A9D4F4;
+}
+
+/* 手机适配 */
+@media (max-width: 720px) {
+  #apple-learning .hs-apple-panel {
+    padding: 18px;
+  }
+
+  #apple-learning .hs-apple-character {
+    padding: 12px;
+  }
+
+  #apple-learning .hs-apple-fruit img {
+    width: min(100%, 300px);
+  }
+}
+
+/* ===== End Apple Visual Upgrade ===== */
