@@ -1326,6 +1326,20 @@ hitDisplay.textContent =
     worldPage.hidden = true;
     applePage.hidden = false;
 
+    
+    // 根據 Sensory Settings 切換 Apple 圖片
+    const appleImage = document.getElementById("hs-apple-image");
+
+    if (appleImage) {
+      const visualMode =
+        window.heartSyncSession?.visual || "gentle";
+
+      appleImage.src = visualMode === "colourful"
+        ? appleImage.dataset.colourfulSrc
+        : appleImage.dataset.gentleSrc;
+    }
+
+
     applePage.classList.toggle(
       "hs-apple-reduced",
       !!window.heartSyncSession?.reduceMotion
