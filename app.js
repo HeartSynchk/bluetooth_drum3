@@ -1594,7 +1594,7 @@ document.getElementById("hs-apple-watch")
        // playAppleBeat(true);
         progress.textContent = "① AP：重拍";
 
-      }, 200));
+      }, 120));
 
       // 第二下：ple
       demoTimers.push(setTimeout(function () {
@@ -1605,7 +1605,7 @@ document.getElementById("hs-apple-watch")
     // playAppleBeat(false);
         progress.textContent = "② ple：輕拍";
 
-      }, 1200));
+      }, 350));
 
       // 示範結束
       demoTimers.push(setTimeout(function () {
@@ -1628,7 +1628,7 @@ if (window.heartSyncSession?.sound !== false) {
         progress.textContent =
           "示範完成！現在可以慢慢敲兩下。";
 
-      }, 2200));
+      }, 800));
 
     });
   }
