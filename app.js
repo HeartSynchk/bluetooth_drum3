@@ -1305,6 +1305,62 @@ let hits = 0;
 let lightTimer;
 let demoTimers = [];
 
+let appleAudioContext = null;
+
+// 準備節拍聲音
+function prepareAppleAudio() {
+  if (window.heartSyncSession?.sound !== true) return;
+
+  const AudioClass =
+    window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioClass) return;
+
+  if (!appleAudioContext) {
+    appleAudioContext = new AudioClass();
+  }
+
+  if (appleAudioContext.state === "suspended") {
+    appleAudioContext.resume().catch(console.warn);
+  }
+}
+
+// 播放輕柔節拍聲
+function playAppleBeat(strong) {
+  if (
+    window.heartSyncSession?.sound !== true ||
+    !appleAudioContext
+  ) return;
+
+  const ctx = appleAudioContext;
+  const oscillator = ctx.createOscillator();
+  const volume = ctx.createGain();
+  const now = ctx.currentTime;
+
+  oscillator.type = "sine";
+
+  oscillator.frequency.setValueAtTime(300, now);
+  oscillator.frequency.exponentialRampToValueAtTime(
+    190, now + 0.15
+  );
+
+  volume.gain.setValueAtTime(0.0001, now);
+  volume.gain.exponentialRampToValueAtTime(
+    strong ? 0.09 : 0.045,
+    now + 0.01
+  );
+  volume.gain.exponentialRampToValueAtTime(
+    0.0001,
+    now + 0.17
+  );
+
+  oscillator.connect(volume);
+  volume.connect(ctx.destination);
+
+  oscillator.start(now);
+  oscillator.stop(now + 0.18);
+}
+
 function stopAppleDemo() {
   demoTimers.forEach(clearTimeout);
   demoTimers = [];
@@ -1501,6 +1557,7 @@ document.getElementById("hs-apple-watch")
 
   if (watchBtn) {
     watchBtn.addEventListener("click", function () {
+      prepareAppleAudio();
 
       // 停止之前的示範
       stopAppleDemo();
@@ -1515,6 +1572,7 @@ document.getElementById("hs-apple-watch")
         if (applePage.hidden) return;
 
         ap.classList.add("is-active");
+        playAppleBeat(true);
         progress.textContent = "① AP：重拍";
 
       }, 200));
@@ -1525,6 +1583,7 @@ document.getElementById("hs-apple-watch")
 
         ap.classList.remove("is-active");
         ple.classList.add("is-active");
+        playAppleBeat(false);
         progress.textContent = "② ple：輕拍";
 
       }, 1200));
