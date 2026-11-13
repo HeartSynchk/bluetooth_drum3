@@ -1600,3 +1600,26 @@ transparent 76%
 }
 
 /* ===== End Apple Visual Upgrade ===== */
+
+
+/* Apple Watch Rhythm Button */
+
+#apple-learning #hs-apple-watch {
+  display: block;
+  margin: 16px auto 8px;
+  padding: 13px 26px;
+
+  background: #FCE4EC;
+  color: #984E64;
+
+  border: 2px solid #EBC3CF;
+  border-radius: 18px;
+
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#apple-learning #hs-apple-watch:hover {
+  background: #F6D5E0;
+}
