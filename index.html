@@ -1306,6 +1306,37 @@ display:block;
 <!-- 敲鼓節奏提示 -->
 <p>敲鼓練習：♩ ♩</p>
 
+      
+<!-- Apple 聲音模式選擇 -->
+<div class="hs-apple-audio-choice"
+     style="display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:10px;
+            margin:14px auto;">
+
+  <label style="display:flex;align-items:center;gap:6px;
+                background:#F8EBDD;padding:11px 14px;
+                border-radius:14px;cursor:pointer;">
+    <input type="radio"
+           name="hs-apple-sound"
+           value="drum"
+           checked>
+    🥁 Drum Only
+  </label>
+
+  <label style="display:flex;align-items:center;gap:6px;
+                background:#FCE4EC;padding:11px 14px;
+                border-radius:14px;cursor:pointer;">
+    <input type="radio"
+           name="hs-apple-sound"
+           value="both">
+    🍎 Voice + Drum
+  </label>
+
+</div>
+<!-- End Apple 聲音模式選擇 -->
+
 <!-- Watch Rhythm 示範按鈕 -->
 <button
   type="button"
