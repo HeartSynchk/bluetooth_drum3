@@ -1304,6 +1304,13 @@ hitDisplay.textContent =
 let hits = 0;
 let lightTimer;
 let demoTimers = [];
+  
+const appleRhythmAudio = new Audio(
+  "assets/audio/apple-pronunciation.mp3"
+);
+
+appleRhythmAudio.preload = "auto";
+
 
 let appleAudioContext = null;
 
@@ -1367,6 +1374,11 @@ oscillator.stop(now + 0.20);
 }
 
 function stopAppleDemo() {
+  
+// 停止音頻並回到開頭
+appleRhythmAudio.pause();
+appleRhythmAudio.currentTime = 0;
+
   demoTimers.forEach(clearTimeout);
   demoTimers = [];
 
@@ -1568,22 +1580,7 @@ document.getElementById("hs-apple-watch")
       stopAppleDemo();
       
       // 播放 Apple 的自然英文發音
-      if ("speechSynthesis" in window) {
-        speechSynthesis.cancel();
-
-        const appleVoice =
-          new SpeechSynthesisUtterance("Apple");
-
-        
-appleVoice.lang = "en-US";
-appleVoice.rate = 0.85;
-appleVoice.pitch = 1;
-appleVoice.volume = 1;
-
-        speechSynthesis.speak(appleVoice);
-      }
-
-
+     
       ap.classList.remove("is-active");
       ple.classList.remove("is-active");
 
@@ -1615,6 +1612,19 @@ appleVoice.volume = 1;
         if (applePage.hidden) return;
 
         stopAppleDemo();
+        
+// 停止舊的瀏覽器語音
+if ("speechSynthesis" in window) {
+  speechSynthesis.cancel();
+}
+
+// 播放 AI Apple 發音
+if (window.heartSyncSession?.sound !== false) {
+  appleRhythmAudio.play().catch(function (error) {
+    console.error("Apple 音頻播放失敗:", error);
+  });
+}
+
         progress.textContent =
           "示範完成！現在可以慢慢敲兩下。";
 
