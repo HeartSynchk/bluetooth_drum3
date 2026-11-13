@@ -1315,7 +1315,7 @@ function stopAppleDemo() {
 }
 
 function resetApple() {
-
+  stopAppleDemo();
     hits = 0;
     clearTimeout(lightTimer);
     stopAppleDemo();
@@ -1364,9 +1364,13 @@ function resetApple() {
     applePage.scrollIntoView();
   }
 
-  function tapApple() {
-    if (applePage.hidden || hits >= 2) return;
-      stopAppleDemo();
+
+function tapApple() {
+  if (applePage.hidden || hits >= 2) return;
+
+  // 孩子開始敲鼓時，停止示範
+  stopAppleDemo();
+
 
     hits++;
 
