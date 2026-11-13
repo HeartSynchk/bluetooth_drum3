@@ -1570,70 +1570,93 @@ document.getElementById("hs-apple-watch")
 /* ===== End Watch Rhythm Demo ===== */
 
   
+
   // ===== Apple Watch Rhythm =====
   const watchBtn = document.getElementById("hs-apple-watch");
 
   if (watchBtn) {
     watchBtn.addEventListener("click", function () {
-      prepareAppleAudio();
 
-      // 停止之前的示範
       stopAppleDemo();
-      
-      // 播放 Apple 的自然英文發音
-     
+
+      if ("speechSynthesis" in window) {
+        speechSynthesis.cancel();
+      }
+
       ap.classList.remove("is-active");
       ple.classList.remove("is-active");
 
-      progress.textContent = "請看節奏示範！";
+      progress.textContent = "準備播放 Apple 示範...";
 
-      // 第一下：AP
-      demoTimers.push(setTimeout(function () {
-        if (applePage.hidden) return;
-
+      // 關閉音效時，仍可觀看視覺節奏
+      if (window.heartSyncSession?.sound === false) {
         ap.classList.add("is-active");
-       // playAppleBeat(true);
-        progress.textContent = "① AP：重拍";
 
-      }, 250));
+        demoTimers.push(setTimeout(function () {
+          ap.classList.remove("is-active");
+          ple.classList.add("is-active");
+        }, 350));
 
-      // 第二下：ple
-      demoTimers.push(setTimeout(function () {
-        if (applePage.hidden) return;
+        demoTimers.push(setTimeout(function () {
+          stopAppleDemo();
+          progress.textContent = "示範完成！";
+        }, 800));
 
-        ap.classList.remove("is-active");
-        ple.classList.add("is-active");
-    // playAppleBeat(false);
-        progress.textContent = "② ple：輕拍";
+        return;
+      }
 
-      }, 500));
+      // 依照 MP3 實際播放進度控制燈光
+      function syncAppleLights() {
+        if (appleRhythmAudio.paused || applePage.hidden) {
+          return;
+        }
 
-      // 示範結束
-      demoTimers.push(setTimeout(function () {
-        if (applePage.hidden) return;
+        const time = appleRhythmAudio.currentTime;
 
+        // AP：第一個音節
+        ap.classList.toggle(
+          "is-active",
+          time >= 0.10 && time < 0.32
+        );
+
+        // ple：第二個音節
+        ple.classList.toggle(
+          "is-active",
+          time >= 0.32 && time < 0.63
+        );
+
+        if (time >= 0.32) {
+          progress.textContent = "② ple：輕拍";
+        } else if (time >= 0.10) {
+          progress.textContent = "① AP：重拍";
+        }
+
+        requestAnimationFrame(syncAppleLights);
+      }
+
+      // 音頻結束才結束示範
+      appleRhythmAudio.onended = function () {
         stopAppleDemo();
-        
-// 停止舊的瀏覽器語音
-if ("speechSynthesis" in window) {
-  speechSynthesis.cancel();
-}
-
-// 播放 AI Apple 發音
-if (window.heartSyncSession?.sound !== false) {
-  appleRhythmAudio.play().catch(function (error) {
-    console.error("Apple 音頻播放失敗:", error);
-  });
-}
-
         progress.textContent =
           "示範完成！現在可以慢慢敲兩下。";
+      };
 
-      }, 1100));
+      // 從頭開始播放
+      appleRhythmAudio.currentTime = 0;
+
+      appleRhythmAudio.play()
+        .then(function () {
+          requestAnimationFrame(syncAppleLights);
+        })
+        .catch(function (error) {
+          console.error("Apple 音頻播放失敗:", error);
+          progress.textContent = "音頻無法播放，請再試一次。";
+        });
 
     });
   }
   // ===== End Watch Rhythm =====
+
 
   // 網頁模擬敲鼓
   drum.addEventListener("click", tapApple);
