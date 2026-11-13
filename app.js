@@ -724,16 +724,7 @@ worldPage.querySelectorAll(
   let hits = 0;
   let colorIndex = 0;
 
-let demoTimers = [];
 
-function stopAppleDemo() {
-  demoTimers.forEach(clearTimeout);
-  demoTimers = [];
-
-  // 恢復孩子實際完成的拍數
-  ap.classList.toggle("is-active", hits >= 1);
-  ple.classList.toggle("is-active", hits >= 2);
-}
 
   const gentleColors = [
     '#D8F4EE',
@@ -1309,10 +1300,22 @@ hitDisplay.textContent =
     "hs-apple-rhythm-line"
   );
 
-  let hits = 0;
-  let lightTimer;
 
-  function resetApple() {
+let hits = 0;
+let lightTimer;
+let demoTimers = [];
+
+function stopAppleDemo() {
+  demoTimers.forEach(clearTimeout);
+  demoTimers = [];
+
+  // 恢復孩子實際完成的拍數
+  ap.classList.toggle("is-active", hits >= 1);
+  ple.classList.toggle("is-active", hits >= 2);
+}
+
+function resetApple() {
+
     hits = 0;
     clearTimeout(lightTimer);
     stopAppleDemo();
@@ -1487,6 +1490,54 @@ document.getElementById("hs-apple-watch")
   });
 
 /* ===== End Watch Rhythm Demo ===== */
+
+  
+  // ===== Apple Watch Rhythm =====
+  const watchBtn = document.getElementById("hs-apple-watch");
+
+  if (watchBtn) {
+    watchBtn.addEventListener("click", function () {
+
+      // 停止之前的示範
+      stopAppleDemo();
+
+      ap.classList.remove("is-active");
+      ple.classList.remove("is-active");
+
+      progress.textContent = "請看節奏示範！";
+
+      // 第一下：AP
+      demoTimers.push(setTimeout(function () {
+        if (applePage.hidden) return;
+
+        ap.classList.add("is-active");
+        progress.textContent = "① AP：重拍";
+
+      }, 200));
+
+      // 第二下：ple
+      demoTimers.push(setTimeout(function () {
+        if (applePage.hidden) return;
+
+        ap.classList.remove("is-active");
+        ple.classList.add("is-active");
+        progress.textContent = "② ple：輕拍";
+
+      }, 1200));
+
+      // 示範結束
+      demoTimers.push(setTimeout(function () {
+        if (applePage.hidden) return;
+
+        stopAppleDemo();
+        progress.textContent =
+          "示範完成！現在可以慢慢敲兩下。";
+
+      }, 2200));
+
+    });
+  }
+  // ===== End Watch Rhythm =====
 
   // 網頁模擬敲鼓
   drum.addEventListener("click", tapApple);
