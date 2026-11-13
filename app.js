@@ -1574,10 +1574,11 @@ document.getElementById("hs-apple-watch")
         const appleVoice =
           new SpeechSynthesisUtterance("Apple");
 
-        appleVoice.lang = "en-US";
-        appleVoice.rate = 0.7;
-        appleVoice.pitch = 1;
-        appleVoice.volume = 0.85;
+        
+appleVoice.lang = "en-US";
+appleVoice.rate = 0.85;
+appleVoice.pitch = 1;
+appleVoice.volume = 1;
 
         speechSynthesis.speak(appleVoice);
       }
@@ -1593,7 +1594,7 @@ document.getElementById("hs-apple-watch")
         if (applePage.hidden) return;
 
         ap.classList.add("is-active");
-        playAppleBeat(true);
+       // playAppleBeat(true);
         progress.textContent = "① AP：重拍";
 
       }, 200));
@@ -1604,7 +1605,7 @@ document.getElementById("hs-apple-watch")
 
         ap.classList.remove("is-active");
         ple.classList.add("is-active");
-        playAppleBeat(false);
+    // playAppleBeat(false);
         progress.textContent = "② ple：輕拍";
 
       }, 1200));
