@@ -1566,6 +1566,22 @@ document.getElementById("hs-apple-watch")
 
       // 停止之前的示範
       stopAppleDemo();
+      
+      // 播放 Apple 的自然英文發音
+      if ("speechSynthesis" in window) {
+        speechSynthesis.cancel();
+
+        const appleVoice =
+          new SpeechSynthesisUtterance("Apple");
+
+        appleVoice.lang = "en-US";
+        appleVoice.rate = 0.7;
+        appleVoice.pitch = 1;
+        appleVoice.volume = 0.85;
+
+        speechSynthesis.speak(appleVoice);
+      }
+
 
       ap.classList.remove("is-active");
       ple.classList.remove("is-active");
