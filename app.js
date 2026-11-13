@@ -724,6 +724,17 @@ worldPage.querySelectorAll(
   let hits = 0;
   let colorIndex = 0;
 
+let demoTimers = [];
+
+function stopAppleDemo() {
+  demoTimers.forEach(clearTimeout);
+  demoTimers = [];
+
+  // 恢復孩子實際完成的拍數
+  ap.classList.toggle("is-active", hits >= 1);
+  ple.classList.toggle("is-active", hits >= 2);
+}
+
   const gentleColors = [
     '#D8F4EE',
     '#FFE2DB',
@@ -1304,6 +1315,7 @@ hitDisplay.textContent =
   function resetApple() {
     hits = 0;
     clearTimeout(lightTimer);
+    stopAppleDemo();
 
     ap.classList.remove("is-active");
     ple.classList.remove("is-active");
@@ -1351,6 +1363,7 @@ hitDisplay.textContent =
 
   function tapApple() {
     if (applePage.hidden || hits >= 2) return;
+      stopAppleDemo();
 
     hits++;
 
@@ -1422,6 +1435,58 @@ hitDisplay.textContent =
         speechSynthesis.speak(voice);
       }
     });
+
+  
+/* ===== Apple Watch Rhythm Demo ===== */
+
+document.getElementById("hs-apple-watch")
+  .addEventListener("click", function () {
+
+    stopAppleDemo();
+
+    // 示範不計入孩子的敲鼓次數
+    ap.classList.remove("is-active");
+    ple.classList.remove("is-active");
+
+    progress.textContent = "先看看 AP 和 ple 的節奏！";
+
+    // 第一拍：AP
+    demoTimers.push(setTimeout(function () {
+      if (applePage.hidden) return;
+
+      ap.classList.add("is-active");
+      progress.textContent = "① AP：重拍";
+
+    }, 200));
+
+    // 第二拍：ple
+    demoTimers.push(setTimeout(function () {
+      if (applePage.hidden) return;
+
+      ap.classList.remove("is-active");
+      ple.classList.add("is-active");
+      progress.textContent = "② ple：輕拍";
+
+    }, 1200));
+
+    // 示範完成
+    demoTimers.push(setTimeout(function () {
+      if (applePage.hidden) return;
+
+      stopAppleDemo();
+
+      progress.textContent =
+        hits === 0
+          ? "示範完成！準備好就敲兩下吧！"
+          : hits === 1
+            ? "第一拍已完成，下一拍是 ple。"
+            : "Apple 練習完成！";
+
+    }, 2200));
+
+  });
+
+/* ===== End Watch Rhythm Demo ===== */
 
   // 網頁模擬敲鼓
   drum.addEventListener("click", tapApple);
