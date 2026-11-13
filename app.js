@@ -1575,6 +1575,7 @@ document.getElementById("hs-apple-watch")
   const watchBtn = document.getElementById("hs-apple-watch");
 
   if (watchBtn) {
+    prepareAppleAudio();
     watchBtn.addEventListener("click", function () {
 
       stopAppleDemo();
@@ -1606,12 +1607,28 @@ document.getElementById("hs-apple-watch")
       }
 
       // 依照 MP3 實際播放進度控制燈光
+     
+let firstBeatPlayed = false;
+let secondBeatPlayed = false;
+
       function syncAppleLights() {
         if (appleRhythmAudio.paused || applePage.hidden) {
           return;
         }
 
         const time = appleRhythmAudio.currentTime;
+
+// 第一拍：AP 重拍
+if (!firstBeatPlayed && time >= 0.10) {
+  firstBeatPlayed = true;
+  playAppleBeat(true);
+}
+
+// 第二拍：ple 輕拍
+if (!secondBeatPlayed && time >= 0.32) {
+  secondBeatPlayed = true;
+  playAppleBeat(false);
+}
 
         // AP：第一個音節
         ap.classList.toggle(
