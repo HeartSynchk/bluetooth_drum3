@@ -1579,6 +1579,69 @@ document.getElementById("hs-apple-watch")
     watchBtn.addEventListener("click", function () {
 
       stopAppleDemo();
+      
+      // 讀取孩子選擇的聲音模式
+      const selectedSound = document.querySelector(
+        'input[name="hs-apple-sound"]:checked'
+      )?.value || "drum";
+
+      // ===== Drum Only 模式 =====
+      if (selectedSound === "drum") {
+
+        // 停止其他英文語音
+        if ("speechSynthesis" in window) {
+          speechSynthesis.cancel();
+        }
+
+        // 準備鼓聲
+        prepareAppleAudio();
+
+        ap.classList.remove("is-active");
+        ple.classList.remove("is-active");
+
+        progress.textContent = "一起聽聽兩下鼓聲！";
+
+        // 第一拍：AP
+        demoTimers.push(setTimeout(function () {
+          if (applePage.hidden) return;
+
+          ap.classList.add("is-active");
+          progress.textContent = "① AP：重拍";
+
+          if (window.heartSyncSession?.sound === true) {
+            playAppleBeat(true);
+          }
+        }, 150));
+
+        // 第二拍：ple
+        demoTimers.push(setTimeout(function () {
+          if (applePage.hidden) return;
+
+          ap.classList.remove("is-active");
+          ple.classList.add("is-active");
+
+          progress.textContent = "② ple：輕拍";
+
+          if (window.heartSyncSession?.sound === true) {
+            playAppleBeat(false);
+          }
+        }, 900));
+
+        // 示範完成
+        demoTimers.push(setTimeout(function () {
+          if (applePage.hidden) return;
+
+          stopAppleDemo();
+
+          progress.textContent =
+            "示範完成！現在可以跟著敲兩下。";
+        }, 1650));
+
+        return;
+      }
+
+      // ===== Voice + Drum 保留原本邏輯 =====
+
 
       if ("speechSynthesis" in window) {
         speechSynthesis.cancel();
