@@ -7,6 +7,7 @@ let bluetoothDevice = null;
 let notifyCharacteristic = null;
 let writeCharacteristic = null;
 
+
 // UI 元件參照
 const connectBtn = document.getElementById('connect-btn');
 const statusText = document.getElementById('status');
@@ -1594,7 +1595,7 @@ document.getElementById("hs-apple-watch")
        // playAppleBeat(true);
         progress.textContent = "① AP：重拍";
 
-      }, 120));
+      }, 250));
 
       // 第二下：ple
       demoTimers.push(setTimeout(function () {
@@ -1605,7 +1606,7 @@ document.getElementById("hs-apple-watch")
     // playAppleBeat(false);
         progress.textContent = "② ple：輕拍";
 
-      }, 350));
+      }, 500));
 
       // 示範結束
       demoTimers.push(setTimeout(function () {
@@ -1628,7 +1629,7 @@ if (window.heartSyncSession?.sound !== false) {
         progress.textContent =
           "示範完成！現在可以慢慢敲兩下。";
 
-      }, 800));
+      }, 1100));
 
     });
   }
