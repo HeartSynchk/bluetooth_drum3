@@ -1339,14 +1339,19 @@ function playAppleBeat(strong) {
 
   oscillator.type = "sine";
 
-  oscillator.frequency.setValueAtTime(300, now);
-  oscillator.frequency.exponentialRampToValueAtTime(
-    190, now + 0.15
-  );
+ 
+oscillator.frequency.setValueAtTime(
+  strong ? 260 : 580, now
+);
+
+oscillator.frequency.exponentialRampToValueAtTime(
+  strong ? 150 : 420, now + 0.15
+);
+
 
   volume.gain.setValueAtTime(0.0001, now);
   volume.gain.exponentialRampToValueAtTime(
-    strong ? 0.09 : 0.045,
+    strong ? 0.18 : 0.07,
     now + 0.01
   );
   volume.gain.exponentialRampToValueAtTime(
@@ -1358,7 +1363,7 @@ function playAppleBeat(strong) {
   volume.connect(ctx.destination);
 
   oscillator.start(now);
-  oscillator.stop(now + 0.18);
+oscillator.stop(now + 0.20);
 }
 
 function stopAppleDemo() {
