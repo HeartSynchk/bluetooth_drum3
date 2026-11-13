@@ -1611,7 +1611,7 @@ document.getElementById("hs-apple-watch")
           if (window.heartSyncSession?.sound === true) {
             playAppleBeat(true);
           }
-        }, 150));
+        }, 100));
 
         // 第二拍：ple
         demoTimers.push(setTimeout(function () {
@@ -1625,7 +1625,7 @@ document.getElementById("hs-apple-watch")
           if (window.heartSyncSession?.sound === true) {
             playAppleBeat(false);
           }
-        }, 900));
+        }, 320));
 
         // 示範完成
         demoTimers.push(setTimeout(function () {
@@ -1659,7 +1659,7 @@ document.getElementById("hs-apple-watch")
         demoTimers.push(setTimeout(function () {
           ap.classList.remove("is-active");
           ple.classList.add("is-active");
-        }, 350));
+        }, 800));
 
         demoTimers.push(setTimeout(function () {
           stopAppleDemo();
