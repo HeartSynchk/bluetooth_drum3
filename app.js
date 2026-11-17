@@ -1189,6 +1189,12 @@ lastDrumHit = message;
 hitDisplay.textContent =
   window.heartSyncTranslate('connectionLastHit').replace('—', message);
     console.log('HeartSync received:', message);
+    
+    // 將實體鼓敲擊通知 Apple 遊戲
+    window.dispatchEvent(
+      new CustomEvent("heartsync:drum-hit")
+    );
+
   }
 
   connectButton.addEventListener('click', async function () {
