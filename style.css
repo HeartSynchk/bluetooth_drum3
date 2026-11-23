@@ -1845,3 +1845,32 @@ transparent 76%
 }
 
 /* ===== End Dynamic LED Ring ===== */
+
+
+/* ===== HeartSync Apple Redesign: Layout Step 1 ===== */
+
+@media (min-width: 900px) {
+
+  /* Apple 學習頁面使用更寬的空間 */
+  #play:has(#apple-learning:not([hidden])) {
+    width: min(calc(100% - 32px), 1600px) !important;
+    max-width: 1600px !important;
+    margin: 16px auto !important;
+  }
+
+  /* 左邊 English 36%，右邊 Rhythm 64% */
+  #apple-learning .hs-apple-grid {
+    grid-template-columns: minmax(0, 36fr) minmax(0, 64fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  /* 避免卡片內容撐破版面 */
+  #apple-learning .hs-apple-panel {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+}
+
+/* ===== End Apple Layout Step 1 ===== */
