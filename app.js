@@ -423,6 +423,17 @@ window.heartSyncTranslate = function (key) {
       }
     });
 
+    
+    // 離開 Play 時，隱藏 Apple 學習頁面
+    if (pageId !== "play") {
+      const applePage = document.getElementById("apple-learning");
+
+      if (applePage) {
+        applePage.hidden = true;
+      }
+    }
+
+
     window.scrollTo(0, 0);
   }
 
