@@ -1561,7 +1561,9 @@ firstBeatTime = null;
 
 
 function tapApple() {
-  if (applePage.hidden || hits >= 2) return;
+ 
+  if (applePage.hidden || hits >= APPLE_TOTAL_BEATS) return;
+
 
   // 孩子開始敲鼓時，停止示範
   stopAppleDemo();
@@ -1612,7 +1614,9 @@ if (hits === 2 && firstBeatTime !== null) {
         "星星：我們已經開始了！慢慢敲下一下。";
     }
 
-    if (hits === 2) {
+    
+if (hits === APPLE_TOTAL_BEATS) {
+
       ple.classList.add("is-active");
 
       progress.textContent = "Apple 練習完成！";
