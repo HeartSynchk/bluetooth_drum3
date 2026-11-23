@@ -723,6 +723,9 @@ worldPage.querySelectorAll(
   }
 
   let hits = 0;
+  
+let firstBeatTime = null;
+
   let colorIndex = 0;
 
 
@@ -1421,6 +1424,9 @@ appleRhythmAudio.currentTime = 0;
 function resetApple() {
   stopAppleDemo();
     hits = 0;
+  
+firstBeatTime = null;
+
     clearTimeout(lightTimer);
     stopAppleDemo();
 
@@ -1477,6 +1483,27 @@ function tapApple() {
 
 
     hits++;
+  
+// ===== Apple Rhythm Timing =====
+
+// 記錄第一拍時間
+if (hits === 1) {
+  firstBeatTime = performance.now();
+}
+
+// 計算兩拍之間的時間差
+if (hits === 2 && firstBeatTime !== null) {
+  const beatGap = Math.round(
+    performance.now() - firstBeatTime
+  );
+
+  console.log(
+    "HeartSync Apple Beat Interval:",
+    beatGap,
+    "ms"
+  );
+}
+
 
     // 每敲一下，鼓面出現一次柔和紅色光波
     clearTimeout(lightTimer);
