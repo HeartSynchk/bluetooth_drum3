@@ -1364,13 +1364,39 @@ display:block;
 </button>
 
 <!-- 實際敲鼓按鈕 -->
+
+<!-- Apple 互動鼓：保留原本的敲擊功能 -->
 <button
   type="button"
   id="hs-apple-drum"
   aria-label="敲鼓"
+  style="
+    display:block;
+    width:min(100%, 240px);
+    height:auto;
+    aspect-ratio:1;
+    margin:24px auto;
+    padding:0;
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    overflow:visible;
+  "
 >
-  🥁
+  <img
+    src="assets/mascots/heartsync-drum.png"
+    alt=""
+    aria-hidden="true"
+    style="
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      pointer-events:none;
+    "
+  >
 </button>
+
 
 <!-- 敲鼓進度提示 -->
 <p id="hs-apple-progress" role="status">
