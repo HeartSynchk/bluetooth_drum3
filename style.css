@@ -1625,3 +1625,66 @@ transparent 76%
 }
 
 
+
+/* ===== Apple English Card - Xinxin Bubble ===== */
+
+/* 心心介紹區 */
+#apple-learning .hs-apple-panel:first-child
+.hs-apple-character {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  padding: 4px;
+}
+
+/* 保留原本的心心圖片 */
+#apple-learning .hs-apple-panel:first-child
+.hs-apple-character img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* 粉紅色對話氣泡 */
+#apple-learning .hs-apple-panel:first-child
+.hs-apple-character > div {
+  flex: 1;
+  min-width: 0;
+  background: #FFEAF0;
+  border: 2px solid #EFC9D5;
+  border-radius: 22px;
+  padding: 16px 18px;
+  text-align: left;
+}
+
+/* 心心名稱 */
+#apple-learning .hs-apple-panel:first-child
+.hs-apple-character strong {
+  color: #98546D;
+  font-size: 19px;
+}
+
+/* 對話內容 */
+#apple-learning #hs-apple-english-line {
+  color: #795A66;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 8px 0 0;
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+  #apple-learning .hs-apple-panel:first-child
+  .hs-apple-character img {
+    width: 72px;
+    height: 72px;
+  }
+
+  #apple-learning .hs-apple-panel:first-child
+  .hs-apple-character > div {
+    padding: 12px;
+  }
+}
+
+/* ===== End Xinxin Bubble ===== */
