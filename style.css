@@ -1534,33 +1534,34 @@ transparent 76%
 
 /* Apple 图片 */
 
+
 /* ===== Apple Fruit Display ===== */
 
 #apple-learning .hs-apple-fruit {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  min-height: 300px;
-  margin: 20px auto;
-  padding: 16px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 
-  background: #FFF5EA;
-  border: 1px solid #F3E1CE;
-  border-radius: 24px;
-  box-sizing: border-box;
+  min-height: 0;
+  padding: 0;
+  margin: 10px auto 12px;
 }
 
 #apple-learning .hs-apple-fruit img {
   display: block;
-  width: min(100%, 300px);
+  width: min(100%, 360px);
   height: auto;
-  max-height: 290px;
+  max-height: none;
   object-fit: contain;
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 /* ===== End Apple Fruit Display ===== */
+
 
 
 /* 音节按钮 */
