@@ -1363,15 +1363,30 @@ hitDisplay.textContent =
 
   drum.appendChild(ledRing);
 
-  function updateAppleLedRing() {
-    const numberToLight = Math.round(
-      APPLE_LED_COUNT * hits / APPLE_TOTAL_BEATS
-    );
+  
+function updateAppleLedRing(totalBeats = APPLE_TOTAL_BEATS) {
 
-    ledDots.forEach(function (dot, index) {
-      dot.classList.toggle("is-on", index < numberToLight);
-    });
-  }
+  // 確保拍數有效，避免除以零
+  const beats = Math.max(1, totalBeats);
+
+  // 按照完成拍數計算亮燈比例
+  const completedBeats = Math.min(
+    Math.max(hits, 0),
+    beats
+  );
+
+  const numberToLight = Math.round(
+    APPLE_LED_COUNT * completedBeats / beats
+  );
+
+  ledDots.forEach(function (dot, index) {
+    dot.classList.toggle(
+      "is-on",
+      index < numberToLight
+    );
+  });
+}
+
   // ===== End Apple 網頁 LED 燈環 =====
 
   
