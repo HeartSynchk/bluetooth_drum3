@@ -1381,7 +1381,38 @@ const APPLE_TOTAL_BEATS = WORD_RHYTHMS.apple.beats;
   drum.appendChild(ledRing);
 
   
-function updateAppleLedRing(totalBeats = APPLE_TOTAL_BEATS) {
+
+  // ===== HeartSync 通用單字 LED 燈環 =====
+  function updateWordLedRing(completedBeats, totalBeats) {
+
+    // 確保總拍數有效
+    const total = Math.max(1, totalBeats);
+
+    // 已完成拍數不能小於 0 或超出總拍數
+    const completed = Math.min(
+      Math.max(completedBeats, 0),
+      total
+    );
+
+    // 根據拍數計算應亮起多少顆 LED
+    const numberToLight = Math.round(
+      APPLE_LED_COUNT * completed / total
+    );
+
+    ledDots.forEach(function (dot, index) {
+      dot.classList.toggle(
+        "is-on",
+        index < numberToLight
+      );
+    });
+  }
+
+  // Apple 保留原本的呼叫方式
+  function updateAppleLedRing(totalBeats = APPLE_TOTAL_BEATS) {
+    updateWordLedRing(hits, totalBeats);
+  }
+  // ===== End 通用 LED 燈環 =====
+
 
   // 確保拍數有效，避免除以零
   const beats = Math.max(1, totalBeats);
