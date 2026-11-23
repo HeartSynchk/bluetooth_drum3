@@ -1415,21 +1415,6 @@ const APPLE_TOTAL_BEATS = WORD_RHYTHMS.apple.beats;
 
 
  
-  // Apple 保留原本的呼叫方式
-  function updateAppleLedRing(totalBeats = APPLE_TOTAL_BEATS) {
-    updateWordLedRing(hits, totalBeats);
-  }
-
-  // ===== End 通用 LED 燈環 =====
-
-  // ===== End Apple 網頁 LED 燈環 =====
-
-  const ap = document.getElementById("hs-apple-ap");
-  const ple = document.getElementById("hs-apple-ple");
-
-
-  // ===== End Apple 網頁 LED 燈環 =====
-
   
   const ap = document.getElementById("hs-apple-ap");
   const ple = document.getElementById("hs-apple-ple");
