@@ -1414,26 +1414,19 @@ const APPLE_TOTAL_BEATS = WORD_RHYTHMS.apple.beats;
   // ===== End 通用 LED 燈環 =====
 
 
-  // 確保拍數有效，避免除以零
-  const beats = Math.max(1, totalBeats);
+ 
+  // Apple 保留原本的呼叫方式
+  function updateAppleLedRing(totalBeats = APPLE_TOTAL_BEATS) {
+    updateWordLedRing(hits, totalBeats);
+  }
 
-  // 按照完成拍數計算亮燈比例
-  const completedBeats = Math.min(
-    Math.max(hits, 0),
-    beats
-  );
+  // ===== End 通用 LED 燈環 =====
 
-  const numberToLight = Math.round(
-    APPLE_LED_COUNT * completedBeats / beats
-  );
+  // ===== End Apple 網頁 LED 燈環 =====
 
-  ledDots.forEach(function (dot, index) {
-    dot.classList.toggle(
-      "is-on",
-      index < numberToLight
-    );
-  });
-}
+  const ap = document.getElementById("hs-apple-ap");
+  const ple = document.getElementById("hs-apple-ple");
+
 
   // ===== End Apple 網頁 LED 燈環 =====
 
