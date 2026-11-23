@@ -1823,10 +1823,19 @@ transparent 76%
 }
 
 /* 已完成拍數的 LED */
+
+/* 已亮起的 LED：柔和暖黃色燈光 */
 #apple-learning .hs-apple-led-ring circle.is-on {
-  fill: #F4C44C;
-  stroke: #D5A747;
+  fill: #FFD16A;
+  stroke: #E8B94E;
+  stroke-width: 1;
+
+  /* 柔和光暈，不閃爍 */
+  filter: drop-shadow(
+    0 0 3px rgba(255, 202, 92, 0.55)
+  );
 }
+
 
 /* Colourful 模式：略微加強光感 */
 #play.hs-colourful #apple-learning
