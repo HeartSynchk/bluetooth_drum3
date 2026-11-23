@@ -1234,6 +1234,30 @@ hitDisplay.textContent =
       );
 
       await hitCharacteristic.startNotifications();
+      
+      // ===== Send RESET to Physical Drum =====
+      window.heartSyncResetPhysicalDrum = async function () {
+
+        if (!drumDevice?.gatt?.connected) {
+          console.warn("HeartSync Drum not connected");
+          return;
+        }
+
+        try {
+          const resetCommand =
+            new TextEncoder().encode("RESET");
+
+          await hitCharacteristic.writeValueWithResponse(
+            resetCommand
+          );
+
+          console.log("HeartSync RESET sent!");
+
+        } catch (error) {
+          console.error("HeartSync RESET failed:", error);
+        }
+      };
+
 
       setStatus('connectionConnected');
       connectButton.textContent =
@@ -1747,9 +1771,21 @@ if (!secondBeatPlayed && time >= 0.32) {
   // 網頁模擬敲鼓
   drum.addEventListener("click", tapApple);
 
-  // 重新練習
-  document.getElementById("hs-apple-reset")
-    .addEventListener("click", resetApple);
+
+// ===== Practice Again: Website + Physical Drum =====
+document.getElementById("hs-apple-reset")
+  .addEventListener("click", function () {
+
+    // 先重置網頁
+    resetApple();
+
+    // 再通知實體鼓清空 LED
+    if (typeof window.heartSyncResetPhysicalDrum === "function") {
+      window.heartSyncResetPhysicalDrum();
+    }
+
+  });
+
 
   // 預留給 ESP32 藍牙敲鼓事件
   window.addEventListener(
