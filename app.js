@@ -1334,6 +1334,47 @@ hitDisplay.textContent =
   if (!applePage || !worldPage || !fruitsBtn) return;
 
   const drum = document.getElementById("hs-apple-drum");
+  
+  // ===== Apple 網頁 LED 燈環 =====
+  const APPLE_LED_COUNT = 46;
+  const APPLE_TOTAL_BEATS = 2;
+  const svgNS = "http://www.w3.org/2000/svg";
+
+  const ledRing = document.createElementNS(svgNS, "svg");
+  ledRing.setAttribute("viewBox", "0 0 300 300");
+  ledRing.setAttribute("aria-hidden", "true");
+  ledRing.classList.add("hs-apple-led-ring");
+
+  const ledDots = [];
+
+  for (let i = 0; i < APPLE_LED_COUNT; i++) {
+    const angle =
+      (i / APPLE_LED_COUNT) * Math.PI * 2 - Math.PI / 2;
+
+    const dot = document.createElementNS(svgNS, "circle");
+
+    dot.setAttribute("cx", 150 + 133 * Math.cos(angle));
+    dot.setAttribute("cy", 150 + 133 * Math.sin(angle));
+    dot.setAttribute("r", 4.7);
+
+    ledRing.appendChild(dot);
+    ledDots.push(dot);
+  }
+
+  drum.appendChild(ledRing);
+
+  function updateAppleLedRing() {
+    const numberToLight = Math.round(
+      APPLE_LED_COUNT * hits / APPLE_TOTAL_BEATS
+    );
+
+    ledDots.forEach(function (dot, index) {
+      dot.classList.toggle("is-on", index < numberToLight);
+    });
+  }
+  // ===== End Apple 網頁 LED 燈環 =====
+
+  
   const ap = document.getElementById("hs-apple-ap");
   const ple = document.getElementById("hs-apple-ple");
   const progress = document.getElementById("hs-apple-progress");
@@ -1435,6 +1476,7 @@ appleRhythmAudio.currentTime = 0;
 function resetApple() {
   stopAppleDemo();
     hits = 0;
+  updateAppleLedRing();
   
 firstBeatTime = null;
 
@@ -1494,7 +1536,7 @@ function tapApple() {
 
 
     hits++;
-  
+  updateAppleLedRing();
 // ===== Apple Rhythm Timing =====
 
 // 記錄第一拍時間
