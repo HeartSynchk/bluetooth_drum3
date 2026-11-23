@@ -1336,8 +1336,25 @@ hitDisplay.textContent =
   const drum = document.getElementById("hs-apple-drum");
   
   // ===== Apple 網頁 LED 燈環 =====
-  const APPLE_LED_COUNT = 46;
-  const APPLE_TOTAL_BEATS = 2;
+
+const APPLE_LED_COUNT = 46;
+
+// ===== HeartSync Word Rhythm Settings =====
+const WORD_RHYTHMS = {
+  apple: {
+    beats: 2,
+    syllables: ["AP", "ple"]
+  },
+
+  banana: {
+    beats: 3,
+    syllables: ["ba", "NA", "na"]
+  }
+};
+
+// 目前仍然教 Apple
+const APPLE_TOTAL_BEATS = WORD_RHYTHMS.apple.beats;
+
   const svgNS = "http://www.w3.org/2000/svg";
 
   const ledRing = document.createElementNS(svgNS, "svg");
