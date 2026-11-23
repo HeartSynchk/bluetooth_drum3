@@ -1874,3 +1874,51 @@ transparent 76%
 }
 
 /* ===== End Apple Layout Step 1 ===== */
+
+
+
+/* ===== Apple Redesign Step 2: Panda Beside Drum ===== */
+
+@media (min-width: 900px) {
+
+  /* 右側節奏卡片改用兩欄版面 */
+  #apple-learning .hs-apple-panel:nth-child(2) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  /* 其他內容仍然橫跨整張卡片 */
+  #apple-learning .hs-apple-panel:nth-child(2)
+  > :not(.hs-apple-character):not(#hs-apple-drum) {
+    grid-column: 1 / -1;
+  }
+
+  /* 拍拍放在鼓的左邊 */
+  #apple-learning .hs-apple-panel:nth-child(2)
+  > .hs-apple-character {
+    grid-column: 1;
+    grid-row: 7;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  /* 對話氣泡不超出欄位 */
+  #apple-learning .hs-apple-panel:nth-child(2)
+  > .hs-apple-character > div {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 鼓放在拍拍的右邊 */
+  #apple-learning #hs-apple-drum {
+    grid-column: 2;
+    grid-row: 7;
+    justify-self: center;
+  }
+
+}
+
+/* ===== End Apple Redesign Step 2 ===== */
