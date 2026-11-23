@@ -1521,10 +1521,55 @@ transparent 76%
   background: #FFF0F3;
 }
 
+
+/* 拍拍：右邊 Rhythm 對話區 */
+
 #apple-learning .hs-apple-panel:nth-child(2)
 .hs-apple-character {
-  background: #EAF4FF;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 20px;
 }
+
+/* 拍拍圖片 */
+#apple-learning .hs-apple-panel:nth-child(2)
+.hs-apple-character img {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* 藍色對話氣泡 */
+#apple-learning .hs-apple-panel:nth-child(2)
+.hs-apple-character > div {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  background: #EAF4FF;
+  border: 2px solid #C8DEEF;
+  border-radius: 22px;
+  padding: 16px 18px;
+  text-align: left;
+}
+
+/* 氣泡文字 */
+#apple-learning .hs-apple-panel:nth-child(2)
+.hs-apple-character strong {
+  color: #41678C;
+  font-size: 18px;
+}
+
+#apple-learning #hs-apple-rhythm-line {
+  color: #59738B;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 8px 0 0;
+}
+
 
 /* 吉祥物标题 */
 #apple-learning .hs-apple-character strong {
