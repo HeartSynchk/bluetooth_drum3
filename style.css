@@ -1796,3 +1796,43 @@ transparent 76%
 }
 
 /* ===== End Xinxin Bubble ===== */
+
+
+
+/* ===== HeartSync Apple Dynamic LED Ring ===== */
+
+#apple-learning #hs-apple-drum {
+  position: relative;
+}
+
+#apple-learning .hs-apple-led-ring {
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  width: calc(100% + 48px);
+  height: calc(100% + 48px);
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* 尚未亮起的 LED */
+#apple-learning .hs-apple-led-ring circle {
+  fill: #D8D2CB;
+  stroke: #F7EDE5;
+  stroke-width: 1;
+}
+
+/* 已完成拍數的 LED */
+#apple-learning .hs-apple-led-ring circle.is-on {
+  fill: #F4C44C;
+  stroke: #D5A747;
+}
+
+/* Colourful 模式：略微加強光感 */
+#play.hs-colourful #apple-learning
+.hs-apple-led-ring circle.is-on {
+  fill: #FFD04F;
+  filter: drop-shadow(0 0 2px #F3CE79);
+}
+
+/* ===== End Dynamic LED Ring ===== */
