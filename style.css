@@ -1960,6 +1960,29 @@ transparent 76%
       minmax(0, 1.55fr)
       minmax(0, 0.95fr);
     column-gap: 14px;
+    
+  /* 聲音選項放在下方左側 */
+  #apple-learning
+  .hs-apple-panel:nth-child(2)
+  > .hs-apple-audio-choice {
+    grid-column: 1 / 3 !important;
+    grid-row: 4;
+    justify-self: center;
+    margin: 4px auto !important;
+  }
+
+  /* Watch Rhythm 放在同一排右側 */
+  #apple-learning
+  .hs-apple-panel:nth-child(2)
+  > #hs-apple-watch {
+    grid-column: 3 !important;
+    grid-row: 4;
+    justify-self: center;
+    margin: 4px auto;
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
   }
 
   #apple-learning .hs-apple-beat-card {
