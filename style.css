@@ -2268,3 +2268,62 @@ body:has(#apple-learning:not([hidden])) #play {
 }
 
 /* ===== End Learning Journey Header ===== */
+
+
+/* ===== Learning Journey Navigation ===== */
+
+#apple-learning .hs-journey-header {
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#apple-learning .hs-journey-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-left: auto;
+}
+
+#apple-learning .hs-journey-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 10px 20px;
+  background: #FFFDFB;
+  color: #365A9B;
+  border: 1px solid #E2DCE8;
+  border-radius: 30px;
+  box-shadow: 0 3px 6px #654B5814;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+#apple-learning .hs-journey-nav-btn:hover:not(:disabled) {
+  background: #F0F5FF;
+  border-color: #AFC8EF;
+}
+
+#apple-learning .hs-journey-nav-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  #apple-learning .hs-journey-links {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  #apple-learning .hs-journey-nav-btn {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+}
