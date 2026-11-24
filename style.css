@@ -2113,3 +2113,71 @@ transparent 76%
 }
 
 /* ===== End Apple Redesign Step 7 ===== */
+
+
+
+/* HeartSync Learning Journey Progress */
+
+#apple-learning .hs-apple-top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 22px;
+
+  background: #FFFCF8;
+  border: 2px solid #F3DFD0;
+  border-radius: 40px;
+  padding: 10px 22px;
+  margin-bottom: 16px;
+}
+
+#apple-learning #apple-back {
+  background: #FFF8F1;
+  color: #693B32;
+  border: 1px solid #F0D6C5;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#apple-learning .hs-apple-level {
+  font-size: 18px;
+  font-weight: 600;
+  color: #693B32;
+}
+
+#apple-learning .hs-apple-progress-track {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  white-space: nowrap;
+}
+
+#apple-learning .hs-apple-dots {
+  display: flex;
+  gap: 12px;
+}
+
+#apple-learning .hs-apple-dots span {
+  width: 17px;
+  height: 17px;
+  background: #DFD0CA;
+  border-radius: 50%;
+}
+
+#apple-learning .hs-apple-dots .is-current {
+  background: #65D51A;
+}
+
+@media (max-width: 800px) {
+  #apple-learning .hs-apple-top {
+    grid-template-columns: 1fr;
+    border-radius: 22px;
+    gap: 12px;
+  }
+
+  #apple-learning .hs-apple-progress-track {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
