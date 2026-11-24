@@ -1895,15 +1895,37 @@ transparent 76%
     grid-column: 1 / -1;
   }
 
-  /* 拍拍放在鼓的左邊 */
+
+  
+  /* 放大拍拍，讓角色更突出 */
+  #apple-learning .hs-apple-panel:nth-child(2)
+  > .hs-apple-character img {
+    width: 165px;
+    height: 165px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* 對話框保持合適寬度 */
+  #apple-learning .hs-apple-panel:nth-child(2)
+  > .hs-apple-character > div {
+    width: min(100%, 250px);
+    max-width: 250px;
+    box-sizing: border-box;
+  }
+
+  /* 拍拍與對話氣泡 */
   #apple-learning .hs-apple-panel:nth-child(2)
   > .hs-apple-character {
     grid-column: 1;
     grid-row: 7;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
     min-width: 0;
     margin-bottom: 0;
   }
+
 
   /* 對話氣泡不超出欄位 */
   #apple-learning .hs-apple-panel:nth-child(2)
