@@ -1967,3 +1967,15 @@ transparent 76%
 }
 
 /* ===== End Apple Redesign Step 2 ===== */
+
+
+
+/* ===== Apple Redesign Step 7: Drum Visual Size ===== */
+
+/* 放大鼓圖片，但不改變按鈕和 LED 燈環尺寸 */
+#apple-learning #hs-apple-drum > img {
+  transform: scale(1.3);
+  transform-origin: center center;
+}
+
+/* ===== End Apple Redesign Step 7 ===== */
