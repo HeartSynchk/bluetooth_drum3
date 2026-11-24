@@ -1951,6 +1951,55 @@ transparent 76%
     column-gap: 18px;
     row-gap: 12px;
     align-items: center;
+    
+/* 星星：右側卡片內的緊湊橫向回饋區 */
+#apple-learning
+.hs-apple-panel:nth-child(2)
+> .hs-apple-guide {
+  grid-column: 1 / -1;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 8px 0 0;
+  padding: 10px 14px;
+}
+
+/* 星星圖片 */
+#apple-learning
+.hs-apple-panel:nth-child(2)
+> .hs-apple-guide img {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* 鼓勵文字 */
+#apple-learning
+.hs-apple-panel:nth-child(2)
+> .hs-apple-guide p {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* 再練習一次按鈕 */
+#apple-learning
+.hs-apple-panel:nth-child(2)
+> .hs-apple-guide button {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
   }
 
   /* 標題、音節、按鈕等橫跨整個區域 */
