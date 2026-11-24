@@ -2202,3 +2202,69 @@ body:has(#apple-learning:not([hidden])) #play {
 }
 
 /* ===== End Apple Journey Header Step ===== */
+
+
+/* ===== HeartSync Learning Journey Header ===== */
+
+#apple-learning .hs-journey-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 16px 18px;
+}
+
+#apple-learning .hs-journey-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#apple-learning .hs-journey-heart {
+  font-size: 42px;
+  line-height: 1;
+}
+
+#apple-learning .hs-journey-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#apple-learning .hs-journey-logo {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+#apple-learning .hs-journey-logo span:first-child {
+  color: #F24B6B;
+}
+
+#apple-learning .hs-journey-logo span:last-child {
+  color: #3999E8;
+}
+
+#apple-learning .hs-journey-subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #87521F;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  #apple-learning .hs-journey-logo {
+    font-size: 27px;
+  }
+
+  #apple-learning .hs-journey-heart {
+    font-size: 32px;
+  }
+
+  #apple-learning .hs-journey-subtitle {
+    font-size: 12px;
+  }
+}
+
+/* ===== End Learning Journey Header ===== */
