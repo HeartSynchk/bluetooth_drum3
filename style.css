@@ -2181,3 +2181,24 @@ transparent 76%
     flex-wrap: wrap;
   }
 }
+
+
+
+/* ===== HeartSync Apple Journey Header Step ===== */
+
+/* 只有进入 Apple 学习页面时，隐藏旧网站页眉 */
+body:has(#apple-learning:not([hidden])) > header {
+  display: none !important;
+}
+
+/* 只有进入 Apple 学习页面时，隐藏旧导航 */
+body:has(#apple-learning:not([hidden])) > nav {
+  display: none !important;
+}
+
+/* Apple 页面减少顶部空白 */
+body:has(#apple-learning:not([hidden])) #play {
+  margin-top: 12px !important;
+}
+
+/* ===== End Apple Journey Header Step ===== */
