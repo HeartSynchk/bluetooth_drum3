@@ -1500,14 +1500,17 @@ transparent 76%
 }
 
 /* 右边 Rhythm */
+
+/* 右邊 Rhythm：溫暖奶油蜜桃色 */
 #apple-learning .hs-apple-panel:nth-child(2) {
   background: linear-gradient(
     180deg,
-    #F4F9FF 0%,
-    #FFFDFC 100%
+    #FFF5F2 0%,
+    #FFFDF9 100%
   );
-  border: 2px solid #D5E5F3;
+  border: 2px solid #EEDBD4;
 }
+
 
 /* 吉祥物介绍区域 */
 #apple-learning .hs-apple-character {
