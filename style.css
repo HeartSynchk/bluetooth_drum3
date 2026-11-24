@@ -1918,7 +1918,7 @@ transparent 76%
   #apple-learning .hs-apple-panel:nth-child(2)
   > .hs-apple-character {
     grid-column: 1;
-    grid-row: 7;
+   grid-row: 3;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
@@ -1934,12 +1934,13 @@ transparent 76%
     box-sizing: border-box;
   }
 
-  /* 鼓放在拍拍的右邊 */
-  #apple-learning #hs-apple-drum {
-    grid-column: 2;
-    grid-row: 7;
-    justify-self: center;
-  }
+/* 鼓放在拍拍的右邊 */
+#apple-learning #hs-apple-drum {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: center;
+}
+
 
 }
 
