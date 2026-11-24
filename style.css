@@ -2327,3 +2327,14 @@ body:has(#apple-learning:not([hidden])) #play {
     padding: 9px 12px;
   }
 }
+
+
+/* HeartSync 官方 Logo */
+
+#apple-learning .hs-journey-symbol {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
