@@ -1877,27 +1877,38 @@ transparent 76%
 
 
 
-/* ===== Apple Redesign Step 2: Panda Beside Drum ===== */
+
+/* ===== Apple Redesign Step 2: Three-Column Rhythm Area ===== */
 
 @media (min-width: 900px) {
 
-  /* 右側節奏卡片改用兩欄版面 */
+  /* 右側節奏卡片 */
   #apple-learning .hs-apple-panel:nth-child(2) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
-    column-gap: 20px;
+    column-gap: 18px;
+    row-gap: 12px;
     align-items: center;
   }
 
-  /* 其他內容仍然橫跨整張卡片 */
+  /* 標題、音節、按鈕等橫跨整個區域 */
   #apple-learning .hs-apple-panel:nth-child(2)
-  > :not(.hs-apple-character):not(#hs-apple-drum) {
+  > :not(.hs-apple-character):not(#hs-apple-drum):not(.hs-apple-beat-card) {
     grid-column: 1 / -1;
   }
 
+  /* 拍拍：在左邊 */
+  #apple-learning .hs-apple-panel:nth-child(2)
+  > .hs-apple-character {
+    grid-column: 1;
+    grid-row: 3;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    margin-bottom: 0;
+  }
 
-  
-  /* 放大拍拍，讓角色更突出 */
   #apple-learning .hs-apple-panel:nth-child(2)
   > .hs-apple-character img {
     width: 165px;
@@ -1906,42 +1917,53 @@ transparent 76%
     object-fit: contain;
   }
 
-  /* 對話框保持合適寬度 */
   #apple-learning .hs-apple-panel:nth-child(2)
   > .hs-apple-character > div {
     width: min(100%, 250px);
-    max-width: 250px;
     box-sizing: border-box;
   }
 
-  /* 拍拍與對話氣泡 */
-  #apple-learning .hs-apple-panel:nth-child(2)
-  > .hs-apple-character {
-    grid-column: 1;
-   grid-row: 3;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    margin-bottom: 0;
+  /* 中間：互動鼓 */
+  #apple-learning #hs-apple-drum {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: center;
   }
 
-
-  /* 對話氣泡不超出欄位 */
-  #apple-learning .hs-apple-panel:nth-child(2)
-  > .hs-apple-character > div {
-    width: 100%;
+  /* 節奏知識卡：較窄螢幕時放在下一行 */
+  #apple-learning .hs-apple-beat-card {
+    grid-column: 1 / -1;
+    background: #FFF7E8;
+    border: 2px solid #F0DDAF;
+    border-radius: 18px;
+    padding: 14px 12px;
+    text-align: center;
     box-sizing: border-box;
   }
 
-/* 鼓放在拍拍的右邊 */
-#apple-learning #hs-apple-drum {
-  grid-column: 2;
-  grid-row: 3;
-  justify-self: center;
+  #apple-learning .hs-apple-beat-card p {
+    margin: 7px 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
 }
 
+/* 桌面寬螢幕：拍拍、鼓、知識卡並排 */
+@media (min-width: 1200px) {
 
+  #apple-learning .hs-apple-panel:nth-child(2) {
+    grid-template-columns:
+      minmax(0, 1.05fr)
+      minmax(0, 1.55fr)
+      minmax(0, 0.95fr);
+    column-gap: 14px;
+  }
+
+  #apple-learning .hs-apple-beat-card {
+    grid-column: 3;
+    grid-row: 3;
+    align-self: center;
+  }
 }
 
 /* ===== End Apple Redesign Step 2 ===== */
