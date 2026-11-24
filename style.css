@@ -1416,15 +1416,32 @@ transparent 76%
   }
 }
 
+
+/* ===== 星星：學習陪伴與鼓勵區 ===== */
+
 .hs-apple-guide {
   display: flex;
   align-items: center;
-  gap: 16px;
-  background: #fffdf9;
+  gap: 18px;
+
+  background: linear-gradient(
+    90deg,
+    #FFF4D9 0%,
+    #FFF9EB 55%,
+    #FFFDF7 100%
+  );
+
+  border: 2px solid #F1DEB4;
   border-radius: 24px;
-  padding: 18px;
-  margin-top: 22px;
+
+  padding: 16px 22px;
+  margin-top: 18px;
+
+  box-shadow: 0 5px 16px rgba(170, 130, 65, 0.06);
 }
+
+/* ===== End 星星學習陪伴區 ===== */
+
 
 .hs-apple-guide img {
   width: 70px;
