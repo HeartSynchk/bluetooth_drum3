@@ -1876,6 +1876,48 @@ transparent 76%
     width: min(calc(100% - 32px), 1600px) !important;
     max-width: 1600px !important;
     margin: 16px auto !important;
+    
+  /* ===== Step 10: Compact Apple Layout ===== */
+
+  /* 收緊整個 Apple 頁面的上下留白 */
+  #apple-learning {
+    padding: 18px 22px;
+  }
+
+  /* 縮短頂部導覽與學習卡片的距離 */
+  #apple-learning .hs-apple-top {
+    margin-bottom: 12px;
+  }
+
+  /* 左右學習卡片減少內部空白 */
+  #apple-learning .hs-apple-panel {
+    padding: 18px 20px;
+  }
+
+  /* 右側標題上下間距 */
+  #apple-learning
+  .hs-apple-panel:nth-child(2) > h3 {
+    margin: 4px 0;
+  }
+
+  /* AP / ple 與其他內容更靠近 */
+  #apple-learning .hs-apple-syllables {
+    margin: 10px auto 8px;
+  }
+
+  /* 敲鼓進度文字不要佔太多高度 */
+  #apple-learning #hs-apple-progress {
+    margin: 4px 0;
+  }
+
+  /* 星星與兩張學習卡片更靠近 */
+  #apple-learning .hs-apple-guide {
+    margin-top: 12px;
+    padding: 12px 18px;
+  }
+
+  /* ===== End Step 10 ===== */
+
   }
 
   /* 左邊 English 36%，右邊 Rhythm 64% */
