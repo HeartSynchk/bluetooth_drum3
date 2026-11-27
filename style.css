@@ -2647,3 +2647,129 @@ body:has(#apple-learning:not([hidden])) #play {
 }
 
 /* ===== End Compact Rhythm Layout ===== */
+
+
+
+/* ===== HeartSync Storybook Nature Background ===== */
+
+/* 只裝飾 Apple 學習頁面 */
+#apple-learning {
+  position: relative;
+  isolation: isolate;
+
+  /* 底部柔和草地，不增加頁面高度 */
+  background-image:
+    radial-gradient(
+      ellipse 24% 25px at 0% 100%,
+      #DDEFB8 98%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 30% 20px at 40% 100%,
+      #E8F4CD 98%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 30% 24px at 75% 100%,
+      #D8ECAD 98%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 22% 28px at 100% 100%,
+      #D8EFAE 98%, transparent 100%
+    );
+  background-repeat: no-repeat;
+}
+
+/* 學習內容保持在裝飾前面 */
+#apple-learning > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 左右兩側自然裝飾 */
+#apple-learning::before,
+#apple-learning::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 130px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  background-repeat: no-repeat;
+
+  background-image:
+
+    /* 白色小花：黃色花心 */
+    radial-gradient(
+      circle 5px at 22px calc(100% - 31px),
+      #F7C95E 95%, transparent 100%
+    ),
+
+    /* 五片白色花瓣 */
+    radial-gradient(
+      ellipse 7px 11px at 22px calc(100% - 43px),
+      white 95%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 7px 11px at 22px calc(100% - 19px),
+      white 95%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 11px 7px at 10px calc(100% - 31px),
+      white 95%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 11px 7px at 34px calc(100% - 31px),
+      white 95%, transparent 100%
+    ),
+
+    /* 上方綠色葉片 */
+    radial-gradient(
+      ellipse 30px 54px at 0px -8px,
+      #BBD985 97%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 34px 43px at 38px -14px,
+      #D0E9A0 97%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 33px 19px at 78px 0px,
+      #C3DD8D 97%, transparent 100%
+    ),
+
+    /* 底部小草葉 */
+    radial-gradient(
+      ellipse 12px 30px at 10px calc(100% - 16px),
+      #B8D989 97%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 16px 27px at 55px calc(100% - 8px),
+      #C9E69B 97%, transparent 100%
+    ),
+    radial-gradient(
+      ellipse 67px 27px at 0px 100%,
+      #D4ECA9 97%, transparent 100%
+    );
+}
+
+/* 左側 */
+#apple-learning::before {
+  left: 0;
+}
+
+/* 右側：鏡像呈現 */
+#apple-learning::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* 手機版：裝飾更淡、更小 */
+@media (max-width: 720px) {
+  #apple-learning::before,
+  #apple-learning::after {
+    width: 75px;
+    opacity: 0.55;
+  }
+}
+
+/* ===== End Storybook Nature Background ===== */
