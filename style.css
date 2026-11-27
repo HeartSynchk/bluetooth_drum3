@@ -2431,3 +2431,85 @@ body:has(#apple-learning:not([hidden])) #play {
   }
 }
 
+
+/* ===== Apple Desktop Compact Layout ===== */
+
+@media (min-width: 1000px) {
+
+  /* 減少頁面外圍空白 */
+  body:has(#apple-learning:not([hidden])) {
+    padding: 8px 12px !important;
+  }
+
+  #play:has(#apple-learning:not([hidden])) {
+    margin: 0 auto !important;
+  }
+
+  #apple-learning {
+    padding: 14px 18px !important;
+  }
+
+  /* 收緊上方導航與進度條 */
+  #apple-learning .hs-journey-header {
+    padding: 0 8px 8px !important;
+  }
+
+  #apple-learning .hs-apple-top {
+    padding: 7px 18px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* 左右卡片 */
+  #apple-learning .hs-apple-panel {
+    padding: 14px 18px !important;
+  }
+
+  /* Apple 圖片完整顯示，不裁切 */
+  #apple-learning #hs-apple-image {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 330px !important;
+    object-fit: contain !important;
+  }
+
+  #apple-learning .hs-apple-fruit {
+    margin: 4px auto 8px !important;
+  }
+
+  /* 右側節奏區減少空隙 */
+  #apple-learning .hs-apple-panel:nth-child(2) {
+    row-gap: 6px !important;
+  }
+
+  /* 拍拍尺寸 */
+  #apple-learning
+  .hs-apple-panel:nth-child(2)
+  > .hs-apple-character img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  /* 鼓與 LED 區域 */
+  #apple-learning #hs-apple-drum {
+    width: 190px !important;
+    height: auto !important;
+    margin: 8px auto !important;
+  }
+
+  #apple-learning #hs-apple-drum > img {
+    transform: scale(1.08) !important;
+  }
+
+  /* 音節區域 */
+  #apple-learning .hs-apple-syllables {
+    margin: 8px auto 6px !important;
+  }
+
+  #apple-learning .hs-apple-syllables span {
+    height: 64px !important;
+  }
+
+}
+
+/* ===== End Apple Desktop Compact Layout ===== */
