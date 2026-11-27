@@ -2369,3 +2369,64 @@ body:has(#apple-learning:not([hidden])) #play {
 #apple-learning .hs-journey-links {
   align-items: center !important;
 }
+
+
+
+/* ===== HeartSync Header 水平排列 ===== */
+
+#apple-learning .hs-journey-header {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+}
+
+#apple-learning .hs-journey-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-shrink: 0;
+}
+
+#apple-learning .hs-journey-logo {
+  font-size: 38px !important;
+  line-height: 1.1 !important;
+}
+
+#apple-learning .hs-journey-symbol {
+  width: 65px !important;
+  height: 65px !important;
+  object-fit: contain;
+}
+
+#apple-learning .hs-journey-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  width: auto !important;
+  margin-left: auto !important;
+  gap: 12px !important;
+}
+
+#apple-learning .hs-journey-nav-btn {
+  height: 54px !important;
+  min-height: 54px !important;
+  max-height: 54px !important;
+  padding: 0 18px !important;
+  font-size: 16px !important;
+}
+
+/* 螢幕較窄時允許導航換行 */
+@media (max-width: 1050px) {
+  #apple-learning .hs-journey-header {
+    flex-wrap: wrap !important;
+  }
+
+  #apple-learning .hs-journey-links {
+    flex-wrap: wrap !important;
+    margin-left: 0 !important;
+  }
+}
