@@ -2430,3 +2430,123 @@ body:has(#apple-learning:not([hidden])) #play {
     margin-left: 0 !important;
   }
 }
+
+/* ===== Apple 頁面高度壓縮，盡量一屏顯示 ===== */
+
+#apple-learning {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+#apple-learning .hs-journey-header {
+  margin-bottom: 10px !important;
+  padding-bottom: 0 !important;
+}
+
+#apple-learning .hs-apple-top {
+  margin-bottom: 12px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+#apple-learning .hs-apple-main,
+#apple-learning .hs-apple-content,
+#apple-learning .hs-apple-panels {
+  gap: 14px !important;
+}
+
+#apple-learning .hs-apple-left,
+#apple-learning .hs-apple-right,
+#apple-learning .hs-apple-card,
+#apple-learning .hs-rhythm-card {
+  padding: 16px !important;
+}
+
+#apple-learning .hs-apple-left img,
+#apple-learning .hs-apple-apple-image,
+#apple-learning .hs-apple-word-image {
+  max-height: 320px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+#apple-learning .hs-apple-title,
+#apple-learning .hs-word-title {
+  font-size: 28px !important;
+  margin-top: 10px !important;
+  margin-bottom: 4px !important;
+}
+
+#apple-learning .hs-apple-meaning,
+#apple-learning .hs-word-meaning {
+  font-size: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+#apple-learning .hs-rhythm-drone,
+#apple-learning .hs-drum-wrap,
+#apple-learning .hs-drum-area {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+#apple-learning .hs-rhythm-drone img,
+#apple-learning .hs-drum-wrap img,
+#apple-learning .hs-drum-area img {
+  max-height: 180px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+#apple-learning .hs-apple-guide {
+  margin-top: 12px !important;
+  padding: 14px 18px !important;
+}
+
+#apple-learning .hs-apple-guide img {
+  width: 58px !important;
+  height: auto !important;
+}
+
+#apple-learning .hs-apple-guide p {
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+#apple-learning .hs-apple-reset {
+  min-height: 46px !important;
+  padding: 0 18px !important;
+}
+
+#apple-learning .hs-bottom-nav,
+#apple-learning .hs-learning-steps,
+#apple-learning .hs-apple-footer {
+  margin-top: 12px !important;
+  padding-top: 0 !important;
+}
+
+#apple-learning .hs-bottom-nav button,
+#apple-learning .hs-learning-steps button,
+#apple-learning .hs-apple-footer button {
+  min-height: 50px !important;
+}
+
+/* 畫面高度較矮時，再進一步壓縮 */
+@media (max-height: 950px) {
+  #apple-learning .hs-apple-left img,
+  #apple-learning .hs-apple-apple-image,
+  #apple-learning .hs-apple-word-image {
+    max-height: 280px !important;
+  }
+
+  #apple-learning .hs-rhythm-drone img,
+  #apple-learning .hs-drum-wrap img,
+  #apple-learning .hs-drum-area img {
+    max-height: 160px !important;
+  }
+
+  #apple-learning .hs-apple-guide p {
+    font-size: 15px !important;
+  }
+}
