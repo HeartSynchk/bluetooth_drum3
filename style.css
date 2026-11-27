@@ -2663,7 +2663,7 @@ body:has(#apple-learning:not([hidden])) #play {
 
   background-repeat: no-repeat !important;
   background-position: center center !important;
-  background-size: 100% 100% !important;
+background-size: 112% 100% !important;
 }
 
 /* 清除舊的幾何裝飾 */
