@@ -1952,6 +1952,14 @@ transparent 76%
     row-gap: 12px;
     align-items: center;
     
+#apple-learning .hs-apple-panel:nth-child(2) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  column-gap: 18px;
+  row-gap: 12px;
+  align-items: center;
+}
+    
 /* 星星：右側卡片內的緊湊橫向回饋區 */
 #apple-learning
 .hs-apple-panel:nth-child(2)
@@ -2068,6 +2076,14 @@ transparent 76%
       minmax(0, 1.55fr)
       minmax(0, 0.95fr);
     column-gap: 14px;
+    
+#apple-learning .hs-apple-panel:nth-child(2) {
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(0, 1.55fr)
+    minmax(0, 0.95fr);
+  column-gap: 14px;
+}
     
   /* 聲音選項放在下方左側 */
   #apple-learning
