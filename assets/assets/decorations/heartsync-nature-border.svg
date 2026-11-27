@@ -1,1 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1600" height="900" viewBox="0 0 1600 900"
+     preserveAspectRatio="none">
+  <defs>
+    <g id="leaf">
+      <path d="M0 0 C12 -26 52 -39 90 -21 C73 9 39 20 0 0Z"
+            fill="currentColor" stroke="#98BA75" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M4 1 Q40 -6 83 -20" fill="none" stroke="#8EAF69"
+            stroke-width="1.6" stroke-linecap="round" opacity=".68"/>
+      <path d="M30 -4 L28 -18 M53 -11 L55 -25"
+            fill="none" stroke="#A5C685" stroke-width="1" opacity=".62"/>
+    </g>
+    <g id="grass">
+      <path d="M0 38 Q-7 10 -22 2 Q-14 25 -5 42Z" fill="#AACC7C"/>
+      <path d="M0 40 Q3 9 15 -3 Q17 23 5 42Z" fill="#BAD88C"/>
+      <path d="M4 42 Q18 22 34 21 Q25 37 9 43Z" fill="#A4CA75"/>
+      <path d="M-3 42 Q-20 28 -32 32 Q-21 43 -5 46Z" fill="#C3DE96"/>
+    </g>
+    <g id="daisy">
+      <path d="M0 8 Q-2 25 3 50" stroke="#9FBD6A" stroke-width="2.8"
+            stroke-linecap="round" fill="none"/>
+      <path d="M0 35 Q-10 24 -18 30 Q-9 41 2 43" fill="#B4D584"/>
+      <path d="M2 42 Q12 28 21 31 Q14 46 2 47" fill="#C6DF98"/>
+      <g fill="#FFFDF4" stroke="#E8EDCF" stroke-width=".7">
+        <ellipse cx="0" cy="-9" rx="6.7" ry="10"/>
+        <ellipse cx="0" cy="9" rx="6.7" ry="10"/>
+        <ellipse cx="-9" cy="0" rx="10" ry="6.7"/>
+        <ellipse cx="9" cy="0" rx="10" ry="6.7"/>
+        <ellipse cx="-6.3" cy="-6.3" rx="5.5" ry="8.3" transform="rotate(-45 -6.3 -6.3)"/>
+        <ellipse cx="6.3" cy="6.3" rx="5.5" ry="8.3" transform="rotate(-45 6.3 6.3)"/>
+      </g>
+      <circle r="5.5" fill="#F4C65D" stroke="#E4B750" stroke-width="1"/>
+      <circle cx="-1.3" cy="-1.4" r="1.5" fill="#FFE9A7" opacity=".8"/>
+    </g>
+  </defs>
 
+  <!-- Irregular, delicate branches growing inward from the upper left -->
+  <g opacity=".94">
+    <path d="M-20 -8 C10 5 19 23 47 30 S98 22 125 17"
+          fill="none" stroke="#98B97A" stroke-width="3" stroke-linecap="round"/>
+    <path d="M18 15 C30 27 31 42 32 61"
+          fill="none" stroke="#A6C889" stroke-width="2.3" stroke-linecap="round"/>
+    <use xlink:href="#leaf" transform="translate(-18 13) rotate(15) scale(1.07)"
+         color="#C7E4A0"/>
+    <use xlink:href="#leaf" transform="translate(16 4) rotate(78) scale(.85)"
+         color="#B8D78D"/>
+    <use xlink:href="#leaf" transform="translate(38 30) rotate(-13) scale(.72)"
+         color="#D8ECAF"/>
+    <use xlink:href="#leaf" transform="translate(62 19) rotate(-27) scale(.66)"
+         color="#B1D083"/>
+    <use xlink:href="#leaf" transform="translate(5 53) rotate(-62) scale(.48)"
+         color="#CBE5A1"/>
+  </g>
+
+  <!-- Different-sized foliage on the opposite upper corner -->
+  <g transform="translate(1600 0) scale(-1 1)" opacity=".93">
+    <path d="M-22 -5 C9 8 32 12 54 24 S100 44 133 28"
+          fill="none" stroke="#9BBE79" stroke-width="2.7" stroke-linecap="round"/>
+    <path d="M32 17 Q32 40 49 67"
+          fill="none" stroke="#A6C889" stroke-width="2" stroke-linecap="round"/>
+    <use xlink:href="#leaf" transform="translate(-27 10) rotate(28) scale(1.03)"
+         color="#D1E8A5"/>
+    <use xlink:href="#leaf" transform="translate(4 9) rotate(64) scale(.72)"
+         color="#AFCF82"/>
+    <use xlink:href="#leaf" transform="translate(49 28) rotate(-19) scale(.92)"
+         color="#C1DE91"/>
+    <use xlink:href="#leaf" transform="translate(68 42) rotate(-52) scale(.58)"
+         color="#D8ECAF"/>
+    <use xlink:href="#leaf" transform="translate(17 66) rotate(-70) scale(.40)"
+         color="#B7D88E"/>
+  </g>
+
+  <!-- Faint soft clouds tucked behind the outer edges -->
+  <g opacity=".42" fill="#FFFFFF">
+    <path d="M0 121 Q14 99 36 110 Q43 87 65 93 Q88 94 88 115 Q107 118 112 137
+             L0 137Z"/>
+    <path d="M1600 119 Q1585 96 1566 105 Q1553 85 1536 93
+             Q1512 97 1515 118 Q1500 120 1498 134 L1600 134Z"/>
+  </g>
+
+  <!-- Undulating meadow: irregular layered curves, not a straight green strip -->
+  <path d="M0 865 C68 843 127 856 186 865 C269 878 312 845 392 854
+           C475 864 537 881 606 865 C694 841 757 856 836 870
+           C906 883 996 846 1086 858 C1173 869 1210 880 1297 862
+           C1383 844 1449 864 1510 854 C1555 849 1580 849 1600 843
+           L1600 900 L0 900Z"
+        fill="#E4F2C4" opacity=".94"/>
+  <path d="M0 885 C80 867 145 884 212 893 C322 901 360 876 462 880
+           C565 884 600 899 708 888 C825 877 871 900 1006 887
+           C1124 873 1180 897 1308 884 C1426 870 1506 888 1600 878
+           L1600 900 L0 900Z"
+        fill="#CEE6A0" opacity=".86"/>
+
+  <!-- Leafy grass clumps growing at uneven heights -->
+  <g opacity=".96">
+    <use xlink:href="#grass" transform="translate(18 824) scale(.95)"/>
+    <use xlink:href="#grass" transform="translate(102 856) scale(.67)"/>
+    <use xlink:href="#grass" transform="translate(164 854) scale(.58)"/>
+    <use xlink:href="#grass" transform="translate(326 866) scale(.62)"/>
+    <use xlink:href="#grass" transform="translate(514 871) scale(.45)"/>
+    <use xlink:href="#grass" transform="translate(741 865) scale(.50)"/>
+    <use xlink:href="#grass" transform="translate(1007 873) scale(.52)"/>
+    <use xlink:href="#grass" transform="translate(1302 854) scale(.72)"/>
+    <use xlink:href="#grass" transform="translate(1420 864) scale(.57)"/>
+    <use xlink:href="#grass" transform="translate(1570 820) scale(.97)"/>
+  </g>
+
+  <!-- Small daisies are intentionally asymmetric, sparse, and off to the side -->
+  <use xlink:href="#daisy" transform="translate(39 830) scale(.77)"/>
+  <use xlink:href="#daisy" transform="translate(186 875) scale(.49)"/>
+  <use xlink:href="#daisy" transform="translate(1397 870) scale(.56)"/>
+  <use xlink:href="#daisy" transform="translate(1554 832) scale(.79)"/>
+
+  <!-- Quiet sunshine specks, small enough not to distract from learning -->
+  <g fill="#E9C969" opacity=".42">
+    <circle cx="112" cy="75" r="2.8"/>
+    <circle cx="137" cy="56" r="2"/>
+    <circle cx="1480" cy="77" r="2.5"/>
+    <circle cx="1461" cy="62" r="1.8"/>
+  </g>
+</svg>
