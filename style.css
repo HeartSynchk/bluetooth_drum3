@@ -2338,3 +2338,34 @@ body:has(#apple-learning:not([hidden])) #play {
   display: block;
   flex-shrink: 0;
 }
+
+
+
+
+/* ===== HeartSync 導航按鈕尺寸統一 ===== */
+
+#apple-learning .hs-journey-links > .hs-journey-nav-btn {
+  box-sizing: border-box !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: auto !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
+
+  padding: 0 22px !important;
+  margin: 0 !important;
+
+  border-radius: 32px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 三個按鈕垂直置中 */
+#apple-learning .hs-journey-links {
+  align-items: center !important;
+}
