@@ -2674,3 +2674,85 @@ background-size: 100% 100% !important;
 }
 
 /* ===== End Natural Storybook Background ===== */
+
+
+
+/* ===== HeartSync Bottom Learning Navigation ===== */
+
+#apple-learning .hs-apple-bottom-nav {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr 1.1fr;
+  gap: 10px;
+  align-items: center;
+
+  margin-top: 10px;
+  padding: 9px 14px;
+
+  background: rgba(255, 253, 247, 0.92);
+  border: 1px solid #F1E1C9;
+  border-radius: 35px;
+  box-shadow: 0 4px 15px rgba(125, 92, 62, 0.07);
+
+  position: relative;
+  z-index: 2;
+}
+
+#apple-learning .hs-apple-bottom-nav button {
+  min-height: 46px;
+  padding: 8px 10px;
+  border-radius: 28px;
+  border: 1px solid #E9DBCB;
+  background: #FFFDF9;
+  color: #77534C;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#apple-learning .hs-step-prev {
+  background: #EAF5FF !important;
+  color: #38679D !important;
+}
+
+#apple-learning .hs-step-listen {
+  background: #FCE7EE !important;
+  color: #B34C69 !important;
+}
+
+#apple-learning .hs-step-watch,
+#apple-learning .hs-step-tap {
+  background: #FFF4E2 !important;
+  color: #906128 !important;
+}
+
+#apple-learning .hs-step-next {
+  background: #DDF5B8 !important;
+  color: #3E8025 !important;
+}
+
+#apple-learning .hs-apple-bottom-nav button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1100px) {
+  #apple-learning .hs-apple-bottom-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #apple-learning .hs-step-next {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  #apple-learning .hs-apple-bottom-nav {
+    grid-template-columns: 1fr;
+  }
+
+  #apple-learning .hs-step-next {
+    grid-column: auto;
+  }
+}
+
+/* ===== End Bottom Learning Navigation ===== */
