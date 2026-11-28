@@ -35,7 +35,8 @@
   </defs>
 
   <!-- Irregular, delicate branches growing inward from the upper left -->
-  <g opacity=".94">
+
+<g opacity=".94" transform="translate(-24 -16) scale(0.78)">
     <path d="M-20 -8 C10 5 19 23 47 30 S98 22 125 17"
           fill="none" stroke="#98B97A" stroke-width="3" stroke-linecap="round"/>
     <path d="M18 15 C30 27 31 42 32 61"
@@ -53,7 +54,8 @@
   </g>
 
   <!-- Different-sized foliage on the opposite upper corner -->
-  <g transform="translate(1600 0) scale(-1 1)" opacity=".93">
+ 
+<g transform="translate(1624 -16) scale(-0.78 0.78)" opacity=".93">
     <path d="M-22 -5 C9 8 32 12 54 24 S100 44 133 28"
           fill="none" stroke="#9BBE79" stroke-width="2.7" stroke-linecap="round"/>
     <path d="M32 17 Q32 40 49 67"
