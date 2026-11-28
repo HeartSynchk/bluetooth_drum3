@@ -2768,3 +2768,54 @@ background-size: 100% 100% !important;
 }
 
 /* ===== End ===== */
+
+
+/* ===== HeartSync Apple 去重設計：第一步 ===== */
+
+/* 1. 隱藏底部重複的三個功能按鈕 */
+#apple-learning .hs-step-listen,
+#apple-learning .hs-step-watch,
+#apple-learning .hs-step-tap {
+  display: none !important;
+}
+
+/* 2. 恢復左側原本的 Listen 按鈕 */
+#apple-learning #hs-apple-listen:not([hidden]) {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3. 恢復右側原本的 Watch 按鈕 */
+#apple-learning #hs-apple-watch:not([hidden]) {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #FFF1DC !important;
+  color: #94602A !important;
+  border: 2px solid #F2D5AE !important;
+}
+
+/* 4. 底部只保留 Previous 與 Next */
+#apple-learning .hs-apple-bottom-nav {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+#apple-learning .hs-step-prev {
+  grid-column: 1 !important;
+  justify-self: start;
+}
+
+#apple-learning .hs-step-next {
+  grid-column: 2 !important;
+  justify-self: end;
+}
+
+/* 手機版容許按鈕文字換行 */
+@media (max-width: 480px) {
+  #apple-learning .hs-apple-bottom-nav button {
+    white-space: normal;
+  }
+}
+
+/* ===== End Apple 去重設計第一步 ===== */
