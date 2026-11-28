@@ -2756,3 +2756,15 @@ background-size: 100% 100% !important;
 }
 
 /* ===== End Bottom Learning Navigation ===== */
+
+
+
+/* ===== Apple 隱藏重複按鈕 ===== */
+
+/* 保留原有功能，只隱藏重複入口 */
+#apple-learning #hs-apple-listen,
+#apple-learning #hs-apple-watch {
+  display: none !important;
+}
+
+/* ===== End ===== */
