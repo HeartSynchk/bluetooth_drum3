@@ -2819,3 +2819,30 @@ background-size: 100% 100% !important;
 }
 
 /* ===== End Apple 去重設計第一步 ===== */
+
+
+
+/* ===== HeartSync Step 3：節奏按鈕位置 ===== */
+
+@media (min-width: 1200px) {
+
+  #apple-learning .hs-apple-panel:nth-child(2) {
+    grid-template-areas:
+      "heading heading heading"
+      "syllables syllables syllables"
+      "panda drum beat"
+      "watch audio audio"
+      "progress progress progress"
+      "guide guide guide" !important;
+  }
+
+  /* 聲音模式移到鼓的下方 */
+  #apple-learning
+  .hs-apple-panel:nth-child(2)
+  > .hs-apple-audio-choice {
+    justify-self: start !important;
+  }
+
+}
+
+/* ===== End Step 3 ===== */
